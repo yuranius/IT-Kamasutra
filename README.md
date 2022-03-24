@@ -1,3 +1,5 @@
-# Учебный проект по курсу IT-Kamasutra
+# Учебный проект ReactJs
+
+по курсу IT-Kamasutra
 
 
