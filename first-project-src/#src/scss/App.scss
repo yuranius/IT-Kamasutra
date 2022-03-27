@@ -6,6 +6,8 @@
 
 //^ Файлы стилей страниц
 
+@import "main";
+
 //^ Подключение ширфтов
 
 @import "fonts";
@@ -70,9 +72,10 @@ body {
 
     &__logo {
         flex: 0 0 60px; //^ Задаем размер картинки
-        border-radius: 50%;
-        overflow: hidden; //^ Вырезаем то что выходит за грницы
-        img {
+        // border-radius: 50%;
+        // overflow: hidden; //^ Вырезаем то что выходит за грницы
+        animation: coin s linear 0s infinite normal none;
+         img {
             max-width: 100%; //^ Ставим 100% заполнение
             display: block; //^ Убираем подрезание снизу
         }
@@ -205,6 +208,15 @@ body {
     }
 }
 
+@keyframes coin{
+0%{
+transform: rotateY(0deg);
+}
+
+100%{
+    transform: rotateY(360deg);
+}
+}
 
 
 .main {
@@ -213,10 +225,9 @@ body {
 
 
     &__body {
-        border: 1px solid rgb(255, 255, 255);
         display: grid;
         grid-template-columns: auto 1fr auto;
-        
+
 
     }
 
@@ -234,47 +245,17 @@ body {
 
 
 
-
-.sidebar {
-    min-height: 100%;
-    background-color: chartreuse;
-    // .sidebar__title
-
-    &__title {
-    }
-
-    // .sidebar__text
-
-    &__text {
-    }
-}
-.posts {
-
-    // .posts__title
-
-    &__title {
-    }
-
-    // .posts__text
-
-    &__text {
-    }
-}
-.aside {
-}
-
-
-
-
 .footer {
     grid-row: 3/4;
     height: 200px;
     width: 100%;
-    background-color: tomato;
 
 
     &__body {
+        min-height: 200px;
         padding: 50px;
+        background-color: rgb(89, 122, 122);
+        border-radius: 20px;
     }
 
     &__title {
@@ -282,5 +263,6 @@ body {
         line-height: 130%;
         margin: 0px 0px 20px 0px;
         cursor: pointer;
+        color: #fff;
     }
 }
