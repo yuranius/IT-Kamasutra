@@ -74,7 +74,7 @@ body {
         flex: 0 0 60px; //^ Задаем размер картинки
         // border-radius: 50%;
         // overflow: hidden; //^ Вырезаем то что выходит за грницы
-        animation: coin s linear 0s infinite normal none;
+        animation: coin 5s linear 0s infinite normal none;
          img {
             max-width: 100%; //^ Ставим 100% заполнение
             display: block; //^ Убираем подрезание снизу

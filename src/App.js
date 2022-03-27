@@ -1,5 +1,9 @@
 import logo from "./image/many.webp";
 import "./App.css";
+import Header_menu from "./Header_menu";
+
+
+
 
 function App() {
 	return (
@@ -14,40 +18,7 @@ function App() {
               <div className='header__burger'>
                 <span></span>
               </div>
-              <nav className='header__menu'>
-                <ul className='header__list'>
-                  <li>
-                    <a href='' className='header__link'>
-                      Главное
-                    </a>
-                  </li>
-                  <li>
-                    <a href='' className='header__link'>
-                      Уроки
-                    </a>
-                  </li>
-                  <li>
-                    <a href='' className='header__link'>
-                      Контакты
-                    </a>
-                  </li>
-                  <li>
-                    <a href='' className='header__link'>
-                      Шпаргалки
-                    </a>
-                  </li>
-                  <li>
-                    <a href='' className='header__link'>
-                      Полезное
-                    </a>
-                  </li>
-                  <li>
-                    <a href='' className='header__link'>
-                      О канале
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+              <Header_menu />
 					  </div>
           </div>
 				</header>
@@ -95,7 +66,7 @@ function App() {
                 <div className="posts__block">
                   <h2 className='posts__title'>
                     Posts
-                    
+
                   </h2>
                   <div className='posts__text'>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
