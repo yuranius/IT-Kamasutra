@@ -12,6 +12,9 @@
 
 @import "fonts";
 
+//^ Подключение иконок
+@import "ico-moon-style";
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 
@@ -219,29 +222,7 @@ transform: rotateY(0deg);
 }
 
 
-.main {
-    margin: 100px 0px 0px 0px;
-    grid-row: 2/3;
 
-
-    &__body {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-
-
-    }
-
-    // &__title {
-    //     font-size: 30px;
-    //     line-height: 130%;
-    //     margin: 0px 0px 20px 0px;
-    //     cursor: pointer;
-    // }
-    // &__text {
-    //     font-size: 18px;
-    //     line-height: 150%;
-    // }
-}
 
 
 

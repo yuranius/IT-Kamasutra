@@ -1,3 +1,13 @@
+.main {
+    margin: 100px 0px 0px 0px;
+    grid-row: 2/3;
+
+    &__body {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+    }
+}
+
 .sidebar {
     min-height: calc(100vh - 350px);
     background-color: rgb(89, 122, 122);
@@ -5,63 +15,61 @@
     width: 200px;
     // .sidebar__title
 
-    &__block{
+    &__block {
         padding: 20px;
     }
 
-    &__menu{
-
+    &__menu {
     }
-        // .sidebar__list
+    // .sidebar__list
 
     &__list {
-        display:flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
 
-        li{
+        li {
             padding: 10px 0px;
             position: relative;
         }
 
-
         li :hover {
-            &::before{
-                content: '';
+            &::before {
+                content: "";
                 position: absolute;
                 top: 10px;
                 left: -30px;
                 width: 20px;
                 height: 20px;
-                background: url('./image/many.webp') 0 0 / 100% no-repeat;
+                background: url("./image/many.webp") 0 0 / 100% no-repeat;
             }
-            &::after{
-                content: '';
+            &::after {
+                content: "";
                 position: absolute;
                 top: 10px;
                 left: 110%;
                 width: 20px;
                 height: 20px;
-                background: url('./image/many.webp') 0 0 / 100% no-repeat;
+                background: url("./image/many.webp") 0 0 / 100% no-repeat;
             }
         }
     }
 
-        // .sidebar__link
+    // .sidebar__link
 
     &__link {
         color: wheat;
         font-size: 21px;
+        span {
+            font-size: 16px;
+            padding-right: 5px;
+        }
     }
-
-
 }
 
-
 .posts {
-
-    &__block{
+    &__block {
         padding: 20px;
         color: wheat;
         font-size: 21px;
@@ -77,17 +85,15 @@
     }
 }
 
-
 .aside {
     min-height: calc(100vh - 350px);
     background-color: rgb(89, 122, 122);
     border-radius: 20px;
     width: 200px;
 
-    &__block{
+    &__block {
         padding: 20px;
         color: wheat;
         font-size: 21px;
     }
-
 }
