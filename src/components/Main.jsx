@@ -1,12 +1,11 @@
+import Sidebar from "./Sidedar";
+
 let Main = () => {
    return (
       <main className='main'>
          <div className='conteiner'>
             <div className='main__body'>
-               <div className='sidebar'>
-
-
-               </div>
+               <Sidebar />
                <div className='posts'>
                   <div className='posts__block'>
                      <h2 className='posts__title'>Posts</h2>
