@@ -1,0 +1,12 @@
+.aside {
+    min-height: calc(100vh - 350px);
+    background-color: rgb(89, 122, 122);
+    border-radius: 20px;
+    width: 200px;
+
+    &__block {
+        padding: 20px;
+        color: wheat;
+        font-size: 21px;
+    }
+}

@@ -1,24 +1,24 @@
-let Header_menu = () => {
+let HeaderMenu = () => {
 	return (
 		<nav className='header__menu'>
 			<ul className='header__list'>
 				<li>
-					<a href='' className='header__link'>
+					<a href='/' className='header__link'>
 						Главное
 					</a>
 				</li>
 				<li>
-					<a href='' className='header__link'>
+					<a href='/' className='header__link'>
 						Уроки
 					</a>
 				</li>
 				<li>
-					<a href='' className='header__link'>
+					<a href='/' className='header__link'>
 						Контакты
 					</a>
 				</li>
 				<li>
-					<a href='' className='header__link'>
+					<a href='/' className='header__link'>
 						Шпаргалки
 					</a>
 				</li>
@@ -37,4 +37,4 @@ let Header_menu = () => {
 	);
 };
 
-export default Header_menu;
+export default HeaderMenu;
