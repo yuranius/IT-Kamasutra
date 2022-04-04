@@ -1,19 +1,9 @@
-import Postview from "./Main-Posts-View";
-import "./Main-Posts.scss"
+import Postview from "./PostsView";
+import "./Main-CreatePosts.scss"
 
 
 let Posts = () => {
-   // state = {
-   //    isOpen: false
-   // };
-
-   // toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
-
-   // render();
-      // const menuClass = `${this.state.isOpen ? " show" : ""}`;
-
    return (
-
       <div className='posts'>
          <div className='posts__block'>
             <div className='posts__slider'>Slaider</div>

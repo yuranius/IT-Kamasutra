@@ -1,19 +1,18 @@
 import "./Aside.scss"
 let Aside = () => {
-
     return (
         <div className="aside">
             <div className="aside__block">
-                <div className="">
+                <div className="aside__section">
                     <div className="contacts">
                         <h4 className="contacts__header">CONTACTS</h4>
                         <ul className="contacts__list">
                             <li className="contacts__item">
                                 <figure className="contacts__avatar">
-                                    <img src='' alt="avater" className="" />avatar
+                                    <img src='' alt="avater" />avatar
                                 </figure>
                                 <h3 className="contacts__name">
-                                    <span className="">name</span>
+                                    <span className="contacts__name-text">name</span>
                                 </h3>
                                 <span className="contacts__status">статус</span>
                             </li>
@@ -25,46 +24,43 @@ let Aside = () => {
                             <li className="groups__item">
                                 <span className="item__logo">UD</span>
                                 <h3 className="item__text-box">
-                                    <span className="item__text" onClick={this.toggleOpen}>Studio Express</span>
+                                    <span className="item__text">Studio Express onClick={this.toggleOpen}</span>
                                 </h3>
                                 <span className="item__time-passed">2 min</span>
                             </li>
                             <li className="groups__item">
                                 <span className="item__logo">AR</span>
                                 <h3 className="item__text-box">
-                                    <span className="item__text" onClick={this.toggleOpen}>Armany Design</span>
+                                    <span className="item__text">Armany Design onClick={this.toggleOpen}</span>
                                 </h3>
                                 <span className="item__badge"></span>
                             </li>
                             <li className="groups__item">
-
                                 <span className="item__logo">UD</span>
                                 <h3 className="item__text-box">
-                                    <span className="item__text" onClick={this.toggleOpen}>De fabous</span>
+                                    <span className="item__text">De fabous onClick={this.toggleOpen}</span>
                                 </h3>
                                 <span className="item__badge"></span>
                             </li>
                         </ul>
                     </div>
-
                     <div className="pages">
-                        {/* те же данные что и в группах */}
+
                     </div>
                 </div>
-
                 <div className="aside__popup">
                     <div className="aside__popup-wrap">
                         <div className="aside__popup-header">
                             <div className="popup__card">
                                 <figure className="popup__avatar">
-                                    <img src="assets/images/user-12.png" alt="avater" className="" />
+                                    img
                                 </figure>
                                 <h5 className="popup__text-primary">Hendrix Stamp</h5>
                                 <h4 className="popup__status">
                                     <span className="popup__status-indicator"></span>
                                     Available
                                 </h4>
-                                <div className="popup__close" onClick={this.toggleOpen}><i className="popup__ti-close"></i></div>
+                                <div className="popup__close"><i className="popup__ti-close"></i></div>
                             </div>
                         </div>
                         <div className="aside__popup-body">
