@@ -1,3 +1,5 @@
+import "./Footer.scss";
+
 let Footer = () => {
 	return (
 		<footer className='footer'>

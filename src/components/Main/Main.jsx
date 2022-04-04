@@ -1,4 +1,4 @@
-import Aside from "./Aside/Main-Aside";
+import Aside from "./Aside/Aside";
 import Posts from "./Posts/Main-Posts";
 import Sidebar from "./Sidebar/Main-Sidebar";
 import "./Main.scss"
