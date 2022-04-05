@@ -1,7 +1,7 @@
-import Aside from "./Aside/Aside";
-import Posts from "./Posts/Center_Panel/CreatePosts";
-import Sidebar from "./Sidebar/Main-Sidebar";
-import "./Main.scss"
+import Aside from './Aside/Aside';
+import Posts from './Posts/Center_Panel/CreatePosts';
+import Sidebar from './Sidebar/Main-Sidebar';
+import './Main.scss'
 
 let Main = () => {
    return (

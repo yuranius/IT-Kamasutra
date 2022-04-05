@@ -1,6 +1,6 @@
-import HeaderMenu from "./Header-menu";
-import logo from "./many.webp";
-import style from "./Header.scss";
+import HeaderMenu from './Header-menu';
+import logo from './many.webp';
+import style from './Header.scss';
 
 let Header = () => {
 	return (
