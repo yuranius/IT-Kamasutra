@@ -1,0 +1,45 @@
+.slider {
+    position: relative;
+    display: block;
+    border: 1px solid red;
+    background-color: ;
+    // .slider__card
+
+    &__card {
+
+        background-color: #343a40 !important;
+        margin-bottom: 1rem !important;
+        margin-right: 1rem !important;
+        overflow: hidden !important;
+
+        position: relative;
+
+        min-width: 0;
+        word-wrap: break-word;
+        background-clip: border-box;
+        border-radius: 10px !important;
+        height: 200px !important;
+        width: 125px !important;
+    }
+
+    // .slider__card-body
+
+    &__card-body {
+    }
+
+    // .slider__button
+
+    &__button {
+    }
+
+    // .slider__title
+
+    &__title {
+    }
+
+    // .slider__avatar
+
+    &__avatar {
+    }
+}
+

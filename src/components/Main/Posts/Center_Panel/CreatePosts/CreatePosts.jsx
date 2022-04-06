@@ -1,5 +1,4 @@
-import './CreatePosts.scss'
-
+import "./CreatePosts.scss";
 
 let CreatePost = () => {
    return (
@@ -10,50 +9,78 @@ let CreatePost = () => {
             </a>
          </div>
          <div className='create-post__form'>
-                  <figure className='create-post__ava'>
-                     image ava in textarea
-                  </figure>
-                  <textarea name='message' className='create-post__area' cols='30' rows='10' placeholder='О чем ты думаешь?'>
-                  </textarea>
+            <figure className='create-post__ava'>
+               <img
+                  src='http://sociala.uitheme.net/assets/images/user-8.png'
+                  alt=''
+               />
+            </figure>
+            <textarea
+               name='message'
+               className='create-post__area'
+               cols='30'
+               rows='10'
+               placeholder='О чем ты думаешь?'
+            ></textarea>
          </div>
          <div className='create-post__footer'>
-                  <a href='#video' className='create-post__video'>
-                     <i className='icon-video'></i>
-                     <span>Live Video</span>
-                  </a>
-                  <a href='#photo' className='create-post__photo'>
-                     <i className='icon-photo'></i>
-                     <span>Photo/Video</span>
-                  </a>
-                  <a href='#activity' className='create-post__activity'>
-                     <i className='icon-activity'></i>
-                     <span>Feeling/Activity</span>
-                  </a>
+            <a href='#video' className='create-post__video'>
+               <i className='icon-ondemand_videotest'></i>
+               <span>Live Video</span>
+            </a>
+            <a href='#photo' className='create-post__photo'>
+               <i className='icon-voice_chattest'></i>
+               <span>Photo/Video</span>
+            </a>
+            <a href='#activity' className='create-post__activity'>
+               <i className='icon-photo_camera_fronttest'></i>
+               <span>Feeling/Activity</span>
+            </a>
+            <div className="dropdown-menu-botton">
+               <i className="icon-filter_nonetest"></i>
+            </div>
 
-                  {/* <div className={`ms-auto pointer ${menuClass}`} id='dropdownMenu4' data-bs-toggle='dropdown' aria-expanded='false' onClick={this.toggleOpen}><i className='ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss'></i></div> */}
-                  {/* <div className={`dropdown-menu-test ${menuClass}`} aria-labelledby='dropdownMenu4'></div> */}
-                        <div className='card-body p-0 d-flex'>
-                            <i className='feather-bookmark text-grey-500 me-3 font-lg'></i>
-                            <h4 className='fw-600 text-grey-900 font-xssss mt-0 me-4 pointer'>Save Link <span className='d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500'>Add this to your saved items</span></h4>
-                        </div>
-                        <div className='card-body p-0 d-flex mt-2'>
-                            <i className='feather-alert-circle text-grey-500 me-3 font-lg'></i>
-                            <h4 className='fw-600 text-grey-900 font-xssss mt-0 me-4 pointer'>Hide Post <span className='d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500'>Save to your saved items</span></h4>
-                        </div>
-                        <div className='card-body p-0 d-flex mt-2'>
-                            <i className='feather-alert-octagon text-grey-500 me-3 font-lg'></i>
-                            <h4 className='fw-600 text-grey-900 font-xssss mt-0 me-4 pointer'>Hide all from Group <span className='d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500'>Save to your saved items</span></h4>
-                        </div>
-                        <div className='card-body p-0 d-flex mt-2'>
-                            <i className='feather-lock text-grey-500 me-3 font-lg'></i>
-                            <h4 className='fw-600 mb-0 text-grey-900 font-xssss mt-0 me-4 pointer'>Unfollow Group <span className='d-block font-xsssss fw-500 mt-1 lh-3 text-grey-500'>Save to your saved items</span></h4>
-                        </div>
-
-
+            <div className="dropdown-menu">
+               <div className='dropdown-menu__item'>
+                  <i className='icon-alternate_emailtest'></i>
+                  <h4 className='dropdown-menu__title'>
+                     Сохранить ссылку
+                     <span className='dropdown-menu__subtitle'>
+                        Добавить к своим сохраненным
+                     </span>
+                  </h4>
+               </div>
+               <div className='dropdown-menu__item'>
+                  <i className='icon-publictest'></i>
+                  <h4 className='dropdown-menu__title'>
+                     Скрыть пост
+                     <span className='dropdown-menu__subtitle'>
+                     Сохранить в сохраненных
+                     </span>
+                  </h4>
+               </div>
+               <div className='dropdown-menu__item'>
+                  <i className='icon-show_charttest'></i>
+                  <h4 className='dropdown-menu__title'>
+                     Скрыть все из группы
+                     <span className='dropdown-menu__subtitle'>
+                     Сохранить в сохраненных
+                     </span>
+                  </h4>
+               </div>
+               <div className='dropdown-menu__item'>
+                  <i className='icon-priority_hightest'></i>
+                  <h4 className='dropdown-menu__title'>
+                     Отписаться от группы
+                     <span className='dropdown-menu__subtitle'>
+                     Сохранить в сохраненных
+                     </span>
+                  </h4>
+               </div>
+            </div>
          </div>
       </div>
    );
 };
 
 export default CreatePost;
-

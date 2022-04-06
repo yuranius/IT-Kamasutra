@@ -1,17 +1,16 @@
-import Postview from './ViewPosts/ViewPosts';
-
-
 import './CenterPanel.scss'
-import CreatePost from './CreatePosts/CreatePosts';
 import Slider from './Slider/Slider';
+import CreatePost from './CreatePosts/CreatePosts';
+import ViewPost from './ViewPosts/ViewPosts';
 
 
 let CenterPanel = () => {
-   return (
+   return 
       <div className="center-panel">
          <Slider />
          <CreatePost />
-         <Postview />
+         <ViewPost />
+
       </div>
    );
 };

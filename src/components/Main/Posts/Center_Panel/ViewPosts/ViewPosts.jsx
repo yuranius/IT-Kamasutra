@@ -1,6 +1,6 @@
 import './PostsView.scss'
 
-let Postview = () => {
+let ViewPost = () => {
     return (
         <div className='card'>
                 <div className='card-body'>
@@ -69,4 +69,4 @@ let Postview = () => {
 };
 
 
-export default Postview;
+export default ViewPost;
