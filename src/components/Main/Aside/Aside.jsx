@@ -9,7 +9,7 @@ let Aside = () => {
                         <ul className='contacts__list'>
                             <li className='contacts__item'>
                                 <figure className='contacts__avatar'>
-                                    <img src='' alt='avater' />avatar
+                                    <img src='../../../image/logo.jpg' alt='avater' />avatar
                                 </figure>
                                 <h3 className='contacts__name'>
                                     <span className='contacts__name-text'>name</span>
@@ -24,21 +24,21 @@ let Aside = () => {
                             <li className='groups__item'>
                                 <span className='item__logo'>UD</span>
                                 <h3 className='item__text-box'>
-                                    <span className='item__text'>Studio Express onClick={this.toggleOpen}</span>
+                                    <span className='item__text'>Studio Express onClick=this.toggleOpen</span>
                                 </h3>
                                 <span className='item__time-passed'>2 min</span>
                             </li>
                             <li className='groups__item'>
                                 <span className='item__logo'>AR</span>
                                 <h3 className='item__text-box'>
-                                    <span className='item__text'>Armany Design onClick={this.toggleOpen}</span>
+                                    <span className='item__text'>Armany Design onClick= фигурна скобка this.toggleOpen фигурна скобка</span>
                                 </h3>
                                 <span className='item__badge'></span>
                             </li>
                             <li className='groups__item'>
                                 <span className='item__logo'>UD</span>
                                 <h3 className='item__text-box'>
-                                    <span className='item__text'>De fabous onClick={this.toggleOpen}</span>
+                                    <span className='item__text'>De fabous onClick=this.toggleOpen</span>
                                 </h3>
                                 <span className='item__badge'></span>
                             </li>

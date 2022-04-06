@@ -1,38 +1,31 @@
-import Postview from './PostsView';
 import './CreatePosts.scss'
 
 
-let Posts = () => {
+let CreatePost = () => {
    return (
-      <div className='posts'>
-         <div className='posts__block'>
-            <div className='posts__slider'>Slaider
-               
-            </div>
-            <div className='posts__create-post'>
-
-               <div className='create-post__button'>
-                  <a href='/' className='create-post__link'>
-                     <i className='icon'></i>Create Post
-                  </a>
-               </div>
-               <div className='creaite-post__form'>
-                  <figure className='creaite-post__ava'>
+      <div className='create-post'>
+         <div className='create-post__button'>
+            <a href='/' className='create-post__link'>
+               <i className='icon-rate_reviewtest'></i>Create Post
+            </a>
+         </div>
+         <div className='create-post__form'>
+                  <figure className='create-post__ava'>
                      image ava in textarea
                   </figure>
-                  <textarea name='message' className='creaite-post__area' cols='30' rows='10' placeholder='О чем ты думаешь?'>
+                  <textarea name='message' className='create-post__area' cols='30' rows='10' placeholder='О чем ты думаешь?'>
                   </textarea>
-               </div>
-               <div className='creaite-post__footer'>
-                  <a href='#video' className='creaite-post__video'>
+         </div>
+         <div className='create-post__footer'>
+                  <a href='#video' className='create-post__video'>
                      <i className='icon-video'></i>
                      <span>Live Video</span>
                   </a>
-                  <a href='#photo' className='creaite-post__photo'>
+                  <a href='#photo' className='create-post__photo'>
                      <i className='icon-photo'></i>
                      <span>Photo/Video</span>
                   </a>
-                  <a href='#activity' className='creaite-post__activity'>
+                  <a href='#activity' className='create-post__activity'>
                      <i className='icon-activity'></i>
                      <span>Feeling/Activity</span>
                   </a>
@@ -57,16 +50,10 @@ let Posts = () => {
                         </div>
 
 
-               </div>
-            </div>
-
-            <Postview />
-
-
          </div>
       </div>
    );
 };
 
-export default Posts;
+export default CreatePost;
 

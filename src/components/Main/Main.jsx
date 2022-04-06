@@ -1,5 +1,5 @@
 import Aside from './Aside/Aside';
-import Posts from './Posts/Center_Panel/CreatePosts';
+import Posts from './Posts/Center_Panel/CreatePosts/CreatePosts';
 import Sidebar from './Sidebar/Main-Sidebar';
 import './Main.scss'
 
@@ -10,7 +10,7 @@ let Main = () => {
             <div className='main__body'>
                <Sidebar />
                <Posts />
-               {/* <Aside /> */}
+               <Aside />
             </div>
          </div>
       </main>
