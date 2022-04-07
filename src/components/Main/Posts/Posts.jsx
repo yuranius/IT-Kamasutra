@@ -4,7 +4,7 @@ import CenterPanel from './Center_Panel/CenterPanel';
 
 
 let Posts = () => {
-   return 
+   return (
       <div className='posts'>
          <div className='posts__block'>
             <CenterPanel />

@@ -1,5 +1,5 @@
 import Aside from './Aside/Aside';
-import Posts from './Posts/Center_Panel/CreatePosts/CreatePosts';
+import Posts from './Posts/Posts';
 import Sidebar from './Sidebar/Main-Sidebar';
 import './Main.scss'
 

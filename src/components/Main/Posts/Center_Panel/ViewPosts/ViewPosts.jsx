@@ -1,4 +1,4 @@
-import './PostsView.scss'
+import './ViewPosts.scss'
 
 let ViewPost = () => {
     return (
