@@ -1,4 +1,4 @@
-import HeaderMenu from './Header-menu';
+import HeaderMenu from './Header-Menu/Header-menu';
 import logo from './many.webp';
 import style from './Header.scss';
 

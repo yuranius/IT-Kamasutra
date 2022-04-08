@@ -13,7 +13,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-        // background-color:cornflowerblue;
         background-color: tomato;
         z-index: 2;
     }
@@ -52,31 +51,6 @@
         z-index: 3;
     }
 
-    // .header__menu
-
-    &__menu {
-    }
-
-    // .header__list
-
-    &__list {
-        display: flex;
-        position: relative;
-        z-index: 3;
-        li {
-            list-style: none; //^ Убирю точки меню
-            margin: 0px 0px 0px 20px;
-        }
-    }
-
-    // .header__link
-
-    &__link {
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 18px;
-        text-decoration: none;
-    }
 
     @media (max-width: 767px) {
         &__burger {
@@ -131,26 +105,6 @@
             }
         }
 
-        &__menu {
-            //^Работаем с меню после breakpoint
-            position: fixed;
-            top: -110%; //^ прячем выпадающее меню
-            left: 0;
-            width: 100%;
-            height: 100%;
-            font-size: 25px;
-            overflow: auto;
-            background-color: aqua;
-            padding: 100px 0px 0px 0px;
-            transition: all 0.3s ease 0s;
-            &.active {
-                top: 0;
-            }
-        }
-
-        &__link {
-            color: red;
-        }
         &__body {
             //^ Уменьшаем шапку
             height: 50px;
@@ -161,12 +115,6 @@
             flex: 0 0 40px;
         }
 
-        &__list {
-            display: block;
-            li {
-                margin: 0px 0px 20px 50px;
-            }
-        }
     }
 }
 

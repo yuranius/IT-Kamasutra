@@ -6,31 +6,30 @@
     // .slider__card
 
     &__card {
-
-        background-color: #343a40 !important;
-        margin-bottom: 1rem !important;
-        margin-right: 1rem !important;
-        overflow: hidden !important;
+        background-color: #343a40;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        overflow: hidden;
 
         position: relative;
 
         min-width: 0;
         word-wrap: break-word;
         background-clip: border-box;
-        border-radius: 10px !important;
-        height: 200px !important;
-        width: 125px !important;
+        border-radius: 10px;
+        height: 200px;
+        width: 125px;
     }
 
     // .slider__card-body
 
-    &__card-body {
-        text-align: center !important;
-        padding: 1rem !important;
-        width: 100% !important;
-        bottom: 0 !important;
-        position: absolute !important;
-        display: block !important;
+    &__cardbody {
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+        display: block;
     }
 
     &__bg{
@@ -88,12 +87,12 @@
         width: 50px;
         img{
             display: block;
-            border-radius: 50% !important;
-            background-color: #fff !important;
-            width: 100% !important;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05) !important;
-            padding: 0 !important;
-            float: right !important;
+            border-radius: 50%;
+            background-color: #fff;
+            width: 100%;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            padding: 0;
+            float: right;
         }
     }
 }

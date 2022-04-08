@@ -1,3 +1,5 @@
+import  './Header-menu.scss';
+
 let HeaderMenu = () => {
 	return (
 		<nav className='header__menu'>
