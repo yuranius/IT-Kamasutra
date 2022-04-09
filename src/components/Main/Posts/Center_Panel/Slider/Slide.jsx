@@ -1,6 +1,7 @@
 import React from 'react';
 import css from './Slide.module.scss';
 
+
 const Slide = ({ children, color }) => {
   return (
     <div className={css.container}>

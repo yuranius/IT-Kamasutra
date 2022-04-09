@@ -1,12 +1,13 @@
+import React from 'react';
 import scss from "./Slider-card-one.module.scss";
 
-let SliderCardOne = () => {
+const SliderCardOne = () => {
    return (
    <div className={scss.slider}>
       <div className={scss.slider__card}>
          <div className={scss.slider__cardbody}>
             <span className={scss.slider__button}>
-               <a href='/'>
+               <a href='/#'>
                   <i className='icon-add_photo_alternatetest'></i>
                </a>
             </span>

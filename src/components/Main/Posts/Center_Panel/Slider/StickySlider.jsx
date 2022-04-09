@@ -1,31 +1,49 @@
-import React from 'react';
-import Swiper from 'react-id-swiper';
-import 'swiper/css';
+import "slick-carousel/slick/slick.scss";
+import "slick-carousel/slick/slick-theme.scss";
 
-import Slide from './Slide'
+import Slider from "react-slick";
 
-import data from './data';
+import SliderCard from './Slider-card/Slider-card';
+import SliderCardOne from './Slider-card-one/Slider-card-one';
+
+import scss from './StickySlider.module.scss'
+
+
+
+
+
+
 
 const StickySlider = () => {
-  const params = {
-    slidesPerView: 1,
-    spaceBetween:50,
-    onSlideChange: () => console.log('slide change'),
-    onSwiper:(swiper) => console.log('gj')
+
+  let settings = {
+    dots: false,
+    arrows: false,
+    infinite: false,
+    speed: 200,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+
   };
 
+
+
+
   return (
-    <Swiper {...params}>
-      {data.map((item, idx) => (
-        <div key={idx}>
-          {/* добавляем слайд */}
-          <Slide color={item.color}>
-            {item.title}
-          </Slide>
-        </div>
-      ))}
-    </Swiper>
+    <Slider {...settings} className={scss.wrapper}>
+      <SliderCardOne />
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
+
+    </Slider>
   );
 };
+
+
+
 
 export default StickySlider;
