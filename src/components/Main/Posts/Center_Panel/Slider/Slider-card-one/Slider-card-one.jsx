@@ -12,7 +12,6 @@ const SliderCardOne = () => {
                </a>
             </span>
             <h4 className={scss.slider__title}>Add Story </h4>
-
          </div>
       </div>
    </div>

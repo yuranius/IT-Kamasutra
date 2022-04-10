@@ -1,5 +1,5 @@
 import scss from './CenterPanel.module.scss'
-import StickySlider from './Slider/StickySlider';
+import Slide from './Slider/Slider';
 import CreatePost from './CreatePosts/CreatePosts';
 import ViewPost from './ViewPosts/ViewPosts';
 
@@ -7,7 +7,7 @@ import ViewPost from './ViewPosts/ViewPosts';
 let CenterPanel = () => {
    return (
       <div className={scss.centerpanel}>
-         <StickySlider />
+         <Slide />
          <CreatePost />
          <ViewPost />
 

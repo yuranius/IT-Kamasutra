@@ -6,28 +6,21 @@ import Slider from "react-slick";
 import SliderCard from './Slider-card/Slider-card';
 import SliderCardOne from './Slider-card-one/Slider-card-one';
 
-import scss from './StickySlider.module.scss'
+import scss from './Slider.module.scss'
 
 
 
-
-
-
-
-const StickySlider = () => {
+const Slide = () => {
 
   let settings = {
     dots: false,
     arrows: false,
     infinite: false,
     speed: 200,
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 2,
 
   };
-
-
-
 
   return (
     <Slider {...settings} className={scss.wrapper}>
@@ -38,7 +31,16 @@ const StickySlider = () => {
       <SliderCard />
       <SliderCard />
       <SliderCard />
-
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
+      <SliderCard />
     </Slider>
   );
 };
@@ -46,4 +48,4 @@ const StickySlider = () => {
 
 
 
-export default StickySlider;
+export default Slide;

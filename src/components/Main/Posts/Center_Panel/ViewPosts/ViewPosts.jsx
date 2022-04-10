@@ -1,29 +1,27 @@
-import './ViewPosts.scss'
+import scss from './ViewPosts.module.scss'
 
 let ViewPost = () => {
     return (
-        <div className='card'>
-                <div className='card-body'>
-                    <figure className='avatar'>img</figure>
-                    <h4 className='name'><span className='time'></span></h4>
-                    <div className='ms-auto pointer'><i className='ti-more-alt text-grey-900 btn-round-md bg-greylight font-xss'></i></div>
+        <div className={scss.card}>
+                <div className={scss.card__title}>
+                    <figure className={scss.card__avatar}>
+                        <img src="http://sociala.uitheme.net/assets/images/user-7.png" alt="avatar" />
+                    </figure>
+                    <h4 className={scss.card__name}>Surfiya Zakir<span className={scss.card__time}>22 min ago</span></h4>
+                    <div className={scss.card__pointer}><i className='icon-filter_nonetest'></i></div>
                 </div>
 
-                <div className='card-body p-0 mb-3 rounded-3 overflow-hidden uttam-die'>
-                    <a href='/defaultvideo' className='video-btn'>
-                        <video autoPlay loop className='float-right w-100'>
-                            <source src='' type='video/mp4' />
-                        </video>
-                    </a>
+
+                <div className={scss.card__subtitle}>
+                    <p className={scss.card__text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus.
+                    <a href='/defaultvideo' className={scss.card__textprimary}>See more</a></p>
                 </div>
 
-                <div className='card-body'>
-                    <p className='text-grey'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus.<a href='/defaultvideo' className='text-primary'>See more</a></p>
-                </div>
-
-                <div className='card-body'>
-                    <div className='row'>
-                        <div className='postimage'>img-posts</div>
+                <div className={scss.card__postimage}>
+                    <div className={scss.card__postimagerow}>
+                        <div className={scss.card__postimageimg}>
+                            <img src="http://sociala.uitheme.net/assets/images/t-10.jpg" alt="" />
+                        </div>
                     </div>
                 </div>
 
