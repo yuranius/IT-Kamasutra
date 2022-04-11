@@ -112,7 +112,6 @@
     &__postimagerow {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-
         --bs-gutter-x: 30px;
         --bs-gutter-y: 0;
         display: flex;
@@ -139,6 +138,67 @@
     }
 }
 
+.card {
+    // .{scss.card__footer}
+    &__footer {
+        display: flex;
+        flex: 1 1 auto;
+    }
+}
+
+.footer {
+
+    // .{scss.footer__like}
+
+    &__like {
+        font-weight: 600;
+        color: #212529;
+        cursor: pointer;
+        margin-right: 0.5rem;
+        align-items: center;
+        display: flex;
+        font-size: 12px;
+        line-height: 26px;
+        i{
+            color: #fff;
+            margin-right: 0.25rem;
+            font-size: 16px;
+            width: 25px;
+            height: 25px;
+            border-radius: 25px;
+            display: inline-block;
+            line-height: 25px;
+            text-align: center;
+
+        }
+        i:nth-child(1){
+            background: linear-gradient(135deg, #05f, #09f);
+        }
+        i:nth-child(2){
+            background: linear-gradient(135deg, #e44d26, #f16529);
+        }
+    }
+
+    // .{scss.footer__comment}
+
+    &__comment {
+    }
+
+    // .{scss.footer__commentText}
+
+    &__commentText {
+    }
+
+    // .{scss.footer__dropdown}
+
+    &__dropdown {
+    }
+
+    // .{scss.footer__dropdownText}
+
+    &__dropdownText {
+    }
+}
 
 
 

@@ -8,7 +8,7 @@ let ViewPost = () => {
                         <img src="http://sociala.uitheme.net/assets/images/user-7.png" alt="avatar" />
                     </figure>
                     <h4 className={scss.card__name}>Surfiya Zakir<span className={scss.card__time}>22 min ago</span></h4>
-                    <div className={scss.card__pointer}><i className='icon-filter_nonetest'></i></div>
+                    <div className={scss.card__pointer}><i className='icon-keyboard_controltest'></i></div>
                 </div>
 
 
@@ -25,18 +25,23 @@ let ViewPost = () => {
                     </div>
                 </div>
 
-                <div className='card-body'>
+                <div className={scss.card__footer}>
                     {/* лайк сердечко */}
-                    <div className='emoji-bttn pointer'><i className='feather-thumbs-up'></i> <i className='feather-heart'></i>2.8K Like</div>
+                    <div className={scss.footer__like}>
+                        <i className='icon-local_floristtest'></i>
+                        <i className='icon-subscriptionstest'></i>
+
+                        2.8K Like</div>
                     {/* значок 22 комментария */}
-                    <a href='/' className='align-items-center'>
+                    <a href='/' className={scss.footer__comment}>
                         <i className='feather-message-circle'></i>
-                        <span className='d-none-xss'>22 Comment</span>
+                        <span className={scss.footer__commentText}>22 Comment</span>
                     </a>
 
-                    <div className='dropdown'>
+                    <div className={scss.footer__dropdown}>
                         <i className='feather-share-2'></i>
-                        <span className='d-none-xs'>Share</span></div>
+                        <span className={scss.footer__dropdownText}>Share</span>
+                    </div>
                     <div className='dropdown-popup'>
                         <h4 className='dropdown-popup__title'>Share <i className='dropdown-popup__closest'></i></h4>
                         <div className='dropdown-popup__card-body'>

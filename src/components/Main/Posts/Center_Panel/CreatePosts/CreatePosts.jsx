@@ -37,7 +37,7 @@ let CreatePost = () => {
                <span>Feeling/Activity</span>
             </a>
             <div className="dropdown-menu-botton">
-               <i className="icon-filter_nonetest"></i>
+               <i className="icon-keyboard_controltest"></i>
             </div>
 
             <div className="dropdown-menu">
