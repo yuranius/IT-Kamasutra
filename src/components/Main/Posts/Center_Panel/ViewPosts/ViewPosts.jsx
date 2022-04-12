@@ -28,43 +28,44 @@ let ViewPost = () => {
                 <div className={scss.card__footer}>
                     {/* лайк сердечко */}
                     <div className={scss.footer__like}>
-                        <i className='icon-local_floristtest'></i>
-                        <i className='icon-subscriptionstest'></i>
+                        <i className='icon-thumb_up'></i>
+                        <i className='icon-like'></i>
 
-                        2.8K Like</div>
+                        2.8K Like
+                    </div>
                     {/* значок 22 комментария */}
                     <a href='/' className={scss.footer__comment}>
-                        <i className='feather-message-circle'></i>
+                        <i className='icon-message'></i>
                         <span className={scss.footer__commentText}>22 Comment</span>
                     </a>
 
                     <div className={scss.footer__dropdown}>
-                        <i className='feather-share-2'></i>
+                        <i className='icon-share'></i>
                         <span className={scss.footer__dropdownText}>Share</span>
                     </div>
-                    <div className='dropdown-popup'>
-                        <h4 className='dropdown-popup__title'>Share <i className='dropdown-popup__closest'></i></h4>
-                        <div className='dropdown-popup__card-body'>
-                            <ul className='dropdown-popup__list'>
-                                <li className='dropdown-popup__item'><span className='btn-facebook'><i className='facebook'></i></span></li>
-                                <li className='dropdown-popup__item'><span className='btn-twiiter'><i className='twitter'></i></span></li>
-                                <li className='dropdown-popup__item'><span className='btn-linkedin'><i className='linkedin'></i></span></li>
-                                <li className='dropdown-popup__item'><span className='btn-instagram'><i className='instagram'></i></span></li>
-                                <li><span className='btn-pinterest'><i className='pinterest'></i></span></li>
+                    <div className={scss.dropdownPopup}>
+                        <h4 className={scss.dropdownPopup__title}>Share <i className='icon-clear'></i></h4>
+                        <div className={scss.dropdownPopup__card}>
+                            <ul className={scss.dropdownPopup__list}>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_steam}><i className='icon-steam'></i></span></li>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Twitter}><i className='icon-twitter'></i></span></li>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Linkedin}><i className='icon-linkedin2'></i></span></li>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Instagram}><i className='icon-instagram'></i></span></li>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Pinterest}><i className='icon-pinterest2'></i></span></li>
                             </ul>
                         </div>
-                        <div className='dropdown-popup__card-body'>
-                            <ul className='dropdown-popup__list'>
-                                <li className='dropdown-popup__item'><span className='btn'><i className='ti-tumblr text-white'></i></span></li>
-                                <li className='dropdown-popup__item'><span className='btn-youtube'><i className='ti-youtube text-white'></i></span></li>
-                                <li className='dropdown-popup__item'><span className='btn-flicker'><i className='ti-flickr text-white'></i></span></li>
-                                <li className='dropdown-popup__item'><span className='btn-black'><i className='ti-vimeo-alt text-white'></i></span></li>
+                        <div className={scss.dropdownPopup__card}>
+                            <ul className={scss.dropdownPopup__list}>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Tumblr}><i className='icon-tumblr'></i></span></li>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Youtube}><i className='ti-youtube text-white'></i></span></li>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Flicker}><i className='ti-flickr text-white'></i></span></li>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Black}><i className='ti-vimeo-alt text-white'></i></span></li>
                                 <li><span className='btn-whatsup'><i className='feather-phone text-white'></i></span></li>
                             </ul>
                         </div>
-                        <h4 className='dropdown-popup__subtitle'>Copy Link</h4>
+                        <h4 className={scss.dropdownPopup__subtitle}>Copy Link</h4>
                         <i className='copy-link'></i>
-                        <input type='text' placeholder='https://yuranius.ru' className='dropdown-popup__form' />
+                        <input type='text' placeholder='https://yuranius.ru' className={scss.dropdownPopup__form} />
                     </div>
                 </div>
         </div>

@@ -173,25 +173,75 @@
         }
         i:nth-child(1){
             background: linear-gradient(135deg, #05f, #09f);
+            &:before {
+                content: "\e914";
+            }
         }
         i:nth-child(2){
             background: linear-gradient(135deg, #e44d26, #f16529);
+            &:before {
+                content: "\e910";
+            }
         }
     }
 
     // .{scss.footer__comment}
 
     &__comment {
+        font-weight: 600;
+        color: #212529;
+        align-items: center;
+        display: flex;
+        font-size: 12px;
+        line-height: 26px;
+        i{
+            color: #212529;
+            font-size: 25px;
+
+            width: 35px;
+            height: 35px;
+            border-radius: 35px;
+            display: inline-block;
+            line-height: 35px;
+            text-align: center;
+            &:before {
+                content: "\e970";
+            }
+        }
     }
 
     // .{scss.footer__commentText}
 
     &__commentText {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 26px;
     }
 
     // .{scss.footer__dropdown}
 
     &__dropdown {
+        cursor: pointer;
+        font-weight: 600;
+        color: #212529;
+        margin-left: auto;
+        align-items: center;
+        display: flex;
+        font-size: 12px;
+        line-height: 26px;
+        i{
+            font-size: 25px;
+
+            width: 35px;
+            height: 35px;
+            border-radius: 35px;
+            display: inline-block;
+            line-height: 35px;
+            text-align: center;
+            &:before {
+                content: "\ea82";
+            }
+        }
     }
 
     // .{scss.footer__dropdownText}
@@ -202,32 +252,175 @@
 
 
 
-.dropdown-popup {
+
+.dropdownPopup {
+    padding: 1.5rem;
+    border: 0;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+    min-width: 10rem;
+    margin: 0;
+    font-size: 1rem;
+    color: #515184;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 15px;
+    right: 0;
+
+
 
 		// .dropdown-popup__title
 
 		&__title {
-		}
-
-		// .dropdown-popup__closest
-
-		&__closest {
+            font-weight: 700;
+            color: #212529;
+            align-items: center;
+            display: flex;
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            i{
+                margin-left: auto;
+                font-size: 12px;
+                width: 25px;
+                height: 25px;
+                border-radius: 25px;
+                display: inline-block;
+                line-height: 25px;
+                text-align: center;
+                background-color: #f5f5f5;
+                cursor: pointer;
+                &:before {
+                    content: "\e92c";
+                }
+            }
 		}
 
 		// .dropdown-popup__card-body
 
-		&__card-body {
+		&__card {
+            display: flex !important;
+            font-size: 1rem;
+color: #515184;
+text-align: left;
+list-style: none;
 		}
 
 		// .dropdown-popup__list
 
 		&__list {
+            margin-top: 0.5rem !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            display: flex !important;
 		}
 
 		// .dropdown-popup__item
 
 		&__item {
+            margin-right: 0.25rem !important;
 		}
+
+        &__btnFacebook {
+
+        }
+
+        // .{scss.dropdownPopup__btnTwitter}
+
+        &__btn {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            display: inline-block;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid red;
+
+            // .{scss.dropdownPopup__btn_Facebook}
+
+            &_steam {
+                border: 1px solid red;
+                i{
+                    &:before {
+                        content: "\eaac";
+                      }
+                }
+            }
+
+            // .{scss.dropdownPopup__btn_Twitter}
+
+            &_Twitter {
+                i{
+                    &:before {
+                        content: "\ea96";
+                      }
+                }
+
+
+            }
+
+            // .{scss.dropdownPopup__btn_Linkedin}
+
+            &_Linkedin {
+                i{
+                    &:before {
+                        content: "\eaca";
+                      }
+                }
+            }
+
+            // .{scss.dropdownPopup__btn_Instagram}
+
+            &_Instagram {
+                i{
+                    &:before {
+                        content: "\ea92";
+                      }
+                }
+            }
+
+            // .{scss.dropdownPopup__btn_Pinterest}
+
+            &_Pinterest {
+                i{
+                    &:before {
+                        content: "\ead2";
+                      }
+                }
+            }
+
+            &_Tumblr {
+                i{
+                    &:before {
+                        content: "\eab9";
+                      }
+                }
+            }
+        }
+
+        &__btnTwitter{
+        }
+
+        // .{scss.dropdownPopup__btnLinkedin}
+
+        &__btnLinkedin{
+        }
+
+        // .{scss.dropdownPopup__btnInstagram}
+
+        &__btnInstagram{
+        }
+
+        // .{scss.dropdownPopup__btnPinterest}
+
+        &__btnPinterest{
+        }
 
 		// .dropdown-popup__subtitle
 
@@ -239,4 +432,7 @@
 		&__form {
 		}
 }
+
+
+
 
