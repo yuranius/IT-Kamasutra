@@ -42,9 +42,9 @@
       "since 2010"
     ],
     "development": [
-      "last 3 chrome version",
-      "last 3 firefox version",
-      "last 3 safari version"
+      "last 5 chrome version",
+      "last 5 firefox version",
+      "last 5 safari version"
     ]
   }
 }
