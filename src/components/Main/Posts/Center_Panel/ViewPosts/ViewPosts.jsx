@@ -7,20 +7,20 @@ let ViewPost = () => {
                     <figure className={scss.card__avatar}>
                         <img src="http://sociala.uitheme.net/assets/images/user-7.png" alt="avatar" />
                     </figure>
-                    <h4 className={scss.card__name}>Surfiya Zakir<span className={scss.card__time}>22 min ago</span></h4>
+                    <h4 className={scss.card__name}>Дмитрий Медведев<span className={scss.card__time}>22 min ago</span></h4>
                     <div className={scss.card__pointer}><i className='icon-keyboard_controltest'></i></div>
                 </div>
 
 
                 <div className={scss.card__subtitle}>
-                    <p className={scss.card__text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus.
+                    <p className={scss.card__text}>Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus. Красота то какая..... Ляпота....
                     <a href='/defaultvideo' className={scss.card__textprimary}>See more</a></p>
                 </div>
 
                 <div className={scss.card__postimage}>
                     <div className={scss.card__postimagerow}>
                         <div className={scss.card__postimageimg}>
-                            <img src="http://sociala.uitheme.net/assets/images/t-10.jpg" alt="" />
+                            <img src="https://www.ridus.ru/images/2015/9/14/324125/7156a2dcaa.jpg" alt="" />
                         </div>
                     </div>
                 </div>
