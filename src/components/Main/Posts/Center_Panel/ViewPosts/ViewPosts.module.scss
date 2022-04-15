@@ -250,8 +250,27 @@
     }
 }
 
+@mixin btn ($color) {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    background-color: $color;
+}
 
 
+@mixin btn-i {
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.iconedit{
+
+}
 
 .dropdownPopup {
     padding: 1.5rem;
@@ -271,6 +290,17 @@
     border-radius: 15px;
     right: 0;
 
+    ico{
+        color: #adb5bd;
+        margin-top: 1rem;
+        position: absolute;
+        font-size: 18px;
+        right: 35px;
+        cursor: pointer;
+        &:before{
+            content: "\e933";
+        }
+    }
 
 
 		// .dropdown-popup__title
@@ -306,9 +336,9 @@
 		&__card {
             display: flex !important;
             font-size: 1rem;
-color: #515184;
-text-align: left;
-list-style: none;
+            color: #515184;
+            text-align: left;
+            list-style: none;
 		}
 
 		// .dropdown-popup__list
@@ -340,13 +370,14 @@ list-style: none;
             display: inline-block;
             line-height: 50px;
             text-align: center;
-            border: 1px solid red;
+
 
             // .{scss.dropdownPopup__btn_Facebook}
 
             &_steam {
-                border: 1px solid red;
+                @include btn (#0d66ff);
                 i{
+                    @include btn-i;
                     &:before {
                         content: "\eaac";
                       }
@@ -356,7 +387,9 @@ list-style: none;
             // .{scss.dropdownPopup__btn_Twitter}
 
             &_Twitter {
+                @include btn (#3b5999);
                 i{
+                    @include btn-i;
                     &:before {
                         content: "\ea96";
                       }
@@ -368,7 +401,9 @@ list-style: none;
             // .{scss.dropdownPopup__btn_Linkedin}
 
             &_Linkedin {
+                @include btn (#0077B5);
                 i{
+                    @include btn-i;
                     &:before {
                         content: "\eaca";
                       }
@@ -378,8 +413,10 @@ list-style: none;
             // .{scss.dropdownPopup__btn_Instagram}
 
             &_Instagram {
+                @include btn (#e4405f);
                 i{
                     &:before {
+                        @include btn-i;
                         content: "\ea92";
                       }
                 }
@@ -388,50 +425,96 @@ list-style: none;
             // .{scss.dropdownPopup__btn_Pinterest}
 
             &_Pinterest {
+                @include btn (#bd081c);
                 i{
                     &:before {
+                        @include btn-i;
                         content: "\ead2";
                       }
                 }
             }
 
             &_Tumblr {
+                @include btn (#34465d);
                 i{
                     &:before {
+                        @include btn-i;
                         content: "\eab9";
+                      }
+                }
+            }
+
+            &_Youtube {
+                @include btn (#cd201f);
+                i{
+                    &:before {
+                        @include btn-i;
+                        content: "\ea9d";
+                      }
+                }
+            }
+
+            &_Wordpress {
+                @include btn (#ff0084);
+                i{
+                    &:before {
+                        @include btn-i;
+                        content: "\eab4";
+                      }
+                }
+            }
+
+            &_Vimeo {
+                @include btn (#111);
+                i{
+                    &:before {
+                        @include btn-i;
+                        content: "\eaa0";
+                      }
+                }
+            }
+
+            &_Whatsapp {
+                @include btn (#25D366);
+                i{
+                    &:before {
+                        @include btn-i;
+                        content: "\ea93";
                       }
                 }
             }
         }
 
-        &__btnTwitter{
-        }
-
-        // .{scss.dropdownPopup__btnLinkedin}
-
-        &__btnLinkedin{
-        }
-
-        // .{scss.dropdownPopup__btnInstagram}
-
-        &__btnInstagram{
-        }
-
-        // .{scss.dropdownPopup__btnPinterest}
-
-        &__btnPinterest{
-        }
 
 		// .dropdown-popup__subtitle
 
 		&__subtitle {
+            font-weight: 700;
+            color: #adb5bd;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            align-items: center;
+            display: flex;
+            font-size: 12px;
 		}
+
 
 		// .dropdown-popup__form
 
 		&__form {
+            font-weight: 600;
+            color: #adb5bd;
+            border-radius: 0.3rem;
+            padding: 0.5rem;
+            width: 100%;
+            border: 0;
+            font-size: 12px;
+            line-height: 32px;
+            background-color: #eee;
 		}
 }
+
+
 
 
 

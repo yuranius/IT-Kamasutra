@@ -2,8 +2,3 @@
 
 по курсу IT-Kamasutra
 
-ntc
-
-
-стест
-

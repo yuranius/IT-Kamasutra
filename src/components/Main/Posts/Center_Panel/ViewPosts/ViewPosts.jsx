@@ -57,14 +57,15 @@ let ViewPost = () => {
                         <div className={scss.dropdownPopup__card}>
                             <ul className={scss.dropdownPopup__list}>
                                 <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Tumblr}><i className='icon-tumblr'></i></span></li>
-                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Youtube}><i className='ti-youtube text-white'></i></span></li>
-                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Flicker}><i className='ti-flickr text-white'></i></span></li>
-                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Black}><i className='ti-vimeo-alt text-white'></i></span></li>
-                                <li><span className='btn-whatsup'><i className='feather-phone text-white'></i></span></li>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Youtube}><i className='icon-youtube'></i></span></li>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Wordpress}><i className='icon-wordpress'></i></span></li>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Vimeo}><i className='icon-vimeo'></i></span></li>
+                                <li className={scss.dropdownPopup__item}><span className={scss.dropdownPopup__btn_Whatsapp}><i className='icon-whatsapp'></i></span></li>
                             </ul>
                         </div>
                         <h4 className={scss.dropdownPopup__subtitle}>Copy Link</h4>
-                        <i className='copy-link'></i>
+                        <ico className="icon-edit"></ico>
+
                         <input type='text' placeholder='https://yuranius.ru' className={scss.dropdownPopup__form} />
                     </div>
                 </div>
