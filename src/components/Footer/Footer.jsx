@@ -6,6 +6,7 @@ let Footer = () => {
 			<div className='conteiner'>
 				<div className='footer__body'>
 					<h2 className='footer__title'>футер</h2>
+					<h2 className='footer__title'>футер</h2>
 				</div>
 			</div>
 		</footer>
