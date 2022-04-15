@@ -2,6 +2,8 @@
 
 по курсу IT-Kamasutra
 
-ntcn
+ntc
 
+
+стест
 
