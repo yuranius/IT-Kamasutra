@@ -1,0 +1,141 @@
+.card {
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+		// .{scss['card__header']}
+
+		&__header{
+            padding: 1.5rem;
+            align-items: center;
+            display: flex;
+            flex: 1 1 auto;
+		}
+
+		// .{scss['card__wrap']}
+
+		&__wrap{
+
+		}
+}
+.header {
+
+		// .{scss['header__title']}
+
+		&__title{
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 0;
+            font-size: 12px;
+
+		}
+
+		// .{scss['header__link']}
+
+		&__link{
+            font-weight: 600;
+            color: #1E74FD;
+            margin-left: auto;
+            font-size: 12px;
+
+            text-decoration: none;
+            outline: none;
+		}
+}
+
+
+@mixin btn {
+	font-weight: 600;
+	text-align: center;
+	padding: 0.5rem;
+	margin-right: 0.5rem;
+	border-radius: 30px;
+	font-size: 12px;
+	line-height: 20px;
+	letter-spacing: 0.4px;
+	width: 100px;
+}
+
+.wrap {
+
+		// .{scss['wrap__header']}
+
+		&__header {
+			padding-left: 1.5rem;
+			padding-bottom: 0;
+			padding-right: 1.5rem;
+			padding-top: 0;
+			display: flex;
+		}
+
+		// .{scss['wrap__avatar']}
+
+		&__avatar {
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		&__avatar-image{
+			border-radius: 50%;
+			box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+			width: 50px;
+			vertical-align: middle;
+		}
+		// .{scss['wrap__user']}
+
+		&__user {
+			font-weight: 700;
+			color: #212529;
+			margin-top: 1rem;
+			font-size: 12px;
+
+		}
+
+		// .{scss['wrap__time']}
+
+		&__recent-time {
+			font-weight: 500;
+			color: #adb5bd;
+			margin-top: 0.25rem;
+			display: block;
+			font-size: 12px;
+			line-height: 1.4;
+		}
+
+		// .{scss['wrap__footer']}
+
+		&__footer {
+			padding-left: 1.5rem;
+			padding-bottom: 1.5rem;
+			padding-right: 1.5rem;
+			padding-top: 0;
+			align-items: center;
+			display: flex;
+		}
+
+		// .{scss['wrap__button
+
+		&__button {
+			&_conform{
+				@include btn;
+				color: #fff;
+				background: linear-gradient(135deg, #05f, #09f);
+			}
+
+			&_delete{
+				@include btn;
+				color: #343a40;
+				background-color: #eee;
+			}
+
+		}
+}
+

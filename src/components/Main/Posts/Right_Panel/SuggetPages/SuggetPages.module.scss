@@ -1,0 +1,113 @@
+
+.card {
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 15px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+
+
+
+		// .{scss['card__header']}
+
+		&__header{
+            padding: 1.5rem;
+            align-items: center;
+            display: flex;
+            flex: 1 1 auto;
+		}
+
+		// .{scss['card__wrap']}
+
+		&__wrap{
+
+		}
+}
+.header {
+
+		// .{scss['header__title']}
+
+		&__title{
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 0;
+            font-size: 12px;
+		}
+
+		// .{scss['header__link']}
+
+		&__link{
+            font-weight: 600;
+            color: #1E74FD;
+            margin-left: auto;
+            font-size: 12px;
+            text-decoration: none;
+        }
+}
+.wrap {
+
+		// .{scss['wrap__fluid']}
+
+		&__fluid{
+            padding-left: 1.5rem;
+            padding-bottom: 0;
+            padding-right: 1.5rem;
+            padding-top: 0;
+            display: flex;
+            overflow: hidden;
+		}
+
+        &__img-fluid{
+            margin-bottom: 0.5rem;
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+		}
+
+		// .{scss['wrap__button']}
+
+		&__button{
+            padding-left: 1.5rem;
+            padding-bottom: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 0;
+            align-items: center;
+            display: flex;
+        }
+
+		// .{scss['wrap__button-link']}
+
+		&__button-link{
+            font-weight: 700;
+            color: #343a40;
+            text-align: center;
+            padding: 0.5rem;
+            width: 100%;
+            border-radius: 30px;
+            font-size: 12px;
+            line-height: 28px;
+            background-color: #eee;
+            i{
+                margin-right: 0.5rem;
+                font-size: 18px;
+                color: #343a40;
+                text-align: center;
+                margin-top: 1rem;
+                    &:before {
+                        content: "\ea7d";
+                    }
+            }
+        }
+}
+
+
+
+
+

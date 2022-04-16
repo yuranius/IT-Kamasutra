@@ -1,3 +1,8 @@
 .posts{
     min-width: 0px;
+
+    &__block{
+        display: flex;
+        justify-content: center;
+    }
 }

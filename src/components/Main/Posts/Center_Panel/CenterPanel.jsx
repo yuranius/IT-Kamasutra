@@ -10,7 +10,6 @@ let CenterPanel = () => {
          <Slide />
          <CreatePost />
          <ViewPost />
-
       </div>
    );
 };
