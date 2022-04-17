@@ -66,6 +66,9 @@
         cursor: pointer;
         margin-left: auto ;
         i{
+            &:before {
+                content: "\e91d";
+            }
             color: #212529;
             font-size: 16px;
             width: 45px;

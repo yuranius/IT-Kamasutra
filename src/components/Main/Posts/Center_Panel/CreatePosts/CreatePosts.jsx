@@ -5,7 +5,7 @@ let CreatePost = () => {
       <div className='create-post' id="wrapperCenterPanel">
          <div className='create-post__button'>
             <a href='/' className='create-post__link'>
-               <i className='icon-drive_file_rename_outlinetest'></i>Create Post
+               <i className='icon-create'></i>Create Post
             </a>
          </div>
          <div className='create-post__form'>

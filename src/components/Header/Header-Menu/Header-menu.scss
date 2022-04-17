@@ -18,7 +18,7 @@
     // .header__link
 
     &__link {
-        color: #fff;
+        color: #adb5bd;
         text-transform: uppercase;
         font-size: 18px;
         text-decoration: none;
@@ -36,7 +36,6 @@
             height: 100%;
             font-size: 25px;
             overflow: auto;
-            background-color: aqua;
             padding: 100px 0px 0px 0px;
             transition: all 0.3s ease 0s;
             &.active {

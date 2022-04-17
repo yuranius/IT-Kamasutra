@@ -10,7 +10,6 @@ let Posts = () => {
          <div className='posts__block'>
             <CenterPanel />
             <RightPanel />
-
          </div>
       </div>
    );
