@@ -1,19 +1,26 @@
 import Aside from './Aside/Aside';
-import Posts from './Posts/Posts';
+import Newsfeed from './Newsfeed/Newsfeed';
 import Sidebar from './Sidebar/Main-Sidebar';
 import './Main.scss'
+import Badges from './Badges/Badges';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 let Main = () => {
    return (
-      <main className='main'>
-         <div className='conteiner'>
-            <div className='main__body'>
-               <Sidebar />
-               <Posts />
-               <Aside />
+      <BrowserRouter>
+         <main className='main'>
+            <div className='conteiner'>
+               <div className='main__body'>
+                  <Sidebar />
+                  <div className="sidebar-zamena"></div>
+
+                  <Route path='/Newsfeed' component={Newsfeed} />
+                  <Route path='/Badges' component={Badges} />
+                  <Aside />
+               </div>
             </div>
-         </div>
-      </main>
+         </main>
+      </BrowserRouter>
    );
 };
 

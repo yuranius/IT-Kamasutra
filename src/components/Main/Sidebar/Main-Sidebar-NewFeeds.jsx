@@ -8,14 +8,14 @@ let SidedarNewFeeds = () => {
                         <a className='newfeeds__link' href='/#'>
                             <i className='icon-radiotest'>
                             </i>
-                            <span>Newsfeed</span>
+                            {/* <span><a href="/Newsfeed">Newsfeed</a></span> */}
                         </a>
                     </li>
                     <li>
                         <a className='newfeeds__link' href='/#'>
                             <i className='icon-star_outlinetest'>
                             </i>
-                            <span>Badges</span>
+                            <a href="/Badges"><span>Badges</span></a>
                         </a>
                     </li>
                     <li>
