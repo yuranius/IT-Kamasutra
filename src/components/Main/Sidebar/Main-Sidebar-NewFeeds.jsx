@@ -5,17 +5,17 @@ let SidedarNewFeeds = () => {
             <nav className='newfeeds__menu'>
                 <ul className='newfeeds__list'>
                     <li>
-                        <a className='newfeeds__link' href='/#'>
+                        <a className='newfeeds__link' href='/newsfeed'>
                             <i className='icon-radiotest'>
                             </i>
-                            {/* <span><a href="/Newsfeed">Newsfeed</a></span> */}
+                            <span>Newsfee</span>
                         </a>
                     </li>
                     <li>
-                        <a className='newfeeds__link' href='/#'>
+                        <a className='newfeeds__link' href='/badges'>
                             <i className='icon-star_outlinetest'>
                             </i>
-                            <a href="/Badges"><span>Badges</span></a>
+                            <span>Badges</span>
                         </a>
                     </li>
                     <li>
