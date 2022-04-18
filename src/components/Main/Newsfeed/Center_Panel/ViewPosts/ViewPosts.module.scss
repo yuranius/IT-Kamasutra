@@ -271,8 +271,20 @@
     font-size: 18px;
 }
 
-.iconedit{
+.icon-edit{
 
+}
+
+.dropdownPopup > i{
+    color: #adb5bd;
+    margin-top: 1rem;
+    position: absolute;
+    font-size: 18px;
+    right: 35px;
+    cursor: pointer;
+    &:before{
+        content: "\e931";
+    }
 }
 
 .dropdownPopup {
@@ -293,17 +305,6 @@
     border-radius: 15px;
     right: 0;
 
-    ico{
-        color: #adb5bd;
-        margin-top: 1rem;
-        position: absolute;
-        font-size: 18px;
-        right: 35px;
-        cursor: pointer;
-        &:before{
-            content: "\e933";
-        }
-    }
 
 
 		// .dropdown-popup__title

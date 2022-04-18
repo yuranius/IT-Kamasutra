@@ -1,5 +1,6 @@
 import scss from './ViewPosts.module.scss'
 
+
 let ViewPost = () => {
     return (
         <div className={scss.card}>
@@ -43,7 +44,7 @@ let ViewPost = () => {
                         <i className='icon-share'></i>
                         <span className={scss.footer__dropdownText}>Share</span>
                     </div>
-                    <div className={scss.dropdownPopup}>
+                    <div className={scss['dropdownPopup']}>
                         <h4 className={scss.dropdownPopup__title}>Share <i className='icon-clear'></i></h4>
                         <div className={scss.dropdownPopup__card}>
                             <ul className={scss.dropdownPopup__list}>
@@ -64,7 +65,7 @@ let ViewPost = () => {
                             </ul>
                         </div>
                         <h4 className={scss.dropdownPopup__subtitle}>Copy Link</h4>
-                        <ico className="icon-edit"></ico>
+                        <i className='icon-edit'></i>
 
                         <input type='text' placeholder='https://yuranius.ru' className={scss.dropdownPopup__form} />
                     </div>
