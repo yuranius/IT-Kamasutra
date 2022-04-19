@@ -1,3 +1,6 @@
+import { NavLink } from "react-router-dom";
+
+
 let SidedarNewFeeds = () => {
     return (
         <div className='newfeeds'>
@@ -5,18 +8,19 @@ let SidedarNewFeeds = () => {
             <nav className='newfeeds__menu'>
                 <ul className='newfeeds__list'>
                     <li>
-                        <a className='newfeeds__link' href='/newsfeed'>
+                        <NavLink className='newfeeds__link' to='/newsfeed'>
+                        {/***^ activeClassName - при добавлении классов из пропсов то нужно добавить отдельный класс для понимания*/}
                             <i className='icon-radiotest'>
                             </i>
                             <span>Newsfee</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
-                        <a className='newfeeds__link' href='/badges'>
+                        <NavLink className='newfeeds__link' to='/badges'>
                             <i className='icon-star_outlinetest'>
                             </i>
                             <span>Badges</span>
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
                         <a className='newfeeds__link' href='/#'>

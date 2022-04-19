@@ -63,6 +63,14 @@
             transition: all 0.2s ease;
             padding-left: 10px;
             padding-right: 10px;
+
+            transition: all 0.5s ease 0s;
+        }
+    }
+    &__link.active{
+        span{
+        color: #09f;
+        transition: all 0.5s ease 0s;
         }
     }
 }
