@@ -13,7 +13,7 @@ let ContactsItem = (props) => {
                : scss["contacts__item"]
          }
          to={path}
-         key={shortid}
+         key={shortid.generate()}
       >
          <figure className={scss["contacts__avatar"]}>
             <img src={props.avatar} alt='avatar' />
