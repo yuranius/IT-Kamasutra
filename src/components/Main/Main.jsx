@@ -14,8 +14,8 @@ let Main = () => {
                   <Sidebar />
                   <div className="sidebar-backend"></div>
                   <Routes>
-                     <Route path='/newsfeed' element={<Newsfeed />} />
-                     <Route path='/badges' element={<Badges />} />
+                     <Route path='/newsfeed/*' element={<Newsfeed />} /> {/* exact - точное указание пути, без совпадений*/}
+                     <Route path='/badges/*' element={<Badges />} />
                   </Routes>
                   <Aside />
                </div>
