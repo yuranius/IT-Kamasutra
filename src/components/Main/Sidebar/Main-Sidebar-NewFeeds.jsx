@@ -37,11 +37,11 @@ let SidedarNewFeeds = () => {
                         </a>
                     </li>
                     <li>
-                        <a className='newfeeds__link' href='/#'>
+                        <NavLink className='newfeeds__link' to='/profile'>
                             <i className='icon-facetest'>
                             </i>
                             <span>Author Profile </span>
-                        </a>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>
