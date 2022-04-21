@@ -17,7 +17,7 @@ const Slide = () => {
     arrows: false,
     infinite: false,
     speed: 200,
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 2,
 
   };

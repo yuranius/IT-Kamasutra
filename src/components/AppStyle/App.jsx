@@ -1,7 +1,6 @@
 import React from 'react';
-// import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 import Footer from '../Footer/Footer';
-
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import './App.scss';
@@ -9,15 +8,22 @@ import './App.scss';
 
 
 
-function App() {
+function App(props) {
 	return (
-		<div className='wrapper'>
-			<div className='wrapper-container'>
-				<Header />
-				<Main />
-				<Footer />
+		<BrowserRouter>
+			<div className='wrapper'>
+				<div className='wrapper-container'>
+					<Header />
+					<Main
+					posts={props.posts}
+					contacts={props.contacts}
+					groups={props.groups}
+					addPost={props.addPost}
+					/>
+					<Footer />
+				</div>
 			</div>
-		</div>
+		</BrowserRouter>
 	);
 }
 

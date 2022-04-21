@@ -1,9 +1,20 @@
+import React from "react";
 import "./CreatePosts.scss";
 
-let CreatePost = () => {
+let CreatePost = (props) => {
+
+   let addPost = () => {
+      debugger;
+      let text = newPostElement.current.value;
+      console.log(text);
+      props.addPost(text, '234234')
+   };
+
+   let newPostElement = React.createRef();
+
    return (
       <div className='create-post' id="wrapperCenterPanel">
-         <div className='create-post__button'>
+         <div className='create-post__button' onClick={addPost}>
             <a href='/' className='create-post__link'>
                <i className='icon-create'></i>Create Post
             </a>
@@ -16,6 +27,7 @@ let CreatePost = () => {
                />
             </figure>
             <textarea
+               ref={newPostElement}
                name='message'
                className='create-post__area'
                cols='30'
