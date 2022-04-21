@@ -11,7 +11,6 @@
         overflow: hidden;
         background: transparent;
         transition: all 0.25s ease;
-
         z-index: 1;
         width: 290px;
     }
@@ -87,6 +86,9 @@
         margin-bottom: 0;
     }
 
+}
+
+.groups {
     // .{scss['groups__item']}
 
     &__item {
@@ -103,8 +105,25 @@
         display: flex;
         color: #212529;
         text-decoration: none;
+        &_active{
+            position: relative;
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+            background-color: transparent;
+            padding-left: 0;
+            padding-bottom: 0.5rem;
+            padding-right: 0;
+            padding-top: 0.5rem;
+            align-items: center;
+            border: 0;
+            display: flex;
+            text-decoration: none;
+            h3 > span{
+                color: #fe9431;}
+        }
     }
 }
+
 .item {
     // .{scss['item__logo']}
 

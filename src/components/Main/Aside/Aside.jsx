@@ -1,11 +1,15 @@
+// import shortid from "shortid"; генератор случайного значения для ключа
 import scss from "./Aside.module.scss";
 import AsidePopup from "./AsidePopup/AsidePopup";
 import ContactsItem from "./ContactsItem/ContactsItem";
+import GroupsItem from "./GroupsItem/GroupsItem";
+
+
 
 
 
 let Aside = () => {
-   let сontacts = [
+   let contacts = [
       {
          id: 1,
          name: "Vova",
@@ -32,14 +36,44 @@ let Aside = () => {
       },
    ];
 
-   //* функция, которая возвращает объект jsx, столько раз, сколько содержиться объектов в ContactsItemData
-   let сontactsElements = сontacts.map( c => (
+   let groups = [
+      {
+         id:1,
+         logo: 'WR',
+         name: 'Wert Rest',
+         time: '2 sec',
+      },
+      {
+         id:2,
+         logo: 'VR',
+         name: 'View Restart',
+         time: '14 min',
+      }
+   ]
+
+
+   // * функция, которая возвращает объект jsx, столько раз, сколько содержиться объектов в ContactsItemData
+   let сontactsElements = contacts.map( c => (
       <ContactsItem
+         // key={shortid.generate()} или так, при использовании генератора случайного значения,
+         // но ключ всегда должен быть иначе будет ошибка в конслое и React всега должен идентифицировать элементы списка
+         key={c.id.toString()}
          id={c.id}
          name={c.name}
          avatar={c.avatar}
       />
    ));
+
+   let groupsElements = groups.map( g => (
+      <GroupsItem
+         key={g.id.toString()}
+         id={g.id}
+         logo={g.logo}
+         name={g.name}
+         time={g.time}
+      />
+   ));
+
 
    return (
       <div className={scss["aside"]}>
@@ -50,36 +84,13 @@ let Aside = () => {
                   <ul className={scss["contacts__list"]}>
                      {/* Добавляем функцию, которая возвращает объект jsx, который содержит элементы из массива ContactsItemData */}
                      { сontactsElements }
+                     {/* <ContactsItem id={contacts[0].key} name={contacts[0].name} avatar={contacts[0].avatar} /> */}
                   </ul>
                </div>
                <div className={scss["groups"]}>
                   <h4 className={scss["groups__title"]}>GROUPS</h4>
                   <ul className={scss["groups__list"]}>
-                     <li className={scss["groups__item"]}>
-                        <span className={scss["item__logo"]}>UD</span>
-                        <h3 className={scss["item__text-box"]}>
-                           <span className={scss["item__text"]}>
-                              Studio Express
-                           </span>
-                        </h3>
-                        <span className={scss["item__time-passed"]}>2 min</span>
-                     </li>
-                     <li className={scss["groups__item"]}>
-                        <span className={scss["item__logo"]}>AR</span>
-                        <h3 className={scss["item__text-box"]}>
-                           <span className={scss["item__text"]}>
-                              Armany Design
-                           </span>
-                        </h3>
-                        <span className={scss["item__badge"]}></span>
-                     </li>
-                     <li className={scss["groups__item"]}>
-                        <span className={scss["item__logo"]}>UD</span>
-                        <h3 className={scss["item__text-box"]}>
-                           <span className={scss["item__text"]}>De fabous</span>
-                        </h3>
-                        <span className={scss["item__badge"]}></span>
-                     </li>
+                     { groupsElements }
                   </ul>
                </div>
                <div className={scss["groups"]}>

@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import scss from "./ContactsItem.module.scss";
-import shortid from 'shortid';
+
 
 
 let ContactsItem = (props) => {
-   let path = "/" + props.id;
+   let path = "/contacts" + props.id;
    return (
       <NavLink
          className={(navData) =>
@@ -13,7 +13,6 @@ let ContactsItem = (props) => {
                : scss["contacts__item"]
          }
          to={path}
-         key={shortid.generate()}
       >
          <figure className={scss["contacts__avatar"]}>
             <img src={props.avatar} alt='avatar' />

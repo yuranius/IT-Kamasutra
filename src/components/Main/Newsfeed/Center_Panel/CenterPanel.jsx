@@ -4,7 +4,7 @@ import CreatePost from "./CreatePosts/CreatePosts";
 import ViewPost from "./ViewPosts/ViewPosts";
 
 let CenterPanel = () => {
-   let postsData = [
+   let posts = [
       {
          id: 1,
          postview:
@@ -26,22 +26,16 @@ let CenterPanel = () => {
             "https://avatars.mds.yandex.net/i?id=370c08515fabb0b019a165ae6934d04a-5704191-images-thumbs&n=13&exp=1",
       },
    ];
+
+   let postsElements = posts.map((p) => (
+      <ViewPost key={p.id} postview={p.postview} postimage={p.postimage} />
+   ));
+
    return (
       <div className={scss.centerpanel}>
          <Slide />
          <CreatePost />
-         <ViewPost
-            postview={postsData[0].postview}
-            postimage={postsData[0].postimage}
-         />
-         <ViewPost
-            postview={postsData[1].postview}
-            postimage={postsData[1].postimage}
-         />
-         <ViewPost
-            postview={postsData[2].postview}
-            postimage={postsData[2].postimage}
-         />
+         { postsElements }
       </div>
    );
 };
