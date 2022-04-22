@@ -2,12 +2,11 @@ import React from "react";
 import "./CreatePosts.scss";
 
 let CreatePost = (props) => {
-
-   let addPost = () => {
+   let addPost = (e) => {
+      e.preventDefault();
       debugger;
       let text = newPostElement.current.value;
-      console.log(text);
-      props.addPost(text, '234234')
+      props.addPost(text, '1232214')
    };
 
    let newPostElement = React.createRef();

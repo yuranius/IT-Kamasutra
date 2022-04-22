@@ -1,3 +1,6 @@
+import { RenderEntireFree } from "../render";
+
+
 let state = {
 
     posts: [
@@ -64,14 +67,17 @@ let state = {
 };
 
 export let addPost = (postView, postImage) => {
-    debugger;
     let newPost = {
         id: 5,
         postview:postView,
         postimage:postImage,
     }
     state.posts.push(newPost);
+
+    RenderEntireFree(state);
+
 };
+
 
 
 export default state;

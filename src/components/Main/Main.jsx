@@ -15,7 +15,12 @@ let Main = (props) => {
                <div className='sidebar-backend'></div>
                {/* <Newsfeed /> */}
                <Routes>
-                  <Route path='/*' element={<Newsfeed posts={props.posts} addPost={props.addPost}/>} />{" "}
+                  <Route
+                     path='/*'
+                     element={
+                        <Newsfeed posts={props.posts} addPost={props.addPost} />
+                     }
+                  />
                   {/*exact - точное указание пути, без совпадений*/}
                   <Route path='/badges/*' element={<Badges />} />
                   <Route path='/profile/*' element={<Profile />} />
