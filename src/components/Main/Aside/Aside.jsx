@@ -52,7 +52,7 @@ let Aside = (props) => {
                   </ul>
                </div>
             </div>
-            <AsidePopup />
+            {/* <AsidePopup /> */}
          </div>
       </div>
    );

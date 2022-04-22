@@ -1,6 +1,7 @@
-import state from "./redux/state";
+import state, { addPost, updateNewPostText } from "./redux/state";
+
 import { RenderEntireFree } from "./render";
 
 
 
-RenderEntireFree(state);
+RenderEntireFree(state, addPost, updateNewPostText);

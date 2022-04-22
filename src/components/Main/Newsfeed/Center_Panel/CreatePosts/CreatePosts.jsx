@@ -1,15 +1,23 @@
 import React from "react";
 import "./CreatePosts.scss";
 
+let image = 'https://img2.goodfon.ru/original/1366x768/1/43/park-ssha-yosemiti-derevo.jpg'
+
+
 let CreatePost = (props) => {
    let addPost = (e) => {
       e.preventDefault();
-      debugger;
-      let text = newPostElement.current.value;
-      props.addPost(text, '1232214')
+      props.addPost(image);
    };
 
    let newPostElement = React.createRef();
+
+   let onPostChange = (e) => {
+      e.preventDefault();
+      let textd = newPostElement.current.value;
+      props.updateNewPostText(textd);
+   };
+
 
    return (
       <div className='create-post' id="wrapperCenterPanel">
@@ -27,12 +35,14 @@ let CreatePost = (props) => {
             </figure>
             <textarea
                ref={newPostElement}
+               onChange={onPostChange}
+               value={props.newPostText}
                name='message'
                className='create-post__area'
                cols='30'
                rows='10'
                placeholder='О чем ты думаешь?'
-            ></textarea>
+            />
          </div>
          <div className='create-post__footer'>
             <a href='#video' className='create-post__video'>

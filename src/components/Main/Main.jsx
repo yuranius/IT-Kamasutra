@@ -18,14 +18,21 @@ let Main = (props) => {
                   <Route
                      path='/*'
                      element={
-                        <Newsfeed posts={props.posts} addPost={props.addPost} />
+                        <Newsfeed
+                        createPostsPage={props.state.createPostsPage}
+                        addPost={props.addPost}
+                        updateNewPostText={props.updateNewPostText}
+                        />
                      }
                   />
                   {/*exact - точное указание пути, без совпадений*/}
                   <Route path='/badges/*' element={<Badges />} />
                   <Route path='/profile/*' element={<Profile />} />
                </Routes>
-               <Aside contacts={props.contacts} groups={props.groups} />
+               <Aside
+               contacts={props.state.asidePage.contacts}
+               groups={props.state.asidePage.groups}
+               />
             </div>
          </div>
       </main>

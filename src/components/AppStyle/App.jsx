@@ -10,10 +10,9 @@ function App(props) {
          <div className='wrapper-container'>
             <Header />
             <Main
-               posts={props.posts}
-               contacts={props.contacts}
-               groups={props.groups}
+               state={props.state}
                addPost={props.addPost}
+               updateNewPostText={props.updateNewPostText}
             />
             <Footer />
          </div>
