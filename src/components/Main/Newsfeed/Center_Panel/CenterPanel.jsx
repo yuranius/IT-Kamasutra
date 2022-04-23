@@ -11,9 +11,8 @@ let CenterPanel = (props) => {
       <div className={scss.centerpanel}>
          <Slide />
          <CreatePost
-            addPost={props.addPost}
-            newPostText={props.createPostsPage.newPostText}
-            updateNewPostText={props.updateNewPostText}
+            createPostsPage={props.createPostsPage}
+            dispatch={props.dispatch}
          />
          {postsElements}
       </div>

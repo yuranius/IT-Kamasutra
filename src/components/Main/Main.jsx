@@ -20,8 +20,7 @@ let Main = (props) => {
                      element={
                         <Newsfeed
                         createPostsPage={props.state.createPostsPage}
-                        addPost={props.addPost}
-                        updateNewPostText={props.updateNewPostText}
+                        dispatch={props.dispatch}
                         />
                      }
                   />

@@ -8,8 +8,7 @@ let Newsfeed = (props) => {
          <div className='posts__block'>
             <CenterPanel
                createPostsPage={props.createPostsPage}
-               addPost={props.addPost}
-               updateNewPostText={props.updateNewPostText}
+               dispatch={props.dispatch}
             />
             {/* <RightPanel /> */}
          </div>

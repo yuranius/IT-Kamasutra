@@ -11,13 +11,14 @@ function App(props) {
             <Header />
             <Main
                state={props.state}
-               addPost={props.addPost}
-               updateNewPostText={props.updateNewPostText}
+               dispatch={props.dispatch}
             />
             <Footer />
          </div>
       </div>
    );
 }
+
+
 
 export default App;

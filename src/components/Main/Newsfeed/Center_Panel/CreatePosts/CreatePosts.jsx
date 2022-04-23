@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type";
 import React from "react";
 import "./CreatePosts.scss";
 
@@ -5,19 +6,22 @@ let image = 'https://img2.goodfon.ru/original/1366x768/1/43/park-ssha-yosemiti-d
 
 
 let CreatePost = (props) => {
+
    let addPost = (e) => {
       e.preventDefault();
-      props.addPost(image);
+      props.dispatch( { type: 'ADD-POST', postImage: image} );
    };
 
    let newPostElement = React.createRef();
 
+
    let onPostChange = (e) => {
       e.preventDefault();
-      let textd = newPostElement.current.value;
-      props.updateNewPostText(textd);
-   };
+      let text = newPostElement.current.value;
 
+      props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text });
+
+   };
 
    return (
       <div className='create-post' id="wrapperCenterPanel">
@@ -36,7 +40,7 @@ let CreatePost = (props) => {
             <textarea
                ref={newPostElement}
                onChange={onPostChange}
-               value={props.newPostText}
+               value={props.createPostsPage.newPostText}
                name='message'
                className='create-post__area'
                cols='30'
