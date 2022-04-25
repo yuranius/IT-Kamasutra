@@ -1,25 +1,20 @@
-import { type } from "@testing-library/user-event/dist/type";
 import React from "react";
 import "./CreatePosts.scss";
-
-let image = 'https://img2.goodfon.ru/original/1366x768/1/43/park-ssha-yosemiti-derevo.jpg'
-
+import { addPostActionCreator, updateNewPostTextActionCreator} from './../../../../../redux/createPostsReducer'
 
 let CreatePost = (props) => {
 
    let addPost = (e) => {
       e.preventDefault();
-      props.dispatch( { type: 'ADD-POST', postImage: image} );
+      props.dispatch( addPostActionCreator() ); //? Вызываем функцию, которая возвращает <<<action>>
    };
 
    let newPostElement = React.createRef();
 
-
    let onPostChange = (e) => {
       e.preventDefault();
       let text = newPostElement.current.value;
-
-      props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text });
+      props.dispatch( updateNewPostTextActionCreator(text) ); //? Вызываем функцию, которая возвращает <<<action>> и передаем в нее значение переменной <<text>>
 
    };
 

@@ -29,8 +29,8 @@ let Main = (props) => {
                   <Route path='/profile/*' element={<Profile />} />
                </Routes>
                <Aside
-               contacts={props.state.asidePage.contacts}
-               groups={props.state.asidePage.groups}
+               asidePage={props.state.asidePage}
+               dispatch={props.dispatch}
                />
             </div>
          </div>

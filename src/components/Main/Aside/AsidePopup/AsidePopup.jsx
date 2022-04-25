@@ -1,5 +1,6 @@
-import scss from "./AsidePopup.module.scss";
-
+import React from "react";
+import scss from "./AsidePopup.module.scss"
+import { addMassageActionCreator,updateNewMassageTextActionCreator } from './../../../../redux/asideReducer'
 let MyMassage = (props) => {
    return (
       <div className={scss["popup-body__message"]}>
@@ -26,16 +27,29 @@ let PartnerMassage = (props) => {
    );
 };
 
-let AsidePopup = () => {
+let AsidePopup = (props) => {
 
-   let MassageData = [
-      {id:1, massage:'Hi, how are you?', date:'Mon 10:20am'},
-      {id:2, massage:"I'm fine", date:'Mon 10:40am'},
-   ]
+   let myMassagesElement = props.asidePage.myMassages.map( m => (
+      <MyMassage key={m.id} massage={m.massage} date={m.date} />
+   ));
 
-   let PartnerMassageData = [
-      {id:1, massage:'I want those files for you. I want you to send 1 PDF and 1 image file.', date:'Mon 10:40am'},
-   ]
+   let partnerMassagesElement = props.asidePage.partnerMassages.map ( pm => (
+      <PartnerMassage key={pm.id} massage={pm.massage} date={pm.date} />
+   ));
+
+   let newMassageElement = React.createRef();
+
+   let onMassageSend = (e) => {
+      e.preventDefault();
+      let text = e.target.value; //? получаем value из того элемента, который вызвал эту функцию
+      props.dispatch( updateNewMassageTextActionCreator(text) ); //? Вызываем функцию, которая возвращает <<<action>> и передаем в нее значение переменной <<text>>
+   };
+
+   let addMassage = (e) => {
+      e.preventDefault()
+      props.dispatch( addMassageActionCreator() );
+   };
+
 
    return (
       <div className={scss["aside__popup"]}>
@@ -64,24 +78,17 @@ let AsidePopup = () => {
 {/* сообщения */}
 
             <div className={scss["aside__popup-body"]}>
-               <MyMassage
-                  massage={MassageData[0].massage}
-                  date={MassageData[0].date}
-               />
-               <PartnerMassage
-                  massage={PartnerMassageData[0].massage}
-                  date={MassageData[0].date}
-               />
-               <MyMassage
-                  massage={MassageData[1].massage}
-                  date={MassageData[1].date}
-               />
+
+               {myMassagesElement}
+
+               {partnerMassagesElement}
 
                <div className={scss["popup-body__snippet"]}>
                   <div className={scss["popup-body__stage"]}>
                      <div className={scss["popup-body__dot-typing"]}></div>
                   </div>
                </div>
+
                <div className={scss["clearfix"]}></div>
             </div>
 
@@ -97,8 +104,14 @@ let AsidePopup = () => {
                         type='popup-footer__text'
                         placeholder='Start typing..'
                         className={scss["popup-footer__form-control"]}
+                        ref={newMassageElement}
+                        value={props.asidePage.newMassageText}
+                        onChange={onMassageSend}
                      />
-                     <i className='icon-send'></i>
+                     <i
+                     className='icon-send'
+                     onClick={addMassage}
+                     ></i>
                   </div>
                </div>
             </div>
