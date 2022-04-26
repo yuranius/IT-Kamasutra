@@ -5,6 +5,7 @@ import ContactsItem from "./ContactsItem/ContactsItem";
 import GroupsItem from "./GroupsItem/GroupsItem";
 
 let Aside = (props) => {
+
    // * функция, которая возвращает объект jsx, столько раз, сколько содержиться объектов в ContactsItemData
    let сontactsElements = props.asidePage.contacts.map((c) => (
       <ContactsItem

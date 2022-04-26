@@ -1,26 +1,26 @@
 let imageTest = '';
 
-const createPostsReduser = (state, action) => {
+let initialState = {
+   posts: [
+      {
+         id: 1,
+         postview:
+            "Morbi nulla dolor, ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus. Красота то какая..... Ляпота....",
+         postimage:
+            "https://www.ridus.ru/images/2015/9/14/324125/7156a2dcaa.jpg",
+      },
+   ],
+   newPostText: "",
+
+   image: "https://img2.goodfon.ru/original/1366x768/1/43/park-ssha-yosemiti-derevo.jpg",
+}
+
+const createPostsReducer = (state = initialState, action) => {
+
 
     imageTest = state.image;
-   // if (action.type === "ADD-POST") {
-   //     let arrPosts = state.posts.slice(-1)[0].id; //* получаем id последнего элемента массива
 
-   //     let newPost = {
-   //        id: arrPosts + 1,
-   //        postview: state.newPostText,
-   //        postimage: action.postImage,
-   //     };
-   //     state.posts.push(newPost);
-   //     state.newPostText = "";
-
-   //  } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-   //     state.newPostText = action.newText;
-   //  }
-
-    //    return state;
-
-   //? можно сделать условия через switch
+   //? можно сделать условия if else через switch case
 
    switch (action.type) {
       case "ADD-POST":
@@ -61,4 +61,4 @@ export let addPostActionCreator = () => {
     };
  };
 
-export default createPostsReduser;
+export default createPostsReducer;

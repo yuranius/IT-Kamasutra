@@ -1,8 +1,11 @@
 import React from "react";
 import "./CreatePosts.scss";
 import { addPostActionCreator, updateNewPostTextActionCreator} from './../../../../../redux/createPostsReducer'
+// import DropdownPopup from "./DropdownPopup/DropdownPopup";
+
 
 let CreatePost = (props) => {
+ 
 
    let addPost = (e) => {
       e.preventDefault();
@@ -60,44 +63,7 @@ let CreatePost = (props) => {
                <i className="icon-keyboard_controltest"></i>
             </div>
 
-            <div className="dropdown-menu">
-               <div className='dropdown-menu__item'>
-                  <i className='icon-alternate_emailtest'></i>
-                  <h4 className='dropdown-menu__title'>
-                     Сохранить ссылку
-                     <span className='dropdown-menu__subtitle'>
-                        Добавить к своим сохраненным
-                     </span>
-                  </h4>
-               </div>
-               <div className='dropdown-menu__item'>
-                  <i className='icon-publictest'></i>
-                  <h4 className='dropdown-menu__title'>
-                     Скрыть пост
-                     <span className='dropdown-menu__subtitle'>
-                     Сохранить в сохраненных
-                     </span>
-                  </h4>
-               </div>
-               <div className='dropdown-menu__item'>
-                  <i className='icon-show_charttest'></i>
-                  <h4 className='dropdown-menu__title'>
-                     Скрыть все из группы
-                     <span className='dropdown-menu__subtitle'>
-                     Сохранить в сохраненных
-                     </span>
-                  </h4>
-               </div>
-               <div className='dropdown-menu__item'>
-                  <i className='icon-priority_hightest'></i>
-                  <h4 className='dropdown-menu__title'>
-                     Отписаться от группы
-                     <span className='dropdown-menu__subtitle'>
-                     Сохранить в сохраненных
-                     </span>
-                  </h4>
-               </div>
-            </div>
+            {/* <DropdownPopup /> */}
          </div>
       </div>
    );

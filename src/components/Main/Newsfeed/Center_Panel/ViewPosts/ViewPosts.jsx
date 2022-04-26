@@ -45,7 +45,7 @@ let ViewPost = (props) => {
                         <i className='icon-share'></i>
                         <span className={scss.footer__dropdownText}>Share</span>
                     </div>
-                    <DropdownPopup />
+                    {/* <DropdownPopup /> */}
                 </div>
         </div>
     );

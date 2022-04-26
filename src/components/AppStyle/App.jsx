@@ -5,7 +5,7 @@ import Main from "../Main/Main";
 import "./App.scss";
 
 function App(props) {
-   return (
+    return (
       <div className='wrapper'>
          <div className='wrapper-container'>
             <Header />

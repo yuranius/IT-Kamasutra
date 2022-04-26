@@ -4,6 +4,7 @@ import CreatePost from "./CreatePosts/CreatePosts";
 import ViewPost from "./ViewPosts/ViewPosts";
 
 let CenterPanel = (props) => {
+
    let postsElements = props.createPostsPage.posts.map((p) => (
       <ViewPost key={p.id} postview={p.postview} postimage={p.postimage} />
    ));

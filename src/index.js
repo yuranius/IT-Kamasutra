@@ -2,11 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './components/AppStyle/App';
-import store from "./redux/state";
+import store from "./redux/redux-store";
+
 
 let RenderEntireFree = (state) => {
 
+
+
 ReactDOM.render(
+
+
 
   <BrowserRouter>
     <App
@@ -20,4 +25,14 @@ ReactDOM.render(
 
 RenderEntireFree(store.getState());
 
-store.subscribe(RenderEntireFree); //! коллбэк функция для вызова функции RenderEntireFree в state.js
+
+
+// store.subscribe(RenderEntireFree); //! коллбэк функция для вызова функции RenderEntireFree в state.js
+
+
+
+
+store.subscribe(() => {
+  let state = store.getState();
+  RenderEntireFree(state);
+}); //! коллбэк функция для вызова функции RenderEntireFree в state.js

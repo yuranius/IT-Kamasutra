@@ -19,7 +19,7 @@ let Main = (props) => {
                      path='/*'
                      element={
                         <Newsfeed
-                        createPostsPage={props.state.createPostsPage}
+                        createPostsPage={props.state.createPostsReducer}
                         dispatch={props.dispatch}
                         />
                      }
@@ -29,7 +29,7 @@ let Main = (props) => {
                   <Route path='/profile/*' element={<Profile />} />
                </Routes>
                <Aside
-               asidePage={props.state.asidePage}
+               asidePage={props.state.asideReducer}
                dispatch={props.dispatch}
                />
             </div>
