@@ -1,22 +1,36 @@
 import scss from "./CenterPanel.module.scss";
 import Slide from "./Slider/Slider";
-import CreatePost from "./CreatePosts/CreatePosts";
 import ViewPost from "./ViewPosts/ViewPosts";
+import CreatePostContainer from "./CreatePosts/CreatePostsContainer";
+import StoreContext from "../../../../storeContext";
 
-let CenterPanel = (props) => {
-
-   let postsElements = props.createPostsPage.posts.map((p) => (
-      <ViewPost key={p.id} postview={p.postview} postimage={p.postimage} />
-   ));
+let CenterPanel = () => {
    return (
-      <div className={scss.centerpanel}>
-         <Slide />
-         <CreatePost
-            createPostsPage={props.createPostsPage}
-            dispatch={props.dispatch}
-         />
-         {postsElements}
-      </div>
+      <StoreContext.Consumer>
+         {(store) => {
+            let postsElements = store
+               .getState()
+               .createPostsReducer.posts.map((p) => (
+                  <ViewPost
+                     key={p.id}
+                     postview={p.postview}
+                     postimage={p.postimage}
+                  />
+               ));
+            return (
+               <div className={scss.centerpanel}>
+                  <Slide />
+                  <CreatePostContainer
+                     newPostText={
+                        store.getState().createPostsReducer.newPostText
+                     }
+                     dispatch={store.dispatch}
+                  />
+                  {postsElements}
+               </div>
+            );
+         }}
+      </StoreContext.Consumer>
    );
 };
 

@@ -1,24 +1,20 @@
 import React from "react";
 import "./CreatePosts.scss";
-import { addPostActionCreator, updateNewPostTextActionCreator} from './../../../../../redux/createPostsReducer'
 // import DropdownPopup from "./DropdownPopup/DropdownPopup";
 
 
 let CreatePost = (props) => {
- 
-
    let addPost = (e) => {
       e.preventDefault();
-      props.dispatch( addPostActionCreator() ); //? Вызываем функцию, которая возвращает <<<action>>
+      props.addPost();
    };
 
    let newPostElement = React.createRef();
 
-   let onPostChange = (e) => {
+   let postChange = (e) => {
       e.preventDefault();
       let text = newPostElement.current.value;
-      props.dispatch( updateNewPostTextActionCreator(text) ); //? Вызываем функцию, которая возвращает <<<action>> и передаем в нее значение переменной <<text>>
-
+      props.postChange(text)
    };
 
    return (
@@ -37,8 +33,8 @@ let CreatePost = (props) => {
             </figure>
             <textarea
                ref={newPostElement}
-               onChange={onPostChange}
-               value={props.createPostsPage.newPostText}
+               onChange={postChange}
+               value={props.newPostText}
                name='message'
                className='create-post__area'
                cols='30'

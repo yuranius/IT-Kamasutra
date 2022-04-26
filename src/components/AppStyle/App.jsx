@@ -10,8 +10,8 @@ function App(props) {
          <div className='wrapper-container'>
             <Header />
             <Main
-               state={props.state}
-               dispatch={props.dispatch}
+               // state={props.state}
+               // dispatch={props.dispatch}
             />
             <Footer />
          </div>

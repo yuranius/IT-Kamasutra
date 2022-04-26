@@ -1,6 +1,6 @@
 import React from "react";
 import scss from "./AsidePopup.module.scss"
-import { addMassageActionCreator,updateNewMassageTextActionCreator } from './../../../../redux/asideReducer'
+
 let MyMassage = (props) => {
    return (
       <div className={scss["popup-body__message"]}>
@@ -40,17 +40,18 @@ let AsidePopup = (props) => {
 
    let newMassageElement = React.createRef();
 
-   let onMassageSend = (e) => {
+   let massageSend = (e) => {
       e.preventDefault();
       let text = e.target.value; //? получаем value из того элемента, который вызвал эту функцию
-      props.dispatch( updateNewMassageTextActionCreator(text) ); //? Вызываем функцию, которая возвращает <<<action>> и передаем в нее значение переменной <<text>>
+      // props.dispatch( updateNewMassageTextActionCreator(text) ); //? Вызываем функцию, которая возвращает <<<action>> и передаем в нее значение переменной <<text>>
+      props.massageSend(text);
    };
 
    let addMassage = (e) => {
       e.preventDefault()
-      props.dispatch( addMassageActionCreator() );
+      // props.dispatch( addMassageActionCreator() );
+      props.addMassage();
    };
-
 
    return (
       <div className={scss["aside__popup"]}>
@@ -107,7 +108,7 @@ let AsidePopup = (props) => {
                         className={scss["popup-footer__form-control"]}
                         ref={newMassageElement}
                         value={props.asidePage.newMassageText}
-                        onChange={onMassageSend}
+                        onChange={massageSend}
                      />
                      <i
                      className='icon-send'

@@ -7,8 +7,8 @@ let Newsfeed = (props) => {
       <div className='posts'>
          <div className='posts__block'>
             <CenterPanel
-               createPostsPage={props.createPostsPage}
-               dispatch={props.dispatch}
+               // createPostsPage={props.createPostsPage}
+               // dispatch={props.dispatch}
             />
             {/* <RightPanel /> */}
          </div>
