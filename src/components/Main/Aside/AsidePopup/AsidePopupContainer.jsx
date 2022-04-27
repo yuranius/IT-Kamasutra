@@ -2,23 +2,30 @@ import {
    addMassageActionCreator,
    updateNewMassageTextActionCreator,
 } from "../../../../redux/asideReducer";
+import StoreContext from "../../../../storeContext";
 
 import AsidePopup from "./AsidePopup";
 
-let AsidePopupContainer = (props) => {
-   let onMassageSend = (text) => {
-      props.dispatch(updateNewMassageTextActionCreator(text)); //? Вызываем функцию, которая возвращает <<<action>> и передаем в нее значение переменной <<text>>
-   };
-
-   let onAddMassage = () => {
-      props.dispatch(addMassageActionCreator());
-   };
+let AsidePopupContainer = () => {
    return (
-      <AsidePopup
-         massageSend={onMassageSend}
-         addMassage={onAddMassage}
-         asidePage={props.asidePage}
-      />
+      <StoreContext.Consumer>
+         {(store) => {
+            let onMassageSend = (text) => {
+               store.dispatch(updateNewMassageTextActionCreator(text)); //? Вызываем функцию, которая возвращает <<<action>> и передаем в нее значение переменной <<text>>
+            };
+
+            let onAddMassage = () => {
+               store.dispatch(addMassageActionCreator());
+            };
+            return (
+               <AsidePopup
+                  massageSend={onMassageSend}
+                  addMassage={onAddMassage}
+                  asidePage={store.getState().asideReducer}
+               />
+            );
+         }}
+      </StoreContext.Consumer>
    );
 };
 export default AsidePopupContainer;

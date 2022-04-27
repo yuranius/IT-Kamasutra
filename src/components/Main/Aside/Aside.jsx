@@ -54,10 +54,7 @@ let Aside = () => {
                            </ul>
                         </div>
                      </div>
-                     <AsidePopupContainer
-                        asidePage={store.getState().asideReducer}
-                        dispatch={store.dispatch}
-                     />
+                     <AsidePopupContainer />
                   </div>
                </div>
             );

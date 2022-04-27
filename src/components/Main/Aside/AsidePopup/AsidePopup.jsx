@@ -28,7 +28,7 @@ let PartnerMassage = (props) => {
 };
 
 let AsidePopup = (props) => {
-
+   
 
    let myMassagesElement = props.asidePage.myMassages.map( m => (
       <MyMassage key={m.id} massage={m.massage} date={m.date} />
