@@ -63,11 +63,9 @@ let initialState = {
 }
 
 
-
 const asideReducer = (state = initialState, action) => {
-
    switch (action.type) {
-      case "ADD-MASSAGE":
+      case "ADD-MASSAGE":{
          let addMassage = state.myMassages.slice(-1)[0].id;
          let newMassage = {
             id: addMassage + 1,
@@ -76,13 +74,27 @@ const asideReducer = (state = initialState, action) => {
                todayDate().date
             }`,
          };
-         state.myMassages.push(newMassage);
-         state.newMassageText = "";
-         return state;
+         // let stateCopy =
+          return {
+            ...state,
+            myMassages:[...state.myMassages, newMassage],
+            newMassageText: ""
+         };
+         // stateCopy.myMassages = [...state.myMassages];
+         // stateCopy.myMassages.push(newMassage);
+         // stateCopy.newMassageText = "";
 
+         // return stateCopy;
+      }
       case "UPDATE-NEW-MASSAGE-TEXT":
-         state.newMassageText = action.newText;
-         return state;
+         // let stateCopy =
+         return {
+            ...state,
+            newMassageText: action.newText
+         }
+         // stateCopy.newMassageText = {...state.newMassageText}
+         // stateCopy.newMassageText = action.newText;
+         // return stateCopy;
       default:
          return state;
    }

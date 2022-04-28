@@ -1,17 +1,16 @@
 // import shortid from "shortid"; генератор случайного значения для ключа
-import StoreContext from "../../../storeContext";
+// import StoreContext from "../../../storeContext";
 import scss from "./Aside.module.scss";
 import AsidePopupContainer from "./AsidePopup/AsidePopupContainer";
 import ContactsItem from "./ContactsItem/ContactsItem";
 import GroupsItem from "./GroupsItem/GroupsItem";
 
-let Aside = () => {
-   return (
-      <StoreContext.Consumer>
-         {(store) => {
-            // * функция, которая возвращает объект jsx, столько раз, сколько содержиться объектов в ContactsItemData
-            let сontactsElements = store
-               .getState()
+let Aside = (props) => {
+   // return (
+      // <StoreContext.Consumer>
+      //    {(store) => {
+      //       // * функция, которая возвращает объект jsx, столько раз, сколько содержиться объектов в ContactsItemData
+            let сontactsElements = props
                .asideReducer.contacts.map((c) => (
                   <ContactsItem
                      //* key={shortid.generate()} или так, при использовании генератора случайного значения,
@@ -23,8 +22,7 @@ let Aside = () => {
                   />
                ));
 
-            let groupsElements = store
-               .getState()
+            let groupsElements = props
                .asideReducer.groups.map((g) => (
                   <GroupsItem
                      key={g.id.toString()}
@@ -58,9 +56,9 @@ let Aside = () => {
                   </div>
                </div>
             );
-         }}
-      </StoreContext.Consumer>
-   );
+   //       }}
+   //    </StoreContext.Consumer>
+   // );
 };
 
 export default Aside;

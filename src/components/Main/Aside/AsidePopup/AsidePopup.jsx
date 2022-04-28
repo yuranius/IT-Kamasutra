@@ -28,13 +28,12 @@ let PartnerMassage = (props) => {
 };
 
 let AsidePopup = (props) => {
-   
 
-   let myMassagesElement = props.asidePage.myMassages.map( m => (
+   let myMassagesElement = props.asideReducer.myMassages.map( m => (
       <MyMassage key={m.id} massage={m.massage} date={m.date} />
    ));
 
-   let partnerMassagesElement = props.asidePage.partnerMassages.map ( pm => (
+   let partnerMassagesElement = props.asideReducer.partnerMassages.map ( pm => (
       <PartnerMassage key={pm.id} massage={pm.massage} date={pm.date} />
    ));
 
@@ -107,7 +106,7 @@ let AsidePopup = (props) => {
                         placeholder='Start typing..'
                         className={scss["popup-footer__form-control"]}
                         ref={newMassageElement}
-                        value={props.asidePage.newMassageText}
+                        value={props.asideReducer.newMassageText}
                         onChange={massageSend}
                      />
                      <i
