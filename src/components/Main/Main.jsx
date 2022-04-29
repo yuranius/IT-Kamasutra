@@ -1,13 +1,13 @@
-// import Aside from "./Aside/Aside";
 import Newsfeed from "./Newsfeed/Newsfeed";
 import Sidebar from "./Sidebar/Main-Sidebar";
 import "./Main.scss";
-import Badges from "./Badges/Badges";
 import { Route, Routes } from "react-router-dom";
-import Profile from "./Profile/Profile";
 import AsideContainer from "./Aside/AsideContainer";
+import Badges from "./Badges_ToDo/Badges";
+import Profile from "./Profile_ToDo/Profile";
+import FindUsersContainer from "./FindUsers/FindUsersContainer";
 
-let Main = (props) => {
+let Main = () => {
    return (
       <main className='main'>
          <div className='conteiner'>
@@ -16,23 +16,13 @@ let Main = (props) => {
                <div className='sidebar-backend'></div>
                {/* <Newsfeed /> */}
                <Routes>
-                  <Route
-                     path='/*'
-                     element={
-                        <Newsfeed
-                        // createPostsPage={props.state.createPostsReducer}
-                        // dispatch={props.dispatch}
-                        />
-                     }
-                  />
+                  <Route path='/*' element={ <Newsfeed/>}/>
                   {/*exact - точное указание пути, без совпадений*/}
                   <Route path='/badges/*' element={<Badges />} />
                   <Route path='/profile/*' element={<Profile />} />
+                  <Route path='/findusers/*' element={ <FindUsersContainer />} />
                </Routes>
-               <AsideContainer
-               // asidePage={props.state.asideReducer}
-               // dispatch={props.dispatch}
-               />
+               <AsideContainer />
             </div>
          </div>
       </main>

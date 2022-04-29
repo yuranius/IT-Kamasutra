@@ -1,12 +1,15 @@
 import { combineReducers, legacy_createStore as createStore } from "redux";
 import asideReducer from "./asideReducer";
 import createPostsReducer from "./createPostsReducer";
+import findUsersReducer from "./findUsersReducer";
 
 
 let reducers = combineReducers({
     createPostsReducer,
-    asideReducer
+    asideReducer,
+    findUsersReducer
 })
+
 
 
 let store = createStore(reducers);

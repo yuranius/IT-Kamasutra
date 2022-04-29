@@ -23,11 +23,12 @@ let SidedarNewFeeds = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <a className='newfeeds__link' href='/#'>
+                        <NavLink className='newfeeds__link' to='/findusers'>
                             <i className='icon-languagetest'>
                             </i>
-                            <span>Explore Stories</span>
-                        </a>
+                            <span>Find users</span>
+                        {/* Explore Stories */}
+                        </NavLink>
                     </li>
                     <li>
                         <a className='newfeeds__link' href='/#'>

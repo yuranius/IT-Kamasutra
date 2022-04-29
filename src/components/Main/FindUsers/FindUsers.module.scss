@@ -1,0 +1,16 @@
+.content {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-top: 0px;
+    &__body {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+
