@@ -25,12 +25,13 @@ class FindUsers extends React.Component {
       if (this.props.users.length === 0) {
          axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count${this.props.pageSize}`).then((response) => {
             this.props.setUsers(response.data.items);
+            this.props.setTotalUsersCount(response.data.totalCount);
          });
       }
    }
-   
+
    onPageChanged = (pageNamber) => {
-      this.props.setCurrentPageAC(pageNamber);
+      this.props.setCurrentPage(pageNamber);
       axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNamber}&count${this.props.pageSize}`).then((response) => {
          this.props.setUsers(response.data.items);
       });
@@ -84,7 +85,7 @@ class FindUsers extends React.Component {
                            </figure>
                            <div className={scss["clearfix"]}></div>
                            <h4 className={scss["card__name"]}>{u.name}</h4>
-                           <p className={scss["card__user"]}>{u.user}</p>
+                           <p className={scss["card__user"]}>{`@/${u.id}`}</p>
                            {u.followed ? (
                               <button
                                  onClick={() => {

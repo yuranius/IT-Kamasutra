@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { followAC, setCurrentPageAC, setUsersAC, unfollowAC } from "../../../redux/findUsersReducer";
+import { followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, unfollowAC } from "../../../redux/findUsersReducer";
 import FindUsers from "./FindUsersClassComponent";
 
 
@@ -26,8 +26,11 @@ let mapDispatchToProps = (dispatch) => {
       setUsers: (users) => {
          dispatch(setUsersAC(users));
       },
-      setCurrentPageAC: (namberPage) => {
+      setCurrentPage: (namberPage) => {
          dispatch(setCurrentPageAC(namberPage))
+      },
+      setTotalUsersCount: (totalCount) => {
+         dispatch(setTotalUsersCountAC(totalCount))
       }
    }
 };
