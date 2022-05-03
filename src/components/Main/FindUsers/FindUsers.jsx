@@ -1,10 +1,10 @@
 import * as axios from "axios";
 import React from "react";
 import scss from "./FindUsers.module.scss";
-import UserItem from "./UserItem/UserItem";
+import UserItem from "./UserItem_test/UserItem";
 import userPhoto from './../../../image/user-img.webp'
 
-let FindUsers = (props) => {
+let FindUsers1 = (props) => {
    if (props.users.length === 0) {
 
       axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
@@ -116,4 +116,4 @@ let FindUsers = (props) => {
    );
 };
 
-export default FindUsers;
+export default FindUsers1;
