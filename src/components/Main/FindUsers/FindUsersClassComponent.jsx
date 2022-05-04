@@ -47,22 +47,6 @@ class FindUsers extends React.Component {
       }
       return (
          <div className={scss["content"]}>
-            <div className={scss["content__namber-page"]}>
-               {pages.map((p) => {
-                  return (
-                     <span
-                        key={p}
-                        onClick={() => {
-                           // e.preventDefault();
-                           this.onPageChanged(p);
-                        }}
-                        className={this.props.currentPage === p ? scss["namber-page__page-active"] : scss["namber-page__page"]}
-                     >
-                        {p}
-                     </span>
-                  );
-               })}
-            </div>
             <div className={scss["content__body"]}>
                {/* <UserItem {this.props.users.map((u) => (
                   id={u.id}
@@ -109,6 +93,22 @@ class FindUsers extends React.Component {
                      </div>
                   </div>
                ))}
+            </div>
+            <div className={scss["content__namber-page"]}>
+               {pages.map((p) => {
+                  return (
+                     <span
+                        key={p}
+                        onClick={() => {
+                           // e.preventDefault();
+                           this.onPageChanged(p);
+                        }}
+                        className={this.props.currentPage === p ? scss["namber-page__page-active"] : scss["namber-page__page"]}
+                     >
+                        {p}
+                     </span>
+                  );
+               })}
             </div>
          </div>
       );
