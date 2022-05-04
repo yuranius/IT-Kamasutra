@@ -73,6 +73,6 @@ export const setUsersAC = (users) => ({ type: SET_USERS, users });
 
 export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
 
-export const setTotalUsersCountAC = (totalUsersCount1) => ({ type: SET_TOTAL_USERS_COUNT, count:totalUsersCount1 });
+export const setTotalUsersCountAC = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, count:totalUsersCount });
 
 export default findUsersReducer;

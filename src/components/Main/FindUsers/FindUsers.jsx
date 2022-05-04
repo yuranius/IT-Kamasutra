@@ -1,103 +1,17 @@
-import * as axios from "axios";
 import React from "react";
 import scss from "./FindUsers.module.scss";
 import UserItem from "./UserItem_test/UserItem";
-import userPhoto from './../../../image/user-img.webp'
+import userPhoto from "./../../../image/user-img.webp";
 
-let FindUsers1 = (props) => {
-   if (props.users.length === 0) {
+let FindUsers = (props) => {
+   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
-      axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-         props.setUsers(response.data.items)
-      })
+   let pages = [];
 
-      // props.setUsers([
-      //    {
-      //       id: 1,
-      //       followed: false,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-7.png",
-      //       name: "Victor Exrixon ",
-      //       user: "@macale343",
-      //    },
-      //    {
-      //       id: 2,
-      //       followed: true,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-12.png",
-      //       name: "Surfiya Zakir ",
-      //       user: "@macale343",
-      //    },
-      //    {
-      //       id: 3,
-      //       followed: false,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-4.png",
-      //       name: "Goria Coast ",
-      //       user: "@macale343",
-      //    },
-      //    {
-      //       id: 4,
-      //       followed: true,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-3.png",
-      //       name: "Hurin Seary ",
-      //       user: "@macale343",
-      //    },
-      //    {
-      //       id: 5,
-      //       followed: false,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-2.png",
-      //       name: "Victor Exrixon ",
-      //       user: "@macale343",
-      //    },
-      //    {
-      //       id: 6,
-      //       followed: true,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-8.png",
-      //       name: "Surfiya Zakir ",
-      //       user: "@macale343",
-      //    },
-      //    {
-      //       id: 7,
-      //       followed: false,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-4.png",
-      //       name: "Goria Coast ",
-      //       user: "@macale343",
-      //    },
-      //    {
-      //       id: 8,
-      //       followed: false,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-11.png",
-      //       name: "Hurin Seary ",
-      //       user: "@macale343",
-      //    },
-      //    {
-      //       id: 9,
-      //       followed: false,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-8.png",
-      //       name: "Surfiya Zakir ",
-      //       user: "@macale343",
-      //    },
-      //    {
-      //       id: 10,
-      //       followed: false,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-3.png",
-      //       name: "Goria Coast ",
-      //       user: "@macale343",
-      //    },
-      //    {
-      //       id: 11,
-      //       followed: false,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-4.png",
-      //       name: "Hurin Seary ",
-      //       user: "@macale343",
-      //    },
-      //    {
-      //       id: 12,
-      //       followed: false,
-      //       avatar: "http://sociala.uitheme.net/assets/images/user-7.png",
-      //       name: "Aliqa Macale ",
-      //       user: "@macale343",
-      //    },
-      // ]);
+   for (let index = 1; index <= pagesCount; index++) {
+      pages.push(index);
    }
+
    let userElements = props.users.map((u) => (
       <UserItem
          id={u.id}
@@ -112,8 +26,24 @@ let FindUsers1 = (props) => {
    return (
       <div className={scss["content"]}>
          <div className={scss["content__body"]}>{userElements}</div>
+         <div className={scss["content__namber-page"]}>
+            {pages.map((p) => {
+               return (
+                  <span
+                     key={p}
+                     onClick={() => {
+                        // e.preventDefault();
+                        props.onPageChanged(p);
+                     }}
+                     className={props.currentPage === p ? scss["namber-page__page-active"] : scss["namber-page__page"]}
+                  >
+                     {p}
+                  </span>
+               );
+            })}
+         </div>
       </div>
    );
 };
 
-export default FindUsers1;
+export default FindUsers;
