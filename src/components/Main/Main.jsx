@@ -4,8 +4,8 @@ import "./Main.scss";
 import { Route, Routes } from "react-router-dom";
 import AsideContainer from "./Aside/AsideContainer";
 import Badges from "./Badges_ToDo/Badges";
-import Profile from "./Profile_ToDo/Profile";
 import FindUsersContainer from "./FindUsers/FindUsersContainer";
+import ProfileContainer from "./Profile_ToDo/ProfileContainer";
 
 let Main = () => {
    return (
@@ -19,7 +19,7 @@ let Main = () => {
                   <Route path='/*' element={ <Newsfeed/>}/>
                   {/*exact - точное указание пути, без совпадений*/}
                   <Route path='/badges/*' element={<Badges />} />
-                  <Route path='/profile/*' element={<Profile />} />
+                  <Route path='/profile/*' element={<ProfileContainer />} />
                   <Route path='/findusers/*' element={ <FindUsersContainer />} />
                </Routes>
                <AsideContainer />

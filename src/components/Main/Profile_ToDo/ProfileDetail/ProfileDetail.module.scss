@@ -1,0 +1,97 @@
+.profile-detail {
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+
+    &__header {
+        padding: 1.5rem;
+        display: block;
+        flex: 1 1 auto;
+    }
+
+    &__header-title {
+        font-weight: 700;
+        color: #212529;
+        margin-bottom: 1rem;
+        font-size: 14px;
+    }
+
+    &__header-text {
+        font-weight: 500;
+        color: #adb5bd;
+        margin-bottom: 0;
+        font-size: 12px;
+        line-height: 24px;
+        line-height: 30px;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+    &__subheader {
+        display: flex;
+        flex: 1 1 auto;
+        padding: 1rem 1rem;
+        i {
+            color: #adb5bd;
+            margin-right: 1rem;
+            font-size: 25px;
+        }
+    }
+
+    &__subheader:nth-child(2) {
+        i {
+            &:before {
+                content: "\e9b4";
+            }
+        }
+    }
+
+    &__subheader:nth-child(3) {
+        i {
+            &:before {
+                content: "\e9ce";
+            }
+        }
+    }
+
+    &__subheader:nth-child(4) {
+        i {
+            &:before {
+                content: "\e947";
+            }
+        }
+    }
+
+    &__subheader:nth-child(5) {
+        i {
+            &:before {
+                content: "\e937";
+            }
+        }
+    }
+
+    &__subheader-title {
+        font-weight: 700;
+        color: #212529;
+        margin-top: 0;
+        font-size: 12px;
+        span {
+            font-weight: 500;
+            color: #adb5bd;
+            margin-top: 0.25rem;
+            display: block;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+    }
+}

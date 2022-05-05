@@ -16,10 +16,8 @@ let UserItem = (props) => {
                ? <button onClick={ () => {props.users.unfollow(props.id)}} className={scss["card__button"]}>Follow</button>
                : <button onClick={ () => {props.users.follow(props.id)}} className={scss["card__button"]}>UnFollow</button>
                }
-
             </div>
          </div>
-
       </div>
    );
 };
