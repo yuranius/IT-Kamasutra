@@ -2,6 +2,8 @@ import React from "react";
 import scss from "./FindUsers.module.scss";
 import UserItem from "./UserItem_test/UserItem";
 import userPhoto from "./../../../image/user-img.webp";
+import Preloader from "../../Common/Preloader/Preloader";
+
 
 let FindUsers = (props) => {
    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -11,7 +13,6 @@ let FindUsers = (props) => {
    for (let index = 1; index <= pagesCount; index++) {
       pages.push(index);
    }
-
    let userElements = props.users.map((u) => (
       <UserItem
          id={u.id}
@@ -25,6 +26,7 @@ let FindUsers = (props) => {
    ));
    return (
       <div className={scss["content"]}>
+         {props.isFetching ? <Preloader /> : null}
          <div className={scss["content__body"]}>{userElements}</div>
          <div className={scss["content__namber-page"]}>
             {pages.map((p) => {
