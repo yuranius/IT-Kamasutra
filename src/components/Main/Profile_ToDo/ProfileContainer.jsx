@@ -9,7 +9,6 @@ import { withRouter } from "react-router-dom";
 class ProfileContainer extends Component {
    componentDidMount() {
       let userId = this.props.match.params.userId;
-      console.log(userId);
       if (!userId) {userId = 23727}
       axios.get(`https://social-network.samuraijs.com/api/1.0/profile/`+userId).then((response) => {
          this.props.setUsersProfile(response.data);

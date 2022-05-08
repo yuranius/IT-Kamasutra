@@ -1,29 +1,27 @@
 import axios from "axios";
 import React from "react";
 import { connect } from "react-redux";
+import { usersAPI } from "../../../api/api";
+
 import { followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, toggleIsFetchingAC, unfollowAC } from "../../../redux/findUsersReducer";
 import FindUsers from "./FindUsers";
 
 class FindUsersAPIComponents extends React.Component {
    componentDidMount() {
       this.props.toggleIsFetching(true);
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count${this.props.pageSize}`, {
-         withCredentials: true
-      }).then((response) => {
+      usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then((response) => {
          this.props.toggleIsFetching(false);
-         this.props.setUsers(response.data.items);
-         this.props.setTotalUsersCount(response.data.totalCount);
+         this.props.setUsers(response.items);
+         this.props.setTotalUsersCount(response.totalCount);
       });
    }
 
    onPageChanged = (pageNamber) => {
       this.props.toggleIsFetching(true);
       this.props.setCurrentPage(pageNamber);
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNamber}&count${this.props.pageSize}`, {
-         withCredentials:true
-      }).then((response) => {
+      usersAPI.getUsers(pageNamber, this.props.pageSize).then((response) => {
          this.props.toggleIsFetching(false);
-         this.props.setUsers(response.data.items);
+         this.props.setUsers(response.items);
       });
    };
    render() {
