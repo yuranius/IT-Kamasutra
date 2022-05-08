@@ -1,18 +1,22 @@
 import React from "react";
 import scss from "./ProfileCardFree.module.scss";
 
-let ProfileCardThree = () => {
+let ProfileCardThree = (props) => {
+   // console.log(props.profile);
    return (
       <div className={scss["profile-card"]}>
          <div className={scss["profile-card__header"]}>
-            <img src='http://sociala.uitheme.net/assets/images/u-bg.jpg' alt='avater' />
+            <img src='https://krym-portal.ru/wp-content/uploads/2016/02/krym-otdyh-2016-ceny.jpg' alt='avater' />
          </div>
          <div className={scss["profile-card__body"]}>
             <figure className={scss["body__avatar"]}>
-               <img src='https://avatars.mds.yandex.net/i?id=808cef5fd39a6c8a9c8a273e2fcf46dc-5450680-images-thumbs&n=13&exp=1' alt='avater'/>
+               <img src={props.profile.photos.large ? `${props.profile.photos.large}` : 'https://avatars.mds.yandex.net/i?id=808cef5fd39a6c8a9c8a273e2fcf46dc-5450680-images-thumbs&n=13&exp=1'} alt='avater'/>
             </figure>
             <h4 className={scss["body__name"]}>
-               Yuranius Webber<span>kreml-in@gmail.com</span>
+            {props.profile.fullName}
+               <span>
+               {`Пользователь Id-${props.profile.userId}`}
+               </span>
             </h4>
             <div className={scss["body__link"]}>
                <a href='/' className={scss["body__link-friend"]}>

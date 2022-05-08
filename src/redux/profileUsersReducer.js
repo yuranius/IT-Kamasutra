@@ -19,6 +19,6 @@ const profileUsersReduser = (state = initialState, action) => {
    }
 };
 
-export const setUsersProfileAC = (profile) => ({ type: SET_USERS_PROFILE, profile });
+export const setUsersProfile = (profile) => ({ type: SET_USERS_PROFILE, profile });
 
 export default profileUsersReduser;

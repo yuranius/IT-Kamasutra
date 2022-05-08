@@ -1,0 +1,16 @@
+.header-login {
+    font-size: 18px;
+    text-decoration: none;
+    &__auth{
+        color: orange ;
+        span{
+            color:brown;
+            cursor: pointer;
+        }
+    }
+    a{
+        color: #adb5bd;
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+}

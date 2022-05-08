@@ -6,7 +6,7 @@
     top: 0;
     left: 0;
     grid-row: 1/2;
-    z-index: 5;
+    z-index: 0;
     &:before {
         content: "";
         position: absolute;
@@ -16,7 +16,7 @@
         height: 100%;
         background-color: #FFFFFF;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-        z-index: 3;
+        z-index: 0;
     }
 
     // .header__body
@@ -42,7 +42,7 @@
             max-width: 100%; //^ Ставим 100% заполнение
             display: block; //^ Убираем подрезание снизу
         }
-        z-index: 2;
+        z-index: 20;
         transition: all 0.3s ease 0s;
     }
 

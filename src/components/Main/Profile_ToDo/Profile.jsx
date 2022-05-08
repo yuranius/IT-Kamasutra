@@ -5,22 +5,21 @@ import ProfileCardThree from "./ProfileCardThree/ProfileCardThree";
 import ProfileDetail from "./ProfileDetail/ProfileDetail";
 
 let Profile = (props) => {
-
-   // let postsElements = props.createPostsReducer.posts.map((p) => <ViewPost key={p.id} postview={p.postview} postimage={p.postimage} />);
+   //let postsElements = props.createPostsReducer.posts.map((p) => <ViewPost key={p.id} postview={p.postview} postimage={p.postimage} />);
    return (
       <div className={scss["profile"]}>
          <div className={scss["profile-block"]}>
             <div className={scss["profile-block__middle-sidebar"]}>
                <div className={scss["profile-block__row"]}>
                   <div className={scss["profile-block__profile-card"]}>
-                     <ProfileCardThree />
+                     <ProfileCardThree profile={props.profile}/>
                   </div>
                   <div className={scss["profile-block__profile-about"]}>
-                     <ProfileDetail />
+                     <ProfileDetail lookingForAJob = {props.profile.lookingForAJob}/>
                      {/* <Profilephoto /> */}
                   </div>
                   <div className='col-xl-8 col-xxl-9 col-lg-8'>
-                     <CreatePostContainer />
+                     {/* <CreatePostContainer /> */}
                      {/* {postsElements} */}
                   </div>
                </div>

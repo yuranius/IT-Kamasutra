@@ -1,20 +1,28 @@
 import HeaderMenu from './Header-Menu/Header-menu';
 import logo from './many.webp';
-import style from './Header.scss';
+import scss from './Header.module.scss';
+import HeaderLogin from './HeaderLogin/HeaderLogin';
 
-let Header = () => {
+let Header = (props) => {
 	return (
-		<header className='header'>
-			<div className='conteiner'>
-				<div className='header__body'>
+		<header className={scss['header']}>
+			<div className={scss['conteiner']}>
+				<div className={scss['header__body']}>
 
-					<a href='/' className='header__logo'>
+					<a href='/' className={scss['header__logo']}>
 						<img src={logo} alt='logo' />
 					</a>
-					<div className='header__burger'>
+
+
+					<HeaderLogin isAuth={props.isAuth} login = {props.login}/>
+
+					<div className={scss['header__burger']}>
 						<span></span>
 					</div>
+
+
 					<HeaderMenu />
+
 				</div>
 			</div>
 		</header>

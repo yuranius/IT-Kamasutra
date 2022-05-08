@@ -6,6 +6,7 @@ import AsideContainer from "./Aside/AsideContainer";
 import Badges from "./Badges_ToDo/Badges";
 import FindUsersContainer from "./FindUsers/FindUsersContainer";
 import ProfileContainer from "./Profile_ToDo/ProfileContainer";
+import { Switch } from "react-router-dom";
 
 let Main = () => {
    return (
@@ -15,13 +16,15 @@ let Main = () => {
                <Sidebar />
                <div className='sidebar-backend'></div>
                {/* <Newsfeed /> */}
-               <Routes>
-                  <Route path='/*' element={ <Newsfeed/>}/>
+               {/* <Routes> */}
+               <Switch>
+                  <Route path='/newsfeed' component={Newsfeed}/>
                   {/*exact - точное указание пути, без совпадений*/}
-                  <Route path='/badges/*' element={<Badges />} />
-                  <Route path='/profile/*' element={<ProfileContainer />} />
-                  <Route path='/findusers/*' element={ <FindUsersContainer />} />
-               </Routes>
+                  <Route path='/badges/' component={Badges} />
+                  <Route path='/profile/:userId?' render={ () => <ProfileContainer />} />
+                  <Route path='/findusers' component={FindUsersContainer} />
+               {/* </Routes> */}
+               </Switch>
                <AsideContainer />
             </div>
          </div>
