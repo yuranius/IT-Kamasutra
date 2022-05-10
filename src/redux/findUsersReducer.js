@@ -1,3 +1,7 @@
+import { usersAPI } from "../api/api";
+
+
+
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
@@ -101,5 +105,21 @@ export const setTotalUsersCount = (totalUsersCount) => ({ type: SET_TOTAL_USERS_
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, fetch: isFetching });
 
 export const toggleInProgres = (followingInProgress, userId) => ({ type: TOGGLE_IS_FOLLOWING_PROPGRESS, followingInProgress: followingInProgress, userId });
+
+
+
+
+export const getUsers = (currentPage, pageSize) => { //! ----------санка(thunk)
+   return (dispatch) => {
+      dispatch(toggleIsFetching(true));
+      usersAPI.getUsers(currentPage, pageSize).then((response) => {
+         dispatch(toggleIsFetching(false));
+         dispatch(setUsers(response.items));
+         dispatch(setTotalUsersCount(response.totalCount));
+      });
+   };
+};
+
+
 
 export default findUsersReducer;
