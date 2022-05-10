@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { usersAPI } from "../../../api/api";
 
-import { followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, toggleIsFetchingAC, unfollowAC } from "../../../redux/findUsersReducer";
+import { follow, setCurrentPage, setTotalUsersCount, setUsers, toggleIsFetching, unfollow, toggleInProgres } from "../../../redux/findUsersReducer";
 import FindUsers from "./FindUsers";
 
 class FindUsersAPIComponents extends React.Component {
@@ -33,7 +33,10 @@ class FindUsersAPIComponents extends React.Component {
       onPageChanged={this.onPageChanged}
       follow={this.props.follow}
       unfollow={this.props.unfollow}
-      isFetching={this.props.isFetching} />;
+      isFetching={this.props.isFetching}
+      followingInProgress={this.props.followingInProgress}
+      toggleInProgres={this.props.toggleInProgres}
+      />;
    }
 }
 
@@ -44,32 +47,11 @@ let mapStateToProps = (state) => {
       totalUsersCount: state.findUsersReducer.totalUsersCount,
       currentPage: state.findUsersReducer.currentPage,
       isFetching: state.findUsersReducer.isFetching,
+      followingInProgress: state.findUsersReducer.followingInProgress
    };
 };
 
-let mapDispatchToProps = (dispatch) => {
-   return {
-      follow: (userId) => {
-         dispatch(followAC(userId));
-      },
-      unfollow: (userId) => {
-         dispatch(unfollowAC(userId));
-      },
-      setUsers: (users) => {
-         dispatch(setUsersAC(users));
-      },
-      setCurrentPage: (namberPage) => {
-         dispatch(setCurrentPageAC(namberPage));
-      },
-      setTotalUsersCount: (totalCount) => {
-         dispatch(setTotalUsersCountAC(totalCount));
-      },
-      toggleIsFetching: (isFetching) => {
-         dispatch(toggleIsFetchingAC(isFetching));
-      },
-   };
-};
 
-const FindUsersContainer = connect(mapStateToProps, mapDispatchToProps)(FindUsersAPIComponents);
+const FindUsersContainer = connect(mapStateToProps, {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching, toggleInProgres })(FindUsersAPIComponents);
 
 export default FindUsersContainer;

@@ -78,13 +78,37 @@
             padding: 0.375rem 0.75rem;
             position: relative;
             z-index: 3;
-            transition: all 0.1s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
             &:active {
                 transition: all 0s ease 0s;
                 color: rgb(255, 136, 0);
              }
-
     }
+
+    &__button-disabled {
+        width: 150px;
+        letter-spacing: 1px;
+        background: linear-gradient(45deg, #3186634f, #0cf39357);
+        box-shadow: 0px 0px 0px #071b13;
+        color: rgba(207, 65, 65, 0.733);
+        margin-left: 0.25rem;
+        margin-top: 0;
+        display: inline-block;
+        font-weight: 600;
+        line-height: 1.5;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        border-radius: 2rem;
+        padding: 0.375rem 0.75rem;
+        position: relative;
+        z-index: 3;
+        transition: all 0.3s ease-in-out 0s;
+        &:active {
+            transition: all 0s ease 0s;
+            color: rgb(255, 136, 0);
+         }
+}
 }
 
 

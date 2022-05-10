@@ -3,14 +3,16 @@ const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
-const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
+const TOGGLE_IS_FOLLOWING_PROPGRESS = 'TOGGLE_IS_FOLLOWING_PROPGRESS'
 
 let initialState = {
    users: [], //*перенесли в презентационную компоненту
    pageSize: 10,
    totalUsersCount: 0,
    currentPage: 1,
-   isFetching: false
+   isFetching: false,
+   followingInProgress: []
 };
 
 const findUsersReducer = (state = initialState, action) => {
@@ -25,7 +27,7 @@ const findUsersReducer = (state = initialState, action) => {
                   return { ...u, followed: true };
                }
                return u; //* если не совпадает, то возвращаем копию массива, без изменения
-            }),
+            })
          };
       }
 
@@ -69,21 +71,35 @@ const findUsersReducer = (state = initialState, action) => {
          };
       }
 
+      case TOGGLE_IS_FOLLOWING_PROPGRESS: {
+         return {
+            ...state,
+            followingInProgress: action.followingInProgress
+            ? [...state.followingInProgress, action.userId]
+            : state.followingInProgress.filter(id => id !== action.userId)
+            //* если пришла сюда подписка
+         };
+
+      }
+
       default:
          return state;
    }
 };
 
-export const followAC = (userId) => ({ type: FOLLOW, userId });
 
-export const unfollowAC = (userId) => ({ type: UNFOLLOW, userId });
+export const follow = (userId) => ({ type: FOLLOW, userId });
 
-export const setUsersAC = (users) => ({ type: SET_USERS, users });
+export const unfollow = (userId) => ({ type: UNFOLLOW, userId });
 
-export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
+export const setUsers = (users) => ({ type: SET_USERS, users });
 
-export const setTotalUsersCountAC = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, count:totalUsersCount });
+export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
 
-export const toggleIsFetchingAC = (isFetching) => ({ type: TOGGLE_IS_FETCHING, fetch: isFetching });
+export const setTotalUsersCount = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, count:totalUsersCount });
+
+export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, fetch: isFetching });
+
+export const toggleInProgres = (followingInProgress, userId) => ({ type: TOGGLE_IS_FOLLOWING_PROPGRESS, followingInProgress: followingInProgress, userId });
 
 export default findUsersReducer;
