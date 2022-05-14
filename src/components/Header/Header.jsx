@@ -1,28 +1,25 @@
-import HeaderMenu from './Header-Menu/Header-menu';
-import logo from './many.webp';
-import scss from './Header.module.scss';
-import HeaderLogin from './HeaderLogin/HeaderLogin';
+import HeaderMenu from "./Header-Menu/Header-menu";
+import logo from "./many.webp";
+import scss from "./Header.module.scss";
+import HeaderLogin from "./HeaderLogin/HeaderLogin";
+import { NavLink } from "react-router-dom";
 
 let Header = (props) => {
 	return (
-		<header className={scss['header']}>
-			<div className={scss['conteiner']}>
-				<div className={scss['header__body']}>
+		<header className={scss["header"]}>
+			<div className={scss["conteiner"]}>
+				<div className={scss["header__body"]}>
+					<NavLink to="/Login" className={scss["header__logo"]}>
+						<img src={logo} alt="logo" />
+					</NavLink>
 
-					<a href='/' className={scss['header__logo']}>
-						<img src={logo} alt='logo' />
-					</a>
+					<HeaderLogin isAuth={props.isAuth} login={props.login} />
 
-
-					<HeaderLogin isAuth={props.isAuth} login = {props.login}/>
-
-					<div className={scss['header__burger']}>
+					<div className={scss["header__burger"]}>
 						<span></span>
 					</div>
 
-
 					<HeaderMenu />
-
 				</div>
 			</div>
 		</header>

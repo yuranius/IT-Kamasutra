@@ -8,6 +8,8 @@ import FindUsersContainer from "./FindUsers/FindUsersContainer";
 import ProfileContainer from "./Profile_ToDo/ProfileContainer";
 import { Switch } from "react-router-dom";
 
+
+
 let Main = () => {
    return (
       <main className='main'>
@@ -23,6 +25,7 @@ let Main = () => {
                   <Route path='/badges/' component={Badges} />
                   <Route path='/profile/:userId?' render={ () => <ProfileContainer />} />
                   <Route path='/findusers' component={FindUsersContainer} />
+                  
                {/* </Routes> */}
                </Switch>
                <AsideContainer />
