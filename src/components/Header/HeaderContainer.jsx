@@ -18,17 +18,18 @@ class HeaderContainer extends Component {
 
 	componentDidUpdate() {
 
+
 	}
+
+
 
 	render() {
 		if (!this.props.isAuth) {
-
 			// ToDo надо разобраться с редиректом!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			
-			return <Redirect to={'/'} />
-		}
+			return <Redirect to={'/Login'} />
+		} if (this.props.isAuth) { return ( <> <Redirect to={'/12'} /> <Header {...this.props} /> </> )}
 
-		return <Header {...this.props} />;
 	}
 }
 
