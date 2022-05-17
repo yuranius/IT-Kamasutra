@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import HeaderContainer from "../Header/HeaderContainer";
 import Login from "../Login/Login";
-import Main from "../Main/Main";
+import MainContainer from "../Main/MainContainer";
 import "./App.scss";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
             <Route path='/login' component={ Login } />
 
             <HeaderContainer />
-            <Main />
+            <MainContainer />
             <Footer />
          </div>
       </div>
