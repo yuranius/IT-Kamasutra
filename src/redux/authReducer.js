@@ -1,4 +1,4 @@
-import { usersAPI } from "../api/api";
+import { authAPI } from "../api/api";
 
 const SET_USER_DATA = 'SET_USER_DATA';
 
@@ -14,6 +14,7 @@ let initialState = {
 const authReducer = (state = initialState, action) => {
    switch (action.type) {
       case SET_USER_DATA: {
+         console.log(state);
          return {
             ...state,
             ...action.data,
@@ -29,10 +30,11 @@ const authReducer = (state = initialState, action) => {
 export const setAuthUserData = (userId, email, login) => ({ type: SET_USER_DATA, data:{userId,email,login} });
 
 
-export const getAuth = (id, email, login) => {
+export const getAuth = (userId) => {
+
 	//! ----------санка(thunk)
 	return (dispatch) => {
-		usersAPI.getAuth(id, email, login).then((response) => {
+		authAPI.getAuth(userId).then((response) => {
 			if (response.resultCode === 0) {
             let { id, email, login } = response.data;
 				dispatch(setAuthUserData(id, email, login));

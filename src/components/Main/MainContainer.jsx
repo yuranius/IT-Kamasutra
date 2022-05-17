@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { authAPI } from '../../api/api';
 import Main from './Main'
+import { setAuthUserData, getAuth } from "../../../src/redux/authReducer";
 
 
 
@@ -66,28 +66,23 @@ class MainContainer extends Component {
     
   
 
-    componentDidUpdate(){
-      authAPI.getAuth().then((response) => {
-        if (response.resultCode === 0) {
-          let { id, email, login } = response.data;
-          this.props.setAuthUserData(id, email, login);
-        }
-      });
-
-
+    componentDidMount(){
+      this.props.getAuth(this.props.isAuth);
     }
 
     render() {
-    //  . console.log(this);
+      console.log(this.props.isAuth);
+     
       return <Main />
     }
 }
 
 function mapStateToProps(state) {
-    return {isAuth: state.authReducer}
+  console.log(state);
+    return {isAuth: state.authReducer.isAuth}
   }
 
-export default connect(mapStateToProps)(MainContainer)
+export default connect(mapStateToProps, { setAuthUserData, getAuth })(MainContainer)
 
 
 

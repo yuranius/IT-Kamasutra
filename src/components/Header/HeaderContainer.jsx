@@ -2,8 +2,7 @@ import { Component } from "react";
 import { connect } from "react-redux";
 import Header from "./Header";
 import { setAuthUserData, getAuth } from "../../../src/redux/authReducer";
-import { authAPI } from "../../api/api";
-import { Redirect } from "react-router-dom";
+
 
 class HeaderContainer extends Component {
 	componentDidMount() {
@@ -13,9 +12,10 @@ class HeaderContainer extends Component {
 		// 		this.props.setAuthUserData(id, email, login);
 		// 	}
 		// });
-		console.log(this);
+		
 
-		this.props.getAuth(this.props.isAuth, this.props.login, this.props.email);
+		// this.props.getAuth(this.props.isAuth);
+
 
 	}
 
