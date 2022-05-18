@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import AsideContainer from "./Aside/AsideContainer";
 import Badges from "./Badges_ToDo/Badges";
 import FindUsersContainer from "./FindUsers/FindUsersContainer";
-import ProfileContainer from "./Profile_ToDo/ProfileContainer";
+import ProfileContainer from "./Profile/ProfileContainer";
 import { Switch } from "react-router-dom";
 
 
