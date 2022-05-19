@@ -2,4 +2,4 @@
 
 по курсу IT-Kamasutra
 
-тема Oceanic Next (sublime)
+тема Oceanic Next (sublime) или Webstorm Darckula

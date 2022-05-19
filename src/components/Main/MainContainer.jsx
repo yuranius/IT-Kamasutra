@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import Main from './Main'
 import { setAuthUserData, getAuth } from "../../../src/redux/authReducer";
 import { withAuthRedirect } from '../hoc/withAuthRedirect';
-import { compose } from 'redux';
 
 
 

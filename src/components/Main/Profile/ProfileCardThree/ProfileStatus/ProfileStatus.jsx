@@ -6,7 +6,7 @@ class ProfileStatus extends Component {
 		editMode: false,
 	};
 
-	activateEditeMode() {
+	activateEditeMode = () => { // 🚧 можно через стрелочноую фанкцию 🚧
 		this.setState({
 			editMode: true,
 		});
@@ -20,10 +20,10 @@ class ProfileStatus extends Component {
 
 	render() {
 		return (
-			<div className={scss["body__status"]}>
+			<div className={scss["body__status"]}> 
 				{!this.state.editMode && (
 					<div className={scss["body__status-text"]}>
-						<span onClick={this.activateEditeMode.bind(this)}>{this.props.props}</span>
+						<span onClick={this.activateEditeMode}>{this.props.props}</span>
 					</div>
 				)}
 				{this.state.editMode && (
@@ -35,5 +35,7 @@ class ProfileStatus extends Component {
 		);
 	}
 }
+
+
 
 export default ProfileStatus;
