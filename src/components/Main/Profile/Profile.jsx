@@ -12,7 +12,7 @@ let Profile = (props) => {
             <div className={scss["profile-block__middle-sidebar"]}>
                <div className={scss["profile-block__row"]}>
                   <div className={scss["profile-block__profile-card"]}>
-                     <ProfileCardThree profile={props.profile}/>
+                     <ProfileCardThree profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
                   </div>
                   <div className={scss["profile-block__profile-about"]}>
                      <ProfileDetail lookingForAJob = {props.profile.lookingForAJob}/>

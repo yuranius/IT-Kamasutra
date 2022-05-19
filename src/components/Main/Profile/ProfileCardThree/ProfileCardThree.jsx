@@ -3,7 +3,6 @@ import scss from "./ProfileCardFree.module.scss";
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
 
 let ProfileCardThree = (props) => {
-	console.log(props.profile.fullName);
 	return (
 		<div className={scss["profile-card"]}>
 			<div className={scss["profile-card__header"]}>
@@ -17,7 +16,7 @@ let ProfileCardThree = (props) => {
 					{props.profile.fullName}
 					<span>{`Пользователь Id-${props.profile.userId}`}</span>
 				</h4>
-				<ProfileStatus props={props.profile.fullName}/>
+				<ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
 				<div className={scss["body__link"]}>
 					<a href="/" className={scss["body__link-friend"]}>
 						Add Friend

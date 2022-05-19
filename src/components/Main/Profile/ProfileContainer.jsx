@@ -1,8 +1,7 @@
-import axios from "axios";
 import { Component } from "react";
 import { connect } from "react-redux";
 import Profile from "./Profile";
-import { setUsersProfile } from "../../../redux/profileUsersReducer";
+import { getProfile, getStatus, updateStatus } from "../../../redux/profileUsersReducer";
 import Preloader from "../../Common/Preloader/Preloader";
 import { withRouter } from "react-router-dom";
 import { compose } from "redux";
@@ -10,27 +9,30 @@ import { compose } from "redux";
 class ProfileContainer extends Component {
 	componentDidMount() {
 		let userId = this.props.match.params.userId; //? match.params берем из withRouter, то что приходит из url, userId береться из пути в <main/>, это все делает withRouer
-		if (!userId) {
-			userId = 23727;
-		}
-		axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId).then((response) => {
-			this.props.setUsersProfile(response.data);
-		});
+		if (!userId) { userId = 23727 };
+		this.props.getProfile(userId); 
+		this.props.getStatus(userId);
 	}
 
 	render() {
 		if (!this.props.profile) {
 			return <Preloader />;
 		}
-		return <Profile {...this.props} profile={this.props.profile} />;
+		return <Profile 
+		{...this.props} 
+		profile={this.props.profile} 
+		status={this.props.status} 
+		updateStatus={this.props.updateStatus}
+		/>;
 	}
 }
 
 let mapStateToProps = (state) => ({
 	profile: state.profileUsersReducer.profile,
+	status: state.profileUsersReducer.status
 });
 
 export default compose(
-   connect(mapStateToProps, { setUsersProfile }), 
+   connect(mapStateToProps, { getProfile, getStatus, updateStatus }), 
    withRouter)
 (ProfileContainer);
