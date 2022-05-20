@@ -1,5 +1,5 @@
 import HeaderMenu from "./Header-Menu/Header-menu";
-import logo from "./many.webp";
+import logo from "./../../image/reactjs.png";
 import scss from "./Header.module.scss";
 import HeaderLogin from "./HeaderLogin/HeaderLogin";
 import { NavLink } from "react-router-dom";
