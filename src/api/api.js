@@ -56,9 +56,9 @@ export const profileAPI = {
 
 export const loginAPI = {
    postLogin(email, password, rememberMy, capcha) {
-      console.log('📢 [api.js:59]', email, password, rememberMy, capcha);
+      console.log('📢 [api.js:59]', email, password, rememberMy, capcha, '💥');
       return instance.post(`/auth/login`, { email: email, password: password, rememberMy: rememberMy, capcha: capcha}).then((response) => {
-         console.log('📢 [api.js:61]', response.data);
+         console.log('📢 [api.js:61]', response.data, '💥');
          return response.data;
       });
    },
