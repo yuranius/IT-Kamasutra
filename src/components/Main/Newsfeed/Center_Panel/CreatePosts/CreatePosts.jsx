@@ -1,47 +1,13 @@
 import React from "react";
 import "./CreatePosts.scss";
+import CreatePostForm from "./CreatePostsForm/CreatePostsForm";
 // import DropdownPopup from "./DropdownPopup/DropdownPopup";
 
 
 let CreatePost = (props) => {
-   let addPost = (e) => {
-      e.preventDefault();
-      props.addPost();
-   };
-
-   let newPostElement = React.createRef();
-
-   let postChange = (e) => {
-      e.preventDefault();
-      let text = newPostElement.current.value;
-      props.postChange(text)
-   };
-
    return (
       <div className='create-post' id="wrapperCenterPanel">
-         <div className='create-post__button' onClick={addPost}>
-            <a href='/' className='create-post__link'>
-               <i className='icon-create'></i>Create Post
-            </a>
-         </div>
-         <div className='create-post__form'>
-            <figure className='create-post__ava'>
-               <img
-                  src='http://sociala.uitheme.net/assets/images/user-8.png'
-                  alt=''
-               />
-            </figure>
-            <textarea
-               ref={newPostElement}
-               onChange={postChange}
-               value={props.newPostText}
-               name='message'
-               className='create-post__area'
-               cols='30'
-               rows='10'
-               placeholder='О чем ты думаешь?'
-            />
-         </div>
+         <CreatePostForm addPost={props.addPost}/>
          <div className='create-post__footer'>
             <a href='#video' className='create-post__video'>
                <i className='icon-ondemand_videotest'></i>

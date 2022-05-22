@@ -24,6 +24,7 @@ let Main = () => {
                   {/*exact - точное указание пути, без совпадений*/}
                   <Route path='/badges/' component={Badges} />
                   <Route path='/profile/:userId?' render={ () => <ProfileContainer />} />
+                  <Route path='/authorprofile' component={ () => <ProfileContainer />} />
                   <Route path='/findusers' component={FindUsersContainer} />
                   
                {/* </Routes> */}

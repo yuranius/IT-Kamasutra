@@ -9,6 +9,7 @@
     "@types/styled-components": "^5.1.25",
     "axios": "^0.27.2",
     "fix": "^0.0.6",
+    "formik": "^2.2.9",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
     "react-carusel": "^0.0.2",
@@ -19,12 +20,14 @@
     "react-scripts": "^5.0.0",
     "react-slick": "^0.28.1",
     "redux": "^4.2.0",
+    "redux-form": "^8.3.8",
     "redux-thunk": "^2.4.1",
     "shortid": "^2.2.16",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
     "swiper": "^8.1.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

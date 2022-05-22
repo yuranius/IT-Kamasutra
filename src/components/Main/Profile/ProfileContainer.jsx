@@ -21,6 +21,7 @@ class ProfileContainer extends Component {
 		return <Profile 
 		{...this.props} 
 		profile={this.props.profile} 
+		userIdAuth={this.props.userIdAuth}
 		status={this.props.status} 
 		updateStatus={this.props.updateStatus}
 		/>;
@@ -29,7 +30,8 @@ class ProfileContainer extends Component {
 
 let mapStateToProps = (state) => ({
 	profile: state.profileUsersReducer.profile,
-	status: state.profileUsersReducer.status
+	status: state.profileUsersReducer.status,
+	userIdAuth: state.authReducer.id,
 });
 
 export default compose(

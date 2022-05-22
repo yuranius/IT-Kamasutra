@@ -1,0 +1,110 @@
+.create-post {
+
+    &__form {
+        margin-top: 1rem;
+        position: relative;
+        flex: 1 1 auto;
+    }
+
+
+    &__ava {
+        margin-left: 0.5rem;
+        margin-top: 0.25rem;
+        position: absolute;
+        top: 3px;
+        img{
+            border-radius: 50%;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            width: 30px;
+        }
+    }
+
+    // .create-post__area
+
+    &__area {
+        font-weight: 500;
+        color: #adb5bd;
+        padding-left: 3rem;
+        padding-top: 10px;
+        width: 100%;
+        border-radius: 15px;
+        border: 2px #f1f1f1 solid;
+        font-size: 12px;
+        min-height: 100px;
+        // resize: vertical;
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+    &__area-invalid{
+        border: 2px #e47171 solid;
+        font-weight: 500;
+        color: #adb5bd;
+        padding-left: 3rem;
+        padding-top: 10px;
+        width: 100%;
+        border-radius: 15px;
+        font-size: 12px;
+        min-height: 100px;
+        // resize: vertical;
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+
+
+    &__error{
+        margin-right: 5.5rem;
+        margin-top: -1.25rem;
+        left: 100%;
+        transform: translateX(-50%);
+        min-width: 100%;
+        position: absolute;
+        color: #1E74FD;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: unset;
+
+        
+
+
+        i{
+            width: 35px;
+            height: 35px;
+            border-radius: 35px;
+            display: inline-block;
+            line-height: 35px !important;
+            text-align: center;
+            color: #1E74FD;
+            background-color: #f5f5f5;
+            font-size: 18px;
+            &:active {color: #adb5bd}
+            margin-right: 8px;
+                        &:before {
+                content: "\e901";
+            }
+            
+        }
+
+    }
+
+    &__button-text{
+        font-weight: 700;
+        color: #adb5bd;
+        &:active {color: #1E74FD}
+    }
+}
+
+
+
+
+
+
+
+
+

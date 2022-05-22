@@ -16,7 +16,7 @@ let ProfileCardThree = (props) => {
 					{props.profile.fullName}
 					<span>{`Пользователь Id-${props.profile.userId}`}</span>
 				</h4>
-				<ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+				<ProfileStatus userIdAuth={props.userIdAuth} profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
 				<div className={scss["body__link"]}>
 					<a href="/" className={scss["body__link-friend"]}>
 						Add Friend

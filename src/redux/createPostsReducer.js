@@ -25,7 +25,8 @@ const createPostsReducer = (state = initialState, action) => {
          let arrPosts = state.posts.slice(-1)[0].id; //* получаем id последнего элемента массива
          let newPost = {
             id: arrPosts + 1,
-            postview: state.newPostText,
+            // postview: state.newPostText,
+            postview: action.massage,
             postimage: action.postImage,
          };
          let stateCopy = {
@@ -33,37 +34,23 @@ const createPostsReducer = (state = initialState, action) => {
             posts: [...state.posts, newPost], //? и создаем одно новое, в которое копируем newPostText из старого
             newPostText: ""
          };
-         // stateCopy.posts = [...state.posts] //? вместо этого
-         // stateCopy.posts.push(newPost); //? push уже не пишем, а сразу добавляем элемент в posts: [...state.posts, newPost]
-         // stateCopy.newPostText = ""; //? пеереносим сразу в stateCopy
 
          return stateCopy; //? ретурнить можно сразу, без объявления переменных
       }
-      case "UPDATE-NEW-POST-TEXT": {
-         let stateCopy = {
-            ...state,
-            newPostText: action.newText
-         };
-         // stateCopy.newPostText = action.newText; //? пеереносим сразу в stateCopy
-         return stateCopy;
-      }
+
       default:
          return state;
    }
 };
 
-export let addPostActionCreator = () => {
+export let addPostActionCreator = (massage) => {
    return {
       type: "ADD-POST",
       postImage: imageTest,
+      massage: massage
    };
 };
 
-export let updateNewPostTextActionCreator = (text) => {
-   return {
-      type: "UPDATE-NEW-POST-TEXT",
-      newText: text,
-   };
-};
+
 
 export default createPostsReducer;
