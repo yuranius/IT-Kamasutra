@@ -7,6 +7,7 @@ import Badges from "./Badges_ToDo/Badges";
 import FindUsersContainer from "./FindUsers/FindUsersContainer";
 import ProfileContainer from "./Profile/ProfileContainer";
 import { Switch } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 
 
@@ -20,12 +21,13 @@ let Main = () => {
                {/* <Newsfeed /> */}
                {/* <Routes> */}
                <Switch>
+                  
                   <Route path='/newsfeed' component={Newsfeed}/>
                   {/*exact - точное указание пути, без совпадений*/}
                   <Route path='/badges/' component={Badges} />
                   <Route path='/profile/:userId?' render={ () => <ProfileContainer />} />
-                  <Route path='/authorprofile' component={ () => <ProfileContainer />} />
-                  <Route path='/findusers' component={FindUsersContainer} />
+                  <Route path='/authprofile'  render={ () => <ProfileContainer />} />
+                  <Route path='/findusers' exact component={FindUsersContainer} />
                   
                {/* </Routes> */}
                </Switch>

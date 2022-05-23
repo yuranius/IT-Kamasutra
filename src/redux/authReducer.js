@@ -17,7 +17,7 @@ const authReducer = (state = initialState, action) => {
       case SET_USER_DATA: {
          return {
             ...state,
-            ...action.data,
+            ...action.payload,
             isAuth:true
          };
       }
@@ -33,7 +33,7 @@ const authReducer = (state = initialState, action) => {
 };
 
 
-export const setAuthUserData = (id, email, login) => ({ type: SET_USER_DATA, data:{id,email,login} });
+export const setAuthUserData = (id, email, login, isAuth) => ({ type: SET_USER_DATA, payload:{id,email,login, isAuth} });
 
 export const toggleIsFetching = (isFetching) => ({
 	type: TOGGLE_IS_FETCHING,
@@ -48,7 +48,7 @@ export const getAuth = () => {
 		authAPI.getAuth().then((response) => {
 			if (response.resultCode === 0) {
             let { id, email, login } = response.data;
-				dispatch(setAuthUserData(id, email, login));
+				dispatch(setAuthUserData(id, email, login, true));
             dispatch(toggleIsFetching(false));
 			}
 		});

@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import { Route } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import HeaderContainer from "../Header/HeaderContainer";
@@ -11,7 +12,6 @@ function App() {
       <div className='wrapper'>
          <div className='wrapper-container'>
             <Route path='/login' component={ LoginContainer } />
-
             <HeaderContainer />
             <MainContainer />
             <Footer />

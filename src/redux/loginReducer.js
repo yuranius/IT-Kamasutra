@@ -1,4 +1,5 @@
 import { loginAPI } from "../api/api";
+import { setAuthUserData } from "./authReducer";
 
 const SEND_LOGIN_DATA = 'SEND_LOGIN_DATA';
 
@@ -26,13 +27,23 @@ export const sendLoginData = (userId) => ({ type: SEND_LOGIN_DATA, userId });
 
 
 
-export const postLogin = (email, password, rememberMy, capcha) => {
+export const login = (email, password, rememberMy, capcha,) => {
 	//! ----------санка(thunk)
 	return (dispatch) => {
-		loginAPI.postLogin(email, password, rememberMy, capcha).then((response) => {
+		loginAPI.login(email, password, rememberMy, capcha).then((response) => {
 			if (response.resultCode === 0) {
-            let userId = response.data;
-            dispatch(sendLoginData(userId));
+            dispatch(setAuthUserData());
+			}
+		});
+	};
+};
+
+export const logout = () => {
+	//! ----------санка(thunk)
+	return (dispatch) => {
+		loginAPI.logout().then((response) => {
+			if (response.resultCode === 0) {
+            dispatch(setAuthUserData(null, null, null, false));
 			}
 		});
 	};

@@ -1,4 +1,15 @@
-let SidebarAccount = () => {
+import { Component } from "react";
+import { connect } from "react-redux";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { logout } from "./../../../redux/loginReducer"
+
+class SidebarAccount extends Component {
+
+    logout = () => {
+        this.props.logout()
+    }
+
+    render() {
     return (
         <div className='newfeeds'>
             <div className='newfeeds__title'>Account</div>
@@ -19,16 +30,19 @@ let SidebarAccount = () => {
                         </a>
                     </li>
                     <li>
-                        <a className='newfeeds__link' href='/#'>
+                        <NavLink className='newfeeds__link' to='/Login'  >
                             <i className='icon-languagetest'>
                             </i>
-                            <span>Chat</span>
-                        </a>
+                            <span onClick={this.logout} >Выход</span>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>
         </div>
-    )
+    )}
 };
 
-export default SidebarAccount;
+
+
+
+export default connect( null, {  logout })(SidebarAccount)

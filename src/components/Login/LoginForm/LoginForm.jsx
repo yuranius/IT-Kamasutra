@@ -23,7 +23,7 @@ let LoginForm = (props) => {
 				// 	props.postLogin(values.email, values.password, values.checkbox, true);
 				// 	setSubmitting(false);
 				// }, 400);
-				props.postLogin(values.email, values.password, values.checkbox, true);
+				props.login(values.email, values.password, values.checkbox, true);
 				setSubmitting(false);
 			}}
 		>

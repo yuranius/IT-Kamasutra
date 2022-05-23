@@ -7,7 +7,7 @@ let Sidebar = () => {
     return (
         <div className='sidebar'>
             <SidedarNewFeeds />
-            <SidedarMorePages />
+            {/* <SidedarMorePages /> */}
             <SidebarAccount />
         </div>
     )
