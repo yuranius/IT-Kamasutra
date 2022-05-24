@@ -5,15 +5,16 @@ import { getProfile, getStatus, updateStatus } from "../../../redux/profileUsers
 import Preloader from "../../Common/Preloader/Preloader";
 import { withRouter } from "react-router-dom";
 import { compose } from "redux";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 
 class ProfileContainer extends Component {
 	componentDidMount() {
-		console.log('📢 [ProfileContainer.jsx:11]', this.props);
 		let userId = this.props.match.params.userId; //? match.params берем из withRouter, то что приходит из url, userId береться из пути в <main/>, это все делает withRouer
 		if (!userId) { userId = this.props.userIdAuth };
 		this.props.getProfile(userId); 
 		this.props.getStatus(userId);
 	}
+
 
 	render() {
 		if (!this.props.profile) {
@@ -37,5 +38,7 @@ let mapStateToProps = (state) => ({
 
 export default compose(
    connect(mapStateToProps, { getProfile, getStatus, updateStatus }), 
-   withRouter)
+   withRouter,
+   withAuthRedirect
+  )
 (ProfileContainer);

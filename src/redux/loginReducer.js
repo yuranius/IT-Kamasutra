@@ -37,7 +37,6 @@ export const login = (email, password, rememberMy, capcha) => {
 			if (response.resultCode === 0) {
             dispatch(setAuthUserData());
 			} else {
-            console.log('📢 [loginReducer.js:39]', response);
             dispatch(sendLoginData(response.messages[0], response.resultCode));
          }
 		});

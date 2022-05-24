@@ -6,7 +6,6 @@ import scss from "./LoginForm.module.scss";
 
 
 let LoginForm = (props) => {
-	console.log('📢 [LoginForm.jsx:5]', props.state);
 	return (
 		<Formik
 			initialValues={{ email: "", password: "" , checkbox:false }}
