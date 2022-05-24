@@ -2,7 +2,6 @@ import scss from "./Login.module.scss";
 import LoginForm from "./LoginForm/LoginForm";
 
 let Login = (props) => {
-	
 	return (
 		<div className={scss["main-wrap"]}>
 			<div className={scss["nav-header"]}>
@@ -23,7 +22,7 @@ let Login = (props) => {
 								Войти  <br />
 								в свой аккаунт
 							</h2>
-							<LoginForm login={props.login}/>
+							<LoginForm {...props} />
 						</div>
 					</div>
 				</div>

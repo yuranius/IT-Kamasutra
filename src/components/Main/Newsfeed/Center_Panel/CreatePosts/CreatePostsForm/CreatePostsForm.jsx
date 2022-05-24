@@ -49,7 +49,9 @@ let CreatePostForm = (props) => {
 						<div className={scss["create-post__error"]}>
 							<ErrorMessage name="massage" />
 						</div>
-						<Field as="textarea" id="massage" type="text" name="massage" className={scss["create-post__area" + (errors.massage && touched.massage ? "-invalid" : "")]} cols="30" rows="10" placeholder="О чем ты думаешь?" />
+						<Field as="textarea" id="massage" type="text" name="massage" 
+						className={scss["create-post__area" + (errors.massage && touched.massage ? "-invalid" : "")]} 
+						cols="30" rows="10" placeholder="О чем ты думаешь?" />
 					</div>
 				</Form>
 			)}

@@ -8,8 +8,9 @@ import { compose } from "redux";
 
 class ProfileContainer extends Component {
 	componentDidMount() {
+		console.log('📢 [ProfileContainer.jsx:11]', this.props);
 		let userId = this.props.match.params.userId; //? match.params берем из withRouter, то что приходит из url, userId береться из пути в <main/>, это все делает withRouer
-		if (!userId) { userId = 23727 };
+		if (!userId) { userId = this.props.userIdAuth };
 		this.props.getProfile(userId); 
 		this.props.getStatus(userId);
 	}

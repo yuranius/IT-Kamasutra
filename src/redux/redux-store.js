@@ -4,6 +4,7 @@ import authReducer from "./authReducer";
 import createPostsReducer from "./createPostsReducer";
 import findUsersReducer from "./findUsersReducer";
 import profileUsersReducer from "./profileUsersReducer";
+import loginReducer from "./loginReducer";
 import thunkMiddleware from "redux-thunk";
 
 
@@ -14,6 +15,7 @@ let reducers = combineReducers({
     findUsersReducer,
     profileUsersReducer,
     authReducer,
+    loginReducer
 })
 
 

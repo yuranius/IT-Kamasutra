@@ -30,11 +30,11 @@ class SidebarAccount extends Component {
                         </a>
                     </li>
                     <li>
-                        <NavLink className='newfeeds__link' to='/Login'  >
+                        <button className='newfeeds__link'  onClick={this.logout} >
                             <i className='icon-languagetest'>
                             </i>
-                            <span onClick={this.logout} >Выход</span>
-                        </NavLink>
+                            <span  >Выход</span>
+                        </button>
                     </li>
                 </ul>
             </nav>

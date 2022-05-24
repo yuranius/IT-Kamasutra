@@ -18,7 +18,7 @@ class LoginContainer extends Component {
       if (this.props.isFetching) {
         return <Preloader />
      }
-        return (!this.props.isAuth ? <Login login={this.props.login}/> : <Redirect to={'/newsfeed'} />)
+        return (!this.props.isAuth ? <Login state={this.props} /> : <Redirect to={'/newsfeed'} />)
         
     }
 }
@@ -26,6 +26,8 @@ class LoginContainer extends Component {
 function mapStateToProps(state) {
     return {
       isAuth: state.authReducer.isAuth,
+      messages: state.loginReducer.messages,
+      resultCode: state.loginReducer.resultCode
     }
   }
 
