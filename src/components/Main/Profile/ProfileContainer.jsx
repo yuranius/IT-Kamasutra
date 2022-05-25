@@ -10,7 +10,12 @@ import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 class ProfileContainer extends Component {
 	componentDidMount() {
 		let userId = this.props.match.params.userId; //? match.params берем из withRouter, то что приходит из url, userId береться из пути в <main/>, это все делает withRouer
-		if (!userId) { userId = this.props.userIdAuth };
+		if (!userId) { 
+			userId = this.props.userIdAuth;
+			if (!userId) {
+				this.props.history.push('/login');
+			}
+		};
 		this.props.getProfile(userId); 
 		this.props.getStatus(userId);
 	}
@@ -37,8 +42,8 @@ let mapStateToProps = (state) => ({
 });
 
 export default compose(
-   connect(mapStateToProps, { getProfile, getStatus, updateStatus }), 
    withRouter,
-   withAuthRedirect
+   withAuthRedirect,
+   connect(mapStateToProps, { getProfile, getStatus, updateStatus }), 
   )
 (ProfileContainer);

@@ -6,6 +6,7 @@ import findUsersReducer from "./findUsersReducer";
 import profileUsersReducer from "./profileUsersReducer";
 import loginReducer from "./loginReducer";
 import thunkMiddleware from "redux-thunk";
+import appReducer from "./appReducer";
 
 
 
@@ -15,7 +16,8 @@ let reducers = combineReducers({
     findUsersReducer,
     profileUsersReducer,
     authReducer,
-    loginReducer
+    loginReducer,
+    appReducer
 })
 
 

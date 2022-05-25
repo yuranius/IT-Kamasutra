@@ -113,7 +113,7 @@ export const toggleInProgres = (followingInProgress, userId) => ({
 	userId,
 });
 
-export const getUsers = (currentPage, pageSize) => {
+export const requestUsers = (currentPage, pageSize) => {
 	//! ----------санка(thunk)
 	return (dispatch) => {
 		dispatch(toggleIsFetching(true));

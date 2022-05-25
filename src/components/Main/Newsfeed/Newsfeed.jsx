@@ -6,11 +6,7 @@ import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 
 
 class Newsfeed extends Component {
-
-   
-
 	render() {
-
 		return (
 			<div>
 				<div className="posts">
@@ -24,7 +20,7 @@ class Newsfeed extends Component {
 	}
 }
 
-let withNewsfeedAuthRedirect = withAuthRedirect(Newsfeed);
+// let withNewsfeedAuthRedirect = withAuthRedirect(Newsfeed);
 
 
-export default withNewsfeedAuthRedirect;
+export default Newsfeed;

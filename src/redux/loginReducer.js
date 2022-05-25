@@ -49,6 +49,7 @@ export const logout = () => {
 		loginAPI.logout().then((response) => {
 			if (response.resultCode === 0) {
             dispatch(setAuthUserData(null, null, null, false));
+            
 			}
 		});
 	};

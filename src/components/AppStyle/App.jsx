@@ -1,25 +1,30 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import { Route } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import HeaderContainer from "../Header/HeaderContainer";
-import LoginContainer from "../Login/LoginContainer";
 import "./App.scss";
-import { setAuthUserData, getAuth } from "../../../src/redux/authReducer";
-import { withAuthRedirect } from "../hoc/withAuthRedirect";
 import { connect } from "react-redux";
 import Main from "../Main/Main";
-import Login from "../Login/Login";
+import { compose } from "redux";
+import { withRouter } from "react-router-dom";
+import { initializeApp } from "../../redux/appReducer";
+import Preloader from "../Common/Preloader/Preloader";
+import { Route } from "react-router-dom";
+import LoginContainer from "./../Login/LoginContainer"
+
 
 class App extends Component {
 	componentDidMount() {
-		this.props.getAuth();
+		this.props.initializeApp();
 	}
 	render() {
+		if (!this.props.initialized) {
+
+			return <Preloader />
+		}
 		return (
 			<div className="wrapper">
 				<div className="wrapper-container">
-					<Route path="/login" component={LoginContainer} />
+					<Route path="/login" component={ LoginContainer } />
 					<HeaderContainer />
 					<Main />
 					<Footer />
@@ -29,6 +34,12 @@ class App extends Component {
 	}
 }
 
+const mapStateToProps = (state ) => ({
+	initialized: state.appReducer.initialized
+})
 
 
-export default connect(null, { getAuth })(App);
+export default compose(
+	withRouter,
+	connect(mapStateToProps, { initializeApp }))(App);
+

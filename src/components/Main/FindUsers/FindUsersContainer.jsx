@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { follow, toggleInProgres, getUsers, unfollow} from "../../../redux/findUsersReducer";
+import { follow, toggleInProgres, requestUsers, unfollow} from "../../../redux/findUsersReducer";
+import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, getTotalUsersCount, getUsers } from "../../../redux/usersSelectors";
 import FindUsers from "./FindUsers";
 
 class FindUsersAPIComponents extends React.Component {
    componentDidMount() {
-      this.props.getUsers(this.props.currentPage, this.props.pageSize); //! getUsers - санка(thunk)
+      this.props.requestUsers(this.props.currentPage, this.props.pageSize); //! getUsers - санка(thunk)
    }
 
    onPageChanged = (pageNamber) => {
@@ -31,17 +32,17 @@ class FindUsersAPIComponents extends React.Component {
 
 let mapStateToProps = (state) => {
    return {
-      users: state.findUsersReducer.users,
-      pageSize: state.findUsersReducer.pageSize,
-      totalUsersCount: state.findUsersReducer.totalUsersCount,
-      currentPage: state.findUsersReducer.currentPage,
-      isFetching: state.findUsersReducer.isFetching,
-      followingInProgress: state.findUsersReducer.followingInProgress
+      users: getUsers(state),
+      pageSize: getPageSize(state),
+      totalUsersCount: getTotalUsersCount(state),
+      currentPage: getCurrentPage(state),
+      isFetching: getIsFetching(state),
+      followingInProgress: getFollowingInProgress(state)
    };
 };
 
 
-const FindUsersContainer = connect(mapStateToProps, {follow, toggleInProgres, getUsers, unfollow })(FindUsersAPIComponents);
+const FindUsersContainer = connect(mapStateToProps, {follow, toggleInProgres, requestUsers, unfollow })(FindUsersAPIComponents);
 
 //! getUsers - санка(thunk)
 
