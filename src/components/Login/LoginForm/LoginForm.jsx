@@ -1,4 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Redirect } from "react-router-dom";
 import scss from "./LoginForm.module.scss";
 
 
@@ -27,9 +28,9 @@ let LoginForm = (props) => {
 				// 	props.postLogin(values.email, values.password, values.checkbox, true);
 				// 	setSubmitting(false);
 				// }, 400);
-				props.state.login(values.email, values.password, values.checkbox, true);
+				props.login(values.email, values.password, values.checkbox, true);
 				setSubmitting(false);
-				
+				props.history.push('/newsfeed') //! не правельно, но пока работает
 			}}
 		>
 			{({ isSubmitting, errors, touched }) => (
@@ -52,7 +53,7 @@ let LoginForm = (props) => {
 						<i className="/"></i>
 						
 					</div>
-					<span className={scss["card__message-error"]}>{props.state.messages}</span>
+					<span className={scss["card__message-error"]}>{props.messages}</span>
 					<div className={scss["card__check"]}>
 						<Field type="checkbox" name={"checkbox"} 
 						className={scss["card__check-input"]} 

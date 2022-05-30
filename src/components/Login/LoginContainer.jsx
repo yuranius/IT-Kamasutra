@@ -5,6 +5,8 @@ import { login } from "../../redux/loginReducer";
 import { Redirect } from 'react-router-dom';
 import Login from './Login';
 import Preloader from '../Common/Preloader/Preloader';
+import { compose } from 'redux';
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -18,7 +20,7 @@ class LoginContainer extends Component {
       if (this.props.isFetching) {
         return <Preloader />
      }
-        return (!this.props.isAuth ? <Login state={this.props} /> : <Redirect to={'/newsfeed'} />)
+        return (!this.props.isAuth ? <Login {...this.props} /> : <Redirect to={'/newsfeed'} />)
         
     }
 }
@@ -31,7 +33,12 @@ function mapStateToProps(state) {
     }
   }
 
-export default connect(mapStateToProps, { setAuthUserData, getAuth, login })(LoginContainer)
+export default compose(
+
+withRouter,
+connect(mapStateToProps, { setAuthUserData, getAuth, login }))
+
+(LoginContainer)
 
 
 
