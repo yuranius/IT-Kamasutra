@@ -6,7 +6,7 @@ import App from "./components/AppStyle/App";
 import store from "./redux/redux-store";
 // import StoreContext, { Provider } from "./storeContext"; //! Provider берем из библиотеки react-redux, но файл storeContext для понимания остается
 
-// let RenderEntireFree = () => {
+// let RenderEntireFree = () => { 
    ReactDOM.render(
       <BrowserRouter>
          <Provider store={store}> 

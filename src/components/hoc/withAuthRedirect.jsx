@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom'
 
 
 function mapStateToPropsForRedirect(state) {
-  console.log('📢 [withAuthRedirect.jsx:7]', state);
     return {
       isAuth: state.authReducer.isAuth,
     }
