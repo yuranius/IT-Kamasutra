@@ -13,6 +13,7 @@ export const getUsersSelector =  createSelector(getUsers, (users) => {
 //? -----------------------> Селектор из библиотеки reselect 
 
 export const getPageSize = (state) => {
+    
     return state.findUsersReducer.pageSize;
 }
 export const getTotalUsersCount = (state) => {

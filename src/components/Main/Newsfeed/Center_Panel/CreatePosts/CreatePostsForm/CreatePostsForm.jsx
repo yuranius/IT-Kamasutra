@@ -36,6 +36,7 @@ let CreatePostForm = (props) => {
 			}}
 		>
 			{({ isSubmitting, errors, touched }) => (
+				
 				<Form>
 					<button className={scss["create-post__button"]} disabled={isSubmitting} type="submit">
 						<i className="icon-create"></i>

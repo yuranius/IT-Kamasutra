@@ -33,16 +33,34 @@ let ProfileStatusWithHooks = (props) => {
 		setStatus(e.currentTarget.value);
 	};
 
+	const pressHeandler = async event => {
+		if (event.key ==='Enter'){
+			try{
+				deactivateEditeMode();
+			} catch (event){}
+		}
+	}
+
+	
+
+
 	return (
 		<div className={scss["body__status"]}>
 			{!editMode && (
 				<div className={scss["body__status-text"]}>
-					<span onClick={activateEditeMode}>{props.status}</span>
+					<span onClick={props.profile.userId == props.userIdAuth ? activateEditeMode : null}>{props.status || "Стутус не добавлен"}</span>
 				</div>
 			)}
 			{editMode && (
 				<div className={scss["body__status-input"]}>
-					<input autoFocus={true} type="text" onChange={onStatusChange} onBlur={deactivateEditeMode}  placeholder="Введи свой статус" value={status} />
+					<input 
+					autoFocus={true} 
+					type="text" 
+					onChange={onStatusChange} 
+					onBlur={deactivateEditeMode} 
+					value={status} 
+					onKeyPress={pressHeandler}
+					/>
 				</div>
 			)}
 		</div>

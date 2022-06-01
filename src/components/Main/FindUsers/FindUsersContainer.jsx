@@ -1,20 +1,19 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 
-import { follow, toggleInProgres, requestUsers, unfollow} from "../../../redux/findUsersReducer";
-import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, getTotalUsersCount, getUsers } from "../../../redux/usersSelectors";
+import { follow, toggleInProgres, requestUsers, unfollow } from "../../../redux/findUsersReducer";
+import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, getTotalUsersCount, getUsers, getUsersSelector } from "../../../redux/usersSelectors";
 import FindUsers from "./FindUsers";
 
-class FindUsersAPIComponents extends React.Component {
+class FindUsersAPIComponents extends PureComponent {
    componentDidMount() {
       this.props.requestUsers(this.props.currentPage, this.props.pageSize); //! getUsers - санка(thunk)
    }
 
    onPageChanged = (pageNamber) => {
-      this.props.getUsers(pageNamber, this.props.pageSize); //! getUsers - санка(thunk)
+      this.props.requestUsers(pageNamber, this.props.pageSize); //! getUsers - санка(thunk)
    };
    render() {
-
       return <FindUsers
       users={this.props.users}
       totalUsersCount={this.props.totalUsersCount}
@@ -32,7 +31,7 @@ class FindUsersAPIComponents extends React.Component {
 
 let mapStateToProps = (state) => {
    return {
-      users: getUsers(state),
+      users: getUsersSelector(state),
       pageSize: getPageSize(state),
       totalUsersCount: getTotalUsersCount(state),
       currentPage: getCurrentPage(state),
@@ -42,7 +41,7 @@ let mapStateToProps = (state) => {
 };
 
 
-const FindUsersContainer = connect(mapStateToProps, {follow, toggleInProgres, requestUsers, unfollow })(FindUsersAPIComponents);
+const FindUsersContainer = connect(mapStateToProps, {follow, toggleInProgres, requestUsers, unfollow, requestUsers })(FindUsersAPIComponents);
 
 //! getUsers - санка(thunk)
 

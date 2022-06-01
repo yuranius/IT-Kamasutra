@@ -5,8 +5,7 @@ import userPhoto from "./../../../image/user-img.webp";
 import Preloader from "../../Common/Preloader/Preloader";
 
 
-let FindUsers = (props) => {
-
+let FindUsers = React.memo (props => {
    
    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
@@ -48,6 +47,6 @@ let FindUsers = (props) => {
          </div>
       </div>
    );
-};
+});
 
 export default FindUsers;
