@@ -6,7 +6,7 @@ import { logout } from "./../../../redux/loginReducer"
 class SidebarAccount extends Component {
 
     logout = () => {
-        this.props.logout()
+        this.props.logout();
     }
 
     render() {

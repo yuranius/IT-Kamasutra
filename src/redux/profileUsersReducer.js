@@ -35,6 +35,7 @@ export const getProfile = ( userId ) => {
 	return (dispatch) => {
 		profileAPI.getProfile(userId).then((response) => {
 			dispatch(setUsersProfile(response));
+         
 		});
 	};
 };

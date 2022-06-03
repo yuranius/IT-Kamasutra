@@ -30,7 +30,6 @@ let LoginForm = (props) => {
 				// }, 400);
 				props.login(values.email, values.password, values.checkbox, true);
 				setSubmitting(false);
-				props.history.push('/newsfeed') //! не правельно, но пока работает
 			}}
 		>
 			{({ isSubmitting, errors, touched }) => (
