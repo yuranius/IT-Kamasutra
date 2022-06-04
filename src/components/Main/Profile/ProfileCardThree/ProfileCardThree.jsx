@@ -2,6 +2,8 @@ import React from "react";
 import scss from "./ProfileCardFree.module.scss";
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
+import userPhoto from "./../../../../image/user-img.webp"
+
 
 let ProfileCardThree = (props) => {
 	return (
@@ -11,7 +13,7 @@ let ProfileCardThree = (props) => {
 			</div>
 			<div className={scss["profile-card__body"]}>
 				<figure className={scss["body__avatar"]}>
-					<img src={props.profile.photos.large ? `${props.profile.photos.large}` : "https://avatars.mds.yandex.net/i?id=808cef5fd39a6c8a9c8a273e2fcf46dc-5450680-images-thumbs&n=13&exp=1"} alt="avater" />
+					<img src={props.profile.photos.large ? props.profile.photos.large : userPhoto} alt="avater" />
 				</figure>
 				<h4 className={scss["body__name"]}>
 					{props.profile.fullName}

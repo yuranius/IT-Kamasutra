@@ -1,10 +1,11 @@
 .content {
     flex-shrink: 0;
-    width: 100%;
+    width: 80%;
     max-width: 100%;
     padding-right: 30px;
     padding-left: 30px;
     margin-top: 0px;
+    margin: auto;
     &__body {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
@@ -21,126 +22,7 @@
     }
 }
 
-.namber-page{
-    &__page{
-        padding: 0px 5px;
-        cursor: pointer;
-    }
-    &__page-active{
-        cursor: pointer;
-        display: inline-block;
-        padding: 0px 5px;
-        font-weight: 700;
-        color: rebeccapurple;
-        font-size: 1.5rem;
-    }
-}
-
-.card {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    //     @media (min-width: 768px){
-        // flex: 0 0 auto;
-        // width: 25%;
-    //   }
-
-    &__block {
-        border-radius: 0.3rem;
-        margin-bottom: 1rem;
-        border: 0;
-        display: block;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        border-radius: 0.5rem;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-        width: 200px;
-    }
-
-    &__body {
-        text-align: center;
-        padding-left: 1rem;
-        padding-bottom: 1.5rem;
-        padding-right: 1rem;
-        width: 100%;
-        display: block;
-        padding: 1rem 1rem;
-    }
-    &__avatar {
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 50%;
-        overflow: hidden;
-        z-index: 2;
-        width: 65px;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-        img{
-            width: 100%;
-        }
-    }
-    &__name {
-        font-weight: 700;
-        margin-bottom: 0;
-        margin-top: 1rem;
-        font-size: 14px;
-    }
-    &__user {
-        font-weight: 500;
-        color: #adb5bd;
-        margin-bottom: 1rem;
-        margin-top: 0;
-        font-size: 12px;
-        line-height: 30px;
-    }
-    &__button{
-            width: 150px;
-            letter-spacing: 1px;
-            background: linear-gradient(45deg, #318663, #0cf393);
-            box-shadow: 0px 0px 0px #071b13;
-            color: #fff;
-            margin-left: 0.25rem;
-            margin-top: 0;
-            display: inline-block;
-            font-weight: 600;
-            line-height: 1.5;
-            text-align: center;
-            text-decoration: none;
-            vertical-align: middle;
-            cursor: pointer;
-            border-radius: 2rem;
-            padding: 0.375rem 0.75rem;
-            position: relative;
-            z-index: 3;
-            transition: all 0.1s ease-in-out 0s;
-            &:active {
-                transition: all 0s ease 0s;
-                color: rgb(255, 136, 0);
-             }
-
-    }
-
-
-}
 
 
 
-
-
-
-
-
-
-.clearfix {
-    width: 100%;
-    outline: none;
-    padding: 0;
-    box-sizing: border-box;
-    text-align: center;
-    word-wrap: break-word;
-}
 

@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 
 import { follow, toggleInProgres, requestUsers, unfollow } from "../../../redux/findUsersReducer";
-import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, getTotalUsersCount, getUsers, getUsersSelector } from "../../../redux/usersSelectors";
+import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, getTotalUsersCount, getUsersSelector } from "../../../redux/usersSelectors";
 import FindUsers from "./FindUsers";
 
 class FindUsersAPIComponents extends PureComponent {
@@ -41,7 +41,7 @@ let mapStateToProps = (state) => {
 };
 
 
-const FindUsersContainer = connect(mapStateToProps, {follow, toggleInProgres, requestUsers, unfollow, requestUsers })(FindUsersAPIComponents);
+const FindUsersContainer = connect(mapStateToProps, {follow, toggleInProgres, requestUsers, unfollow })(FindUsersAPIComponents);
 
 //! getUsers - санка(thunk)
 

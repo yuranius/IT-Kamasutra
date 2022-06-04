@@ -1,8 +1,9 @@
 import React from "react";
 import scss from "./FindUsers.module.scss";
-import UserItem from "./UserItem_test/UserItem";
 import userPhoto from "./../../../image/user-img.webp";
 import Preloader from "../../Common/Preloader/Preloader";
+import FindUsersPages from "./FindUsersPages/FindUsersPages";
+import FindUserItem from "./FindUserItem/FindUserItem";
 
 
 let FindUsers = React.memo (props => {
@@ -15,7 +16,7 @@ let FindUsers = React.memo (props => {
       pages.push(index);
    }
    let userElements = props.users.map((u) => (
-      <UserItem
+      <FindUserItem
          id={u.id}
          key={u.id.toString()}
          avatar={u.photos.small != null ? u.photos.small : userPhoto} //? если small не равен null, тогда берем small, иначе userPhoto
@@ -25,26 +26,22 @@ let FindUsers = React.memo (props => {
          users={props}
       />
    ));
+
+   let pagesElement = pages.map( ( p ) => (
+      <FindUsersPages 
+      id = { p }
+      key = { p.toString() } 
+      onPageChanged= { props.onPageChanged }
+      currentPage = { props.currentPage }
+      />
+   ));
+
+
    return (
       <div className={scss["content"]}>
          {props.isFetching ? <Preloader /> : null}
-         <div className={scss["content__body"]}>{userElements}</div>
-         <div className={scss["content__namber-page"]}>
-            {pages.map((p) => {
-               return (
-                  <span
-                     key={p}
-                     onClick={() => {
-                        // e.preventDefault();
-                        props.onPageChanged(p);
-                     }}
-                     className={props.currentPage === p ? scss["namber-page__page-active"] : scss["namber-page__page"]}
-                  >
-                     {p}
-                  </span>
-               );
-            })}
-         </div>
+         <div className={scss["content__body"]}> {userElements} </div>
+         <div className={scss["content__namber-page"]}> {pagesElement} </div>
       </div>
    );
 });

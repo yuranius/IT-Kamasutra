@@ -21,12 +21,6 @@ import { withAuthRedirect } from '../../hoc/withAuthRedirect'
 let ProfileContainer = (props) => {
   let [userId, setUserId] = useState(props.match.params.userId)
 
-  //   if (!props.profile) {
-  //     return <Preloader />
-  //   }
-
-  
-
 
   if (!userId) {
     setUserId(props.userIdAuth)
@@ -44,16 +38,6 @@ let ProfileContainer = (props) => {
     props.getAuth()
   }, [])
 
-  // if (!userId) {
-  // 	userId = props.userIdAuth;
-  // 	if (!userId) {
-  // 		props.history.push("/login");
-  // 	}
-  // };
-
-  // useLayoutEffect(()=>{
-  // 	setUserId(props.match.params.userId);
-  // }, [])
 
   if (!props.profile) {
     return <Preloader />

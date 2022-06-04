@@ -80,11 +80,6 @@ const asideReducer = (state = initialState, action) => {
             myMassages:[...state.myMassages, newMassage],
             newMassageText: ""
          };
-         // stateCopy.myMassages = [...state.myMassages];
-         // stateCopy.myMassages.push(newMassage);
-         // stateCopy.newMassageText = "";
-
-         // return stateCopy;
       }
       case "UPDATE-NEW-MASSAGE-TEXT":
          // let stateCopy =
@@ -92,9 +87,7 @@ const asideReducer = (state = initialState, action) => {
             ...state,
             newMassageText: action.newText
          }
-         // stateCopy.newMassageText = {...state.newMassageText}
-         // stateCopy.newMassageText = action.newText;
-         // return stateCopy;
+
       default:
          return state;
    }

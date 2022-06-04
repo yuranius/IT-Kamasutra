@@ -23,13 +23,6 @@
         margin-bottom: 10px;
     }
 
-    // .newfeeds__menu
-
-    &__menu {
-
-    }
-
-    // .newfeeds__list
 
     &__list {
         display: flex;
@@ -37,6 +30,9 @@
         margin-bottom: 0.25rem;
         li{
             margin: 1px 5px;
+        }
+        li > button{
+            background-color: inherit;
         }
     }
 

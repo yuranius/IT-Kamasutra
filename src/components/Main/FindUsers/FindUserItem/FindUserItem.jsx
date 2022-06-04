@@ -1,29 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { usersAPI } from '../../../../api/api'
-import scss from './UserItem.module.scss'
+import scss from './FindUserItem.module.scss'
 
-let UserItem = (props) => {
+let FindUserItem = (props) => {
   let follow = () => {
    props.users.unfollow(props.id)
-
-    // props.users.toggleInProgres(true, props.id);
-    // usersAPI.deleteFollow(props.id).then((response) => {
-    //    if (response.resultCode === 0) {
-    //       props.users.unfollow(props.id);
-    //    }
-    //    props.users.toggleInProgres(false, props.id);
-    // });
   }
   let unfollow = () => {
    props.users.follow(props.id)
-   //  props.users.toggleInProgres(true, props.id)
-   //  usersAPI.postFollow(props.id).then((response) => {
-   //    if (response.resultCode === 0) {
-   //      props.users.follow(props.id)
-   //    }
-   //    props.users.toggleInProgres(false, props.id)
-   //  })
+
   }
   return (
     <div className={scss['card']}>
@@ -76,4 +62,4 @@ let UserItem = (props) => {
   )
 }
 
-export default UserItem
+export default FindUserItem;

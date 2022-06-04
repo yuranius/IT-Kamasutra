@@ -4,7 +4,7 @@ import scss from "./ContactsItem.module.scss";
 
 
 let ContactsItem = (props) => {
-   let path = "/contacts" + props.id;
+   let path = "/newsfeed/" + props.id;
    return (
       <NavLink
          className={(navData) =>

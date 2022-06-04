@@ -10,7 +10,7 @@ const TOGGLE_IS_FOLLOWING_PROPGRESS = "TOGGLE_IS_FOLLOWING_PROPGRESS";
 
 let initialState = {
 	users: [], //*перенесли в презентационную компоненту
-	pageSize: 10,
+	pageSize: 12,
 	totalUsersCount: 0,
 	currentPage: 1,
 	isFetching: false,

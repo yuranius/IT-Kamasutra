@@ -1,15 +1,13 @@
-import { Component } from "react";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
-import { logout } from "./../../../redux/loginReducer"
+import { logout } from "./../../../redux/loginReducer";
 
-class SidebarAccount extends Component {
+let SidebarAccount = (props) => {
 
-    logout = () => {
-        this.props.logout();
+    let logout = () => {
+        props.logout();
     }
 
-    render() {
+
     return (
         <div className='newfeeds'>
             <div className='newfeeds__title'>Account</div>
@@ -30,7 +28,7 @@ class SidebarAccount extends Component {
                         </a>
                     </li>
                     <li>
-                        <button className='newfeeds__link'  onClick={this.logout} >
+                        <button className='newfeeds__link'  onClick={logout} >
                             <i className='icon-languagetest'>
                             </i>
                             <span  >Выход</span>
@@ -39,7 +37,7 @@ class SidebarAccount extends Component {
                 </ul>
             </nav>
         </div>
-    )}
+    )
 };
 
 

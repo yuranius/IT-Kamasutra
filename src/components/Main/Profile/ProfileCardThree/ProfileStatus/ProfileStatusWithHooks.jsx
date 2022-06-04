@@ -48,7 +48,7 @@ let ProfileStatusWithHooks = (props) => {
 		<div className={scss["body__status"]}>
 			{!editMode && (
 				<div className={scss["body__status-text"]}>
-					<span onClick={props.profile.userId == props.userIdAuth ? activateEditeMode : null}>{props.status || "Стутус не добавлен"}</span>
+					<span onClick={props.profile.userId === props.userIdAuth ? activateEditeMode : null}>{props.status || "Стутус не добавлен"}</span>
 				</div>
 			)}
 			{editMode && (
