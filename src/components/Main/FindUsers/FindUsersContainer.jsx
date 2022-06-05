@@ -7,6 +7,7 @@ import FindUsers from "./FindUsers";
 
 class FindUsersAPIComponents extends PureComponent {
    componentDidMount() {
+      
       this.props.requestUsers(this.props.currentPage, this.props.pageSize); //! getUsers - санка(thunk)
    }
 

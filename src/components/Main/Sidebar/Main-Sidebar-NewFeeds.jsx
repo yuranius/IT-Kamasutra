@@ -1,17 +1,9 @@
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { getAuth } from "../../../redux/authReducer";
+
 
 
 let SidedarNewFeeds = (props) => {
-
-    let setAuthUser = () => {
-        // props.getAuth();
-        console.log('📢 [Main-Sidebar-NewFeeds.jsx:12]', props);
-    }
-
-
-
     return (
         <div className='newfeeds'>
             <div className='newfeeds__title'>New Feeds</div>
@@ -48,10 +40,10 @@ let SidedarNewFeeds = (props) => {
                         </a>
                     </li>
                     <li>
-                        <NavLink className='newfeeds__link' to='/authprofile' onClick={setAuthUser}>
+                        <NavLink className='newfeeds__link' to='/authprofile'>
                             <i className='icon-facetest'>
                             </i>
-                            <span>Author Profile </span>
+                            <span>Author Profile</span>
                         </NavLink>
                     </li>
                 </ul>
@@ -63,13 +55,4 @@ let SidedarNewFeeds = (props) => {
 
 
 
-let mapStateToProps = (state) =>({
-    
-	profile: state.profileUsersReducer.profile,
-	status: state.profileUsersReducer.status,
-	userIdAuth: state.authReducer.id,
-});
-
-
-
-export default  connect( mapStateToProps, {getAuth})(SidedarNewFeeds);
+export default  SidedarNewFeeds;

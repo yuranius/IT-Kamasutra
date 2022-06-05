@@ -1,4 +1,5 @@
 import { usersAPI } from "../api/api";
+import { updateOblectInArray } from "../components/utilits/object-helpers";
 
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
@@ -36,12 +37,7 @@ const findUsersReducer = (state = initialState, action) => {
 		case UNFOLLOW: {
 			return {
 				...state,
-				users: state.users.map((u) => {
-					if (u.id === action.userId) {
-						return { ...u, followed: false }; //* наоборот
-					}
-					return u;
-				}),
+				users: updateOblectInArray(state.users,  action.userId, "id", {followed: false}) //* с помощью универсальной функции 
 			};
 		}
 
@@ -115,41 +111,45 @@ export const toggleInProgres = (followingInProgress, userId) => ({
 
 export const requestUsers = (currentPage, pageSize) => {
 	//! ----------санка(thunk)
-	return (dispatch) => {
+	return async (dispatch) => {
+		//async делает функцию асинхронной
 		dispatch(toggleIsFetching(true));
-		usersAPI.getUsers(currentPage, pageSize).then((response) => {
-			dispatch(toggleIsFetching(false));
-			dispatch(setUsers(response.items));
-			dispatch(setTotalUsersCount(response.totalCount));
-			dispatch(setCurrentPage(currentPage));
-		});
+		let response = await usersAPI.getUsers(currentPage, pageSize); //await - ожидание выполнения запроса
+		dispatch(toggleIsFetching(false));
+		dispatch(setUsers(response.items));
+		dispatch(setTotalUsersCount(response.totalCount));
+		dispatch(setCurrentPage(currentPage));
 	};
 };
 
-export const unfollow = (id) => {
-	//! ----------санка(thunk)
-	return (dispatch) => {
-		dispatch(toggleInProgres(true, id));
-		usersAPI.deleteFollow(id).then((response) => {
-			if (response.resultCode === 0) {
-				dispatch(unfollowSuccsess(id));
-			}
-			dispatch(toggleInProgres(false, id));
-		});
-	};
+//! ----------санка(thunk)
+export const requestUsersFollowed = (currentPage, pageSize) => async (dispatch) => {
+	let response = await usersAPI.getUsers(currentPage, pageSize);
+	dispatch(setUsers(response.items));
+	console.log("📢 [findUsersReducer.js:137]", response);
 };
 
-export const follow = (id) => {
-	//! ----------санка(thunk)
-	return (dispatch) => {
-		dispatch(toggleInProgres(true, id));
-		usersAPI.postFollow(id).then((response) => {
-			if (response.resultCode === 0) {
-				dispatch(followSuccsess(id));
-			}
-			dispatch(toggleInProgres(false, id));
-		});
-	};
+// let followUnfollowFlow = async (dispatch )
+
+
+//! ----------санка(thunk)
+export const unfollow = (id) => async (dispatch) => {
+	dispatch(toggleInProgres(true, id));
+	let response = await usersAPI.deleteFollow(id);
+	if (response.resultCode === 0) {
+		dispatch(unfollowSuccsess(id));
+	}
+	dispatch(toggleInProgres(false, id));
+};
+
+//! ----------санка(thunk)
+export const follow = (id) => async (dispatch) => {
+	dispatch(toggleInProgres(true, id));
+	let response = await usersAPI.postFollow(id);
+	if (response.resultCode === 0) {
+		dispatch(followSuccsess(id));
+	}
+	dispatch(toggleInProgres(false, id));
 };
 
 export default findUsersReducer;

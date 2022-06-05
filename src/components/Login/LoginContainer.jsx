@@ -14,12 +14,10 @@ let LoginContainer = (props) => {
 
   useEffect(()=>{
     props.getAuth()
-
   },[props]);
 
 
     if (props.isFetching) {
-      console.log('📢 [LoginContainer copy.jsx:20]', 'sdfs');
       return <Preloader />
    }
       return (!props.isAuth ? <Login {...props} /> : <Redirect to={'/newsfeed'} />)
