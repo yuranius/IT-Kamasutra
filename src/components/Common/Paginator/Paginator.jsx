@@ -1,9 +1,9 @@
 import React from 'react'
 import scss from './Paginator.module.scss'
 
-let Paginator = (props) => {
+let Paginator = ({totalUsersCount, pageSize, currentPage, onPageChanged}) => {
 
-  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+  let pagesCount = Math.ceil(totalUsersCount / pageSize)
 
   let pages = []
 
@@ -20,10 +20,10 @@ let Paginator = (props) => {
           <span
             key={p}
             onClick={() => {
-              props.onPageChanged(p)
+              onPageChanged(p)
             }}
             className={
-              props.currentPage === p
+              currentPage === p
                 ? scss['namber-page__page-active']
                 : scss['namber-page__page']
             }
