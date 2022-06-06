@@ -1,23 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import App from "./components/AppStyle/App";
-import store from "./redux/redux-store";
+import MainApp from "./components/AppStyle/App";
+
 // import StoreContext, { Provider } from "./storeContext"; //! Provider берем из библиотеки react-redux, но файл storeContext для понимания остается
 
 // let RenderEntireFree = () => { 
-   ReactDOM.render(
-      <BrowserRouter>
-         <Provider store={store}> 
-            <App
-              //  state={state}
-              //  dispatch={store.dispatch.bind(store)} //!  bind не вызывает функцию addStore, он ее берет бандит ее со store и этот метод bind он вохвращает другую функцию, такая же равнозначаная addPost, но внутри ее this будет всегда store/
-            />
-         </Provider>
-      </BrowserRouter>,
-      document.getElementById("root"),
-   );
+   ReactDOM.render(<MainApp/>, document.getElementById("root"));
 // };
 
 

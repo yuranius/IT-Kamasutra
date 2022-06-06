@@ -42,7 +42,6 @@ export const toggleIsFetching = (isFetching) => ({
 export const getAuth = () => async (dispatch) => {
 	dispatch(toggleIsFetching(true));
 	let response = await authAPI.getAuth();
-   console.log('📢 [authReducer.js:45]', response);
 	if (response.resultCode === 0) {
 		let { id, email, login } = response.data;
 		dispatch(setAuthUserData(id, email, login, true));
