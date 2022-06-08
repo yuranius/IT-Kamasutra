@@ -28,7 +28,7 @@ let FindUsers = React.memo (props => {
       <div className={scss["content"]}>
          {props.isFetching ? <Preloader /> : null}
          <div className={scss["content__body"]}> {userElements} </div>
-         <div className={scss["content__namber-page"]}> <Paginator totalUsersCount={props.totalUsersCount} pageSize = {props.pageSize} currentPage = {props.currentPage} onPageChanged = {props.onPageChanged} /> </div>
+         <div className={scss["content__namber-page"]}> <Paginator totalItemsCount={props.totalUsersCount} pageSize = {props.pageSize} currentPage = {props.currentPage} onPageChanged = {props.onPageChanged} /> </div>
       </div>
    );
 });

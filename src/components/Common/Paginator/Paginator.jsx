@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import scss from './Paginator.module.scss'
 
-let Paginator = ({totalUsersCount, pageSize, currentPage, onPageChanged}) => {
+let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
 
-  let pagesCount = Math.ceil(totalUsersCount / pageSize)
+  let pagesCount = Math.ceil(totalItemsCount / pageSize);
+
+  //? определяем границы для диапазона вывода страниц------------>
+
+  //? определяем размер порции:
+  let portionCount = Math.ceil(totalItemsCount / portionSize) //? portionSize - размер порции
+  let [portionNamber, setPortionNamber] = useState(1);
+  
+  let leftPortionPageNamber = (portionNamber - 1) * portionSize + 1; //* левая граница
+  let rightPortionPageNamber = portionNamber * portionSize; //* правая граница
+
+  //? --------------------> определяем границы для диапазона вывода страниц
 
   let pages = []
 
@@ -13,8 +24,12 @@ let Paginator = ({totalUsersCount, pageSize, currentPage, onPageChanged}) => {
 
   return (
     <>
-      {pages.map((p) => {
-		  
+    {portionNamber > 1 && <button onClick={ ()=> { setPortionNamber(portionNamber - 1) } }>PREV</button>}
+      
+
+      {pages
+      .filter( (p) => p >= leftPortionPageNamber && p <= rightPortionPageNamber)
+      .map((p) => {
         return (
 			
           <span
@@ -31,7 +46,9 @@ let Paginator = ({totalUsersCount, pageSize, currentPage, onPageChanged}) => {
             {p}
           </span>
         )
-      })}
+      })
+      }
+      {portionNamber < portionCount && <button onClick={ ()=> { setPortionNamber(portionNamber + 1) } }>NEXT</button>}
     </>
   )
 }
