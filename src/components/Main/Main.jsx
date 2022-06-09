@@ -35,7 +35,7 @@ let Main = () => {
                   {/*exact - точное указание пути, без совпадений*/}
                   <Route path='/badges/' component={Badges} />
                   <Route path='/profile/:userId?' component={ withSuspense(ProfileContainer) } />
-                  <Route path='/authprofile'  component={ withSuspense(ProfileContainerCopy) } />
+                  <Route path='/profile'  component={ withSuspense(ProfileContainer) } />
                   <Route path='/findusers' component={ withSuspense(FindUsersContainer) } />
                   
                {/* </Routes> */}

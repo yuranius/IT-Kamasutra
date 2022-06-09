@@ -29,14 +29,14 @@ let ProfileContainer = (props) => {
     }
   }
 
+  
 
   useEffect(() => {
     //setUserId(props.match.params.userId); //? match.params берем из withRouter, то что приходит из url, userId береться из пути в <main/>, это все делает withRouer
-
     props.getProfile(userId)
     props.getStatus(userId)
     props.getAuth()
-  }, [])
+  }, [userId])
 
 
   if (!props.profile) {

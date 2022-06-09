@@ -13,7 +13,7 @@ let ProfileCardThree = (props) => {
 			</div>
 			<div className={scss["profile-card__body"]}>
 				<figure className={scss["body__avatar"]}>
-					<img src={props.profile.photos.large ? props.profile.photos.large : userPhoto} alt="avater" />
+					<img src={props.profile.photos.large || userPhoto} alt="avater" />
 				</figure>
 				<h4 className={scss["body__name"]}>
 					{props.profile.fullName}
@@ -21,9 +21,16 @@ let ProfileCardThree = (props) => {
 				</h4>
 				<ProfileStatusWithHooks userIdAuth={props.userIdAuth} profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
 				<div className={scss["body__link"]}>
+				{props.userIdAuth === props.profile.userId && 
+				    <>
 					<a href="/" className={scss["body__link-friend"]}>
-						Add Friend
+						Add Foto
+						
 					</a>
+					<input type={"file"} placeholder='true'/>
+					</>
+					}
+
 					<a href="/" className={scss["body__link-mail"]}>
 						<i className="icon-mark_as_unread"></i>
 					</a>
