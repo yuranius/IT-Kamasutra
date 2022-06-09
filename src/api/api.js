@@ -52,6 +52,13 @@ export const profileAPI = {
          return response.data;
       });
    },
+   savePhoto(file) {
+      let formData = new FormData();
+      formData.append("image", file) // "image" - берется из документации к бэкэнду
+      return instance.put(`profile/photo`,  formData, {headers: {'Content-Type': 'multipart/form-data'}}).then((response) => {
+         return response.data;
+      });
+   },
 }
 
 export const loginAPI = {

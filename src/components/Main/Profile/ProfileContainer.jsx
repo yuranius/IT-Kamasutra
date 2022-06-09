@@ -11,6 +11,7 @@ import {
   getProfile,
   getStatus,
   updateStatus,
+  savePhoto,
 } from '../../../redux/profileUsersReducer'
 import { getAuth } from '../../../redux/authReducer'
 import Preloader from '../../Common/Preloader/Preloader'
@@ -49,6 +50,7 @@ let ProfileContainer = (props) => {
     userIdAuth={props.userIdAuth}
     status={props.status}
     updateStatus={props.updateStatus}
+    savePhoto={props.savePhoto}
   />
   )
 }
@@ -62,5 +64,5 @@ let mapStateToProps = (state) => ({
 export default compose(
   withRouter,
   withAuthRedirect,
-  connect(mapStateToProps, { getProfile, getStatus, updateStatus, getAuth }),
+  connect(mapStateToProps, { getProfile, getStatus, updateStatus, getAuth, savePhoto }),
 )(ProfileContainer)
