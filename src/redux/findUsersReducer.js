@@ -44,7 +44,7 @@ const findUsersReducer = (state = initialState, action) => {
 		case SET_USERS: {
 			return {
 				...state,
-				users: action.users, //* из старго state users, которые там были, и дописать к ним user`ов которые пришли к нам из action
+				users: action.users, //* из старго state users, которые там были, и дописать к ним user`ов которые пришли к нам из actio
 			};
 		}
 
